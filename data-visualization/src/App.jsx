@@ -24,7 +24,6 @@ import BarchartHigh from "./BarchartHigh";
 Chart.register(CategoryScale);
 
 function App() {
-
   const genderData = {
     labels: [
       "Female (Alcohol Involved)",
@@ -74,8 +73,6 @@ function App() {
     },
     aspectRatio: 2,
   };
-
- 
 
   const optionsTime = {
     scales: {
@@ -300,13 +297,10 @@ function App() {
     ],
   };
 
+  const cnt = [<BarchartHigh></BarchartHigh> ,
+<Map></Map>
 
-
-  const cnt = [
-
-<BarchartHigh></BarchartHigh> 
-
-  ];
+];
 
   const [components, setComponents] = useState(cnt[0]);
 
@@ -452,3 +446,4 @@ function App() {
   );
 }
 export default App;
+
