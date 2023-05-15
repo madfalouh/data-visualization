@@ -1,0 +1,17 @@
+.pies {
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 90%;
+justify-content: space-between;
+}
+
+.pie {
+
+width: 45%;
+}
+
+.pie h2 {
+color: rgb(255, 255, 255);
+text-align: center;
+}
