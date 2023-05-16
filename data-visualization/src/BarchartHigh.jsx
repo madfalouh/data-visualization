@@ -1,7 +1,7 @@
-import dataA from "./alcohol/TypeA/month";
-import dataAB from "./alcohol/TypeAB/monthInj";
-import dataFatalities from "./alcohol/Fatalities/monthInj";
-import dataInjuries from "./alcohol/Allinjuries/mounthAllInj";
+import dataA from "./alcohol/TypeA/race";
+import dataAB from "./alcohol/TypeAB/race";
+import dataFatalities from "./alcohol/Fatalities/race";
+import dataInjuries from "./alcohol/Allinjuries/race";
 
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
@@ -13,7 +13,7 @@ export default function BarchartHigh() {
   let scale = 0 ; 
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) { // Typical breakpoint for mobile screens
-      scale =  0.85;
+      scale =  0.8;
     } else {
       scale = 0.7;
     }
@@ -22,9 +22,6 @@ export default function BarchartHigh() {
 const [chartWidth, setChartWidth] = useState(window.innerWidth * scale);
 
 console.log(chartWidth);
-
-
-
 
   const handleResize = useCallback(() => {
     setChartWidth(window.innerWidth * scale);
@@ -45,8 +42,8 @@ console.log(chartWidth);
     charts.forEach((chart) => {
       const width = chartWidth;
       console.log(width);
-      let pointWidth = Math.max(Math.round(width / 100), 2);
-      pointWidth = Math.min(Math.max(pointWidth, 4), 15);
+      let pointWidth = Math.max(Math.round(width / 100), 0.1);
+      pointWidth = Math.min(Math.max(pointWidth, 0.1), 15);
       const pointPadding = pointWidth / 15;
       chart.update(
         {
@@ -99,11 +96,11 @@ console.log(chartWidth);
 },
     plotOptions: {
       column: {
-        pointPadding: 0.1,
+        pointPadding: 0.2,
         groupPadding: 0.1,
         borderWidth: 0,
         borderRadius: 5,
-        pointWidth: 15, // Adjust the value as needed
+        pointWidth: 12, // Adjust the value as needed
       },
     },
     series: [
@@ -123,7 +120,7 @@ console.log(chartWidth);
       },
       {
         name: "All Injuries",
-        data: dataFatalities.series[0].data,
+        data: dataFatalities.datasets[0].data,
         color: Highcharts.getOptions().colors[2],
         borderColor: Highcharts.getOptions().colors[2],
         borderWidth: 1,
@@ -195,7 +192,7 @@ console.log(chartWidth);
         groupPadding: 0.1,
         borderWidth: 0,
         borderRadius: 5,
-        pointWidth: 15, // Adjust the value as needed
+        pointWidth: 12, // Adjust the value as needed
       },
     },
     series: [

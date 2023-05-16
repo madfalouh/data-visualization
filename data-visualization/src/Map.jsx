@@ -1,7 +1,7 @@
 // src/Map.js
 import useMapbox from "./useMapbox";
 import "./Map.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { feature } from "topojson-client";
 import * as d3 from 'd3';
 
@@ -11,7 +11,7 @@ const MAPBOX_STYLE = "mapbox://styles/mapbox/streets-v11";
 
 const Map = () => {
   const mapContainer = useRef(null);
-
+const [switchData  , setSwitchData  ]= useState(true) ;
   const dataCSV = [
     {
       County: "Adams",
@@ -3250,9 +3250,6 @@ function addPropertiesToTopojson(originalData, topojson) {
     if (county) {
       feature.properties.alcoholInvolved = county.alcoholInvolved|| 0;
       feature.properties.notAlcoholInvolved = county.notAlcoholInvolved || 0;
-    } else {
-      // Log a message if no match is found
-      console.log(`No match found for county: ${feature.properties.NAME}`);
     }
   });
 
@@ -3276,9 +3273,18 @@ geojsonData.features.forEach(function(feature) {
 
 
 
-  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, geojsonData  , colorScale );
+  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, geojsonData  , switchData );
 
-  return <div ref={mapContainer} className="map-container" />;
+  return (<> <div ref={mapContainer} className="map-container" /> 
+
+<div className="toggle"   title= { switchData ?   "Not alcohol Involved"  : "Alcohol Involved" } >
+  <input type="checkbox" id="a"   onClick={ () =>{ setSwitchData( (old)=> { return !old }  ) } }   />
+  <label htmlFor="a">
+  </label>
+</div>
+
+
+ </> );
 };
 
 export default Map;

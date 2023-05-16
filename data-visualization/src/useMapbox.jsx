@@ -2,9 +2,11 @@
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-const useMapbox = (container, accessToken, mapStyle, data  , colorScale) => {
+const useMapbox = (container, accessToken, mapStyle, data  , involmenemt) => {
   useEffect(() => {
 
+console.log("ijfc,jr,fckf,ckfc,");
+console.log(involmenemt);
 
 const bounds = [    [-91.655009, 30.173943], // Southwest coordinates
   [-88.097889, 34.996052]  // Northeast coordinates
@@ -25,30 +27,15 @@ map.on('load', () => {
     data: data,
   });
 
-  // Add a fill-extrusion layer covering the entire world
   map.addLayer({
-    'id': 'blur-layer',
-    'type': 'fill-extrusion',
-    'source': {
-      'type': 'geojson',
-      'data': {
-        'type': 'Feature',
-        'geometry': {
-          'type': 'Polygon',
-          'coordinates': [[[180, 90], [-180, 90], [-180, -90], [180, -90], [180, 90]]]
-        }
-      }
-    },
+    'id': 'world-layer',
+    'type': 'background',
     'paint': {
-      'fill-extrusion-color': '#000',  // use whatever color you like
-      'fill-extrusion-height': ['interpolate', ['linear'], ['zoom'], 0, 0, 20, 20000000],
-      'fill-extrusion-base': 0,
-      'fill-extrusion-opacity': 0.6  // adjust this to control the 'blurring' effect
+      'background-color': 'rgba(204, 204, 204, 0.7)' // grey with 0.2 opacity
     }
   });
 
-  // Add your counties layer
-  map.addLayer({
+    map.addLayer({
     'id': 'counties-layer',
     'type': 'fill',
     'source': 'counties',
@@ -56,15 +43,14 @@ map.on('load', () => {
     'paint': {
       'fill-color': [
         'interpolate',
-        ['linear'],
-        ['get', 'alcoholInvolved'],
-        0, 'rgba(255, 0, 0, 0)',
-        5, 'rgba(255, 0, 0, 1)' 
+        ['linear'], 
+        ['get',    involmenemt ? "notAlcoholInvolved" :"alcoholInvolved"    ],
+        0, 'rgba(173, 216, 230, 1)', // light blue at 0
+         (involmenemt ? 257 : 5) , 'rgba(0, 0, 139, 1)' 
       ],
       'fill-opacity': 0.7
     }
   });
-
   // Add your counties borders
   map.addLayer({
     'id': 'counties-borders',
@@ -82,7 +68,7 @@ map.on('load', () => {
     return () => {
       map.remove();
     };
-  }, [container, accessToken, mapStyle, data]);
+  }, [container, accessToken, mapStyle, data , involmenemt]);
 };
 
 export default useMapbox;
