@@ -10,8 +10,8 @@ position: relative;
   --toggle-width: 60px;
   --toggle-height: 30px;
   --toggle-offset: 7px;
-  top: 10%;
-left: 70%;
+  top: 16%;
+left: 65%;
   --toggle-outer-default: #207ace;
   --toggle-outer-active: #1cf074;
   --toggle-inner-default: #ffffff;
@@ -94,7 +94,8 @@ left: 70%;
 
 .toggle {
 
-left: 80%;
+top: 10%;
+left: 75%;
 }
 
 }

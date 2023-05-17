@@ -3,11 +3,13 @@ margin: 0 0;
 background-color: #141b2d;
 font-family: "Source Sans Pro", sans-serif;
 overflow-x: hidden;
+
 }
 
 .burger-icon {
 position: fixed;
 top: 0;
+z-index: 10000000000;
 left: -120%;
 }
 
@@ -217,6 +219,16 @@ position: relative;
 
 @media (max-width: 1000px) {
 
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.second-section-inner {
+
+margin: 0px;
+}
 
 
 .burger-icon {
@@ -232,7 +244,7 @@ z-index: 1000;
 width: 100vw;
 left: -120%;
 
-  transition: left 0.3s ease-in-out;
+transition: left 0.3s ease-in-out;
 
 }
 
