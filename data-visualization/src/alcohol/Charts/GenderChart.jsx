@@ -1,14 +1,15 @@
-import dataA from "./alcohol/TypeAData/race";
-import dataAB from "./alcohol/typeABData/race";
-import dataFatalities from "./alcohol/FatalitiesData/race";
-import dataInjuries from "./alcohol/AllinjuriesData/race";
+import React from 'react'
+import dataA from "../TypeAData/gender";
+import dataAB from "../typeABData/gender";
+import dataFatalities from "../FatalitiesData/gender";
+import dataInjuries from "../AllinjuriesData/gender";
 
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function BarchartHigh() {
-  const chartComponent1 = useRef();
+function GenderChart() {
+const chartComponent1 = useRef();
   const chartComponent2 = useRef();
   let scale = 0 ; 
     const screenWidth = window.innerWidth;
@@ -254,5 +255,7 @@ console.log(chartWidth);
         />
       </div>
     </>
-  );
+  )
 }
+
+export default GenderChart

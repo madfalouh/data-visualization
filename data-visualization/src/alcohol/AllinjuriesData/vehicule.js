@@ -3,13 +3,13 @@ const dataInjuries = {
   "datasets": [
     {
       "label": "Alcohol Involved",
-      "data": [66, 1, 4, 1, 3, 1, 135, 4, 61, 2, 3, null, null, null, null, null, null, null, null, null, null, 106, null, 52, null, 17, 17, 10, 10],
+      "data": [66, 1, 4, 1, 3, 1, 135, 4, 61, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 106, 0, 52, 0, 17, 17, 10, 10],
       "borderColor": "rgba(75, 192, 192, 1)",
       "backgroundColor": "rgba(75, 192, 192, 0.2)"
     },
     {
       "label": "Not Alcohol Involved",
-      "data": [6235, 529, 80, 3, 195, 4, 15654, 631, 4619, null, 358, 6, 9, 4, 17, 17, 10, 1, 2, 9, 2, 106, 2, 52, 9, 17, 187, 4],
+      "data": [6235, 529, 80, 3, 195, 4, 15654, 631, 4619, 0, 358],
       "borderColor": "rgba(255, 99, 132, 1)",
       "backgroundColor": "rgba(255, 99, 132, 0.2)"
     }

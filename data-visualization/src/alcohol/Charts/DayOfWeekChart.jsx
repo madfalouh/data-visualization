@@ -1,14 +1,15 @@
-import dataA from "./alcohol/TypeAData/race";
-import dataAB from "./alcohol/typeABData/race";
-import dataFatalities from "./alcohol/FatalitiesData/race";
-import dataInjuries from "./alcohol/AllinjuriesData/race";
+import React from 'react'
+import dataA from "../TypeAData/dayOfWeek";
+import dataAB from "../typeABData/dayOfWeek";
+import dataFatalities from "../FatalitiesData/dayOfWeek";
+import dataInjuries from "../AllinjuriesData/dayOfWeek";
 
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function BarchartHigh() {
-  const chartComponent1 = useRef();
+function DayOfWeekChart() {
+const chartComponent1 = useRef();
   const chartComponent2 = useRef();
   let scale = 0 ; 
     const screenWidth = window.innerWidth;
@@ -254,5 +255,7 @@ console.log(chartWidth);
         />
       </div>
     </>
-  );
+  )
 }
+
+export default DayOfWeekChart

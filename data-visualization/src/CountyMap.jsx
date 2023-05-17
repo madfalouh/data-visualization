@@ -9,7 +9,7 @@ const MAPBOX_ACCESS_TOKEN =
   "pk.eyJ1IjoibWFkZmFsb3VoIiwiYSI6ImNsaGducmV3MzBmcmkzc2w5c25zY2ZsaTkifQ.qOZpdZGPS6IiY3YZfMqlHQ";
 const MAPBOX_STYLE = "mapbox://styles/mapbox/streets-v11";
 
-const Map = () => {
+const CountyMap = () => {
   const mapContainer = useRef(null);
 const [switchData  , setSwitchData  ]= useState(true) ;
   const dataCSV = [
@@ -3287,4 +3287,4 @@ geojsonData.features.forEach(function(feature) {
  </> );
 };
 
-export default Map;
+export default CountyMap;

@@ -8,15 +8,11 @@ const dataFatalities = {
     "Other Race",
     "Unknown",
     "White"
-
-
-
-
   ],
   "datasets": [
     {
       "label": "Fatalities",
-      "data": [0, 82, 0, 4, 0, 1, 1, 75],
+      "data": [0, 82, 0, 4, 0, 1, 75],
       "borderColor": "rgba(75, 192, 192, 1)",
       "backgroundColor": "rgba(75, 192, 192, 0.2)"
     }

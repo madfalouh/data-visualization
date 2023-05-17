@@ -1,19 +1,20 @@
-import dataA from "./alcohol/TypeAData/race";
-import dataAB from "./alcohol/typeABData/race";
-import dataFatalities from "./alcohol/FatalitiesData/race";
-import dataInjuries from "./alcohol/AllinjuriesData/race";
+import React from 'react'
+import dataA from "../TypeAData/month";
+import dataAB from "../typeABData/monthInj";
+import dataFatalities from "../FatalitiesData/monthInj";
+import dataInjuries from "../AllinjuriesData/mounthAllInj";
 
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export default function BarchartHigh() {
-  const chartComponent1 = useRef();
+function MonthChart() {
+ const chartComponent1 = useRef();
   const chartComponent2 = useRef();
   let scale = 0 ; 
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) { // Typical breakpoint for mobile screens
-      scale =  0.8;
+      scale =  0.75;
     } else {
       scale = 0.7;
     }
@@ -120,7 +121,7 @@ console.log(chartWidth);
       },
       {
         name: "All Injuries",
-        data: dataFatalities.datasets[0].data,
+        data: dataFatalities.series[0].data,
         color: Highcharts.getOptions().colors[2],
         borderColor: Highcharts.getOptions().colors[2],
         borderWidth: 1,
@@ -256,3 +257,5 @@ console.log(chartWidth);
     </>
   );
 }
+
+export default MonthChart
