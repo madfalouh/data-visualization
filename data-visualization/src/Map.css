@@ -1,5 +1,6 @@
 /* src/Map.css */
 .map-container {
+position: relative;
   height: 80vh;
   width: 100%;
 }
@@ -9,8 +10,8 @@
   --toggle-width: 60px;
   --toggle-height: 30px;
   --toggle-offset: 7px;
-  top: 24%;
-left: 88%;
+  top: 10%;
+left: 70%;
   --toggle-outer-default: #207ace;
   --toggle-outer-active: #1cf074;
   --toggle-inner-default: #ffffff;
@@ -86,4 +87,14 @@ left: 88%;
 	position: absolute !important;
 	width: 1px !important;
 	white-space: nowrap !important;
+}
+
+
+@media (min-width: 1000px) { 
+
+.toggle {
+
+left: 80%;
+}
+
 }

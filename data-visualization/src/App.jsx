@@ -2,11 +2,11 @@
 import "./App.css";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import LiquorIcon from '@mui/icons-material/Liquor';
-import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
-import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
-import MopedIcon from '@mui/icons-material/Moped';
-import VaccinesIcon from '@mui/icons-material/Vaccines';
+import LiquorIcon from "@mui/icons-material/Liquor";
+import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
+import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
+import MopedIcon from "@mui/icons-material/Moped";
+import VaccinesIcon from "@mui/icons-material/Vaccines";
 import { useState } from "react";
 import WcIcon from "@mui/icons-material/Wc";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -17,7 +17,7 @@ import ElderlyIcon from "@mui/icons-material/Elderly";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { AddRoad, DirectionsCar } from "@mui/icons-material";
-import TabCard from "./TabCard";;
+import TabCard from "./TabCard";
 import MonthChart from "./alcohol/Charts/monthChart";
 import TimeOfDayChart from "./alcohol/Charts/timeOfDayChart";
 import DayOfWeekChar from "./alcohol/Charts/DayOfWeekChart";
@@ -28,12 +28,11 @@ import VehiculeChart from "./alcohol/Charts/VehiculeChart";
 import RoadChart from "./alcohol/Charts/RoadChart";
 import CountyMap from "./CountyMap";
 import CityMap from "./CityMap";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 Chart.register(CategoryScale);
 
 function App() {
-
-const [open, setOpen ] =useState(true)
+  const [open, setOpen] = useState(false);
 
   const cnt = [
     <MonthChart></MonthChart>,
@@ -54,20 +53,39 @@ const [open, setOpen ] =useState(true)
 
   return (
     <div className="container">
-  <MenuIcon  className="burger-icon" style={{color : "#fff" , cursor :"pointer" }}  onClick ={()=>{ setOpen((old) =>{return !old} )   }}     > </MenuIcon>
-      <div className={`firt-section  open  ${open  && " toggle-side" }   `}   >
-        <div className="side-element"  style={{backgroundColor : "#6998F5"}} > <LiquorIcon></LiquorIcon> Alcohol Fatalities</div>
-        <div className="side-element"> <DirectionsBikeIcon></DirectionsBikeIcon> Bycle Fatalities</div>
-              <div className="side-element"> <TwoWheelerIcon></TwoWheelerIcon>  Cyclist Fatalities</div>
-              <div className="side-element"> <VaccinesIcon></VaccinesIcon>  Drug Fatalities</div>
-              <div className="side-element"> <MopedIcon></MopedIcon> Motocycle Fatalities</div>
-
-</div>
-
-
-
-
-
+      <MenuIcon
+        className="burger-icon"
+        style={{ color: "#fff", cursor: "pointer" }}
+        onClick={() => {
+          setOpen((old) => {
+            return !old;
+          });
+        }}
+      >
+        {" "}
+      </MenuIcon>
+      <div className={`firt-section  open  ${open && " toggle-side"}   `}>
+        <div className="side-element" style={{ backgroundColor: "#6998F5" }}>
+          {" "}
+          <LiquorIcon></LiquorIcon> Alcohol Fatalities
+        </div>
+        <div className="side-element">
+          {" "}
+          <DirectionsBikeIcon></DirectionsBikeIcon> Bycle Fatalities
+        </div>
+        <div className="side-element">
+          {" "}
+          <TwoWheelerIcon></TwoWheelerIcon> Cyclist Fatalities
+        </div>
+        <div className="side-element">
+          {" "}
+          <VaccinesIcon></VaccinesIcon> Drug Fatalities
+        </div>
+        <div className="side-element">
+          {" "}
+          <MopedIcon></MopedIcon> Motocycle Fatalities
+        </div>
+      </div>
 
       <div className="second-section">
         <div className="second-section-inner">

@@ -44,8 +44,8 @@ console.log(chartWidth);
       const width = chartWidth;
       console.log(width);
       let pointWidth = Math.max(Math.round(width / 100), 0.1);
-      pointWidth = Math.min(Math.max(pointWidth, 0.1), 15);
-      const pointPadding = pointWidth / 15;
+      pointWidth = Math.min(Math.max(pointWidth, 0.1), 10);
+      const pointPadding = pointWidth/4 ;
       chart.update(
         {
           plotOptions: {
@@ -98,10 +98,10 @@ console.log(chartWidth);
     plotOptions: {
       column: {
         pointPadding: 0.2,
-        groupPadding: 0.1,
+        groupPadding: -0.05,
         borderWidth: 0,
         borderRadius: 5,
-        pointWidth: 12, // Adjust the value as needed
+        pointWidth: 10, // Adjust the value as needed
       },
     },
     series: [

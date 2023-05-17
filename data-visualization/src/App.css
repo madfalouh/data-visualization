@@ -98,6 +98,7 @@ flex-direction: column;
 
 
 .body-chart {
+
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -197,7 +198,7 @@ align-items: center;
 }
 
 .body-chart-bd {
-
+  position: relative;
    width: 80vw;
   max-width: 80vw;
 }
@@ -207,9 +208,16 @@ align-items: center;
 display: none;
 }
 
+.map-container {
+
+position: relative;
+}
+
 
 
 @media (max-width: 1000px) {
+
+
 
 .burger-icon {
 left: 0;
@@ -279,3 +287,6 @@ margin-left: 5%;
 background-color: rgba(209, 215, 228, 0.2);
 
 }
+
+
+
