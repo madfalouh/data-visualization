@@ -7,7 +7,11 @@ import dataInjuries from "../AllinjuriesData/age";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
+import exportingInit from 'highcharts/modules/exporting';
+import exportCSV from 'highcharts/modules/export-data';
 
+exportingInit(Highcharts);
+exportCSV(Highcharts);
 function AgeChart() {
 const chartComponent1 = useRef();
   const chartComponent2 = useRef();

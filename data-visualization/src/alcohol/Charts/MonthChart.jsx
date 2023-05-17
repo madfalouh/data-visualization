@@ -7,6 +7,11 @@ import dataInjuries from "../AllinjuriesData/mounthAllInj";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
+import exportingInit from 'highcharts/modules/exporting';
+import exportCSV from 'highcharts/modules/export-data';
+
+exportingInit(Highcharts);
+exportCSV(Highcharts);
 
 function MonthChart() {
  const chartComponent1 = useRef();
