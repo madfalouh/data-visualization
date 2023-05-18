@@ -2832,7 +2832,6 @@ const [switchData  , setSwitchData  ]= useState(true) ;
   };
 
 
-console.log(data);
 
 const  dataa =  addPropertiesToTopojson(dataCSV, data) ;
 
@@ -2840,11 +2839,12 @@ const  dataa =  addPropertiesToTopojson(dataCSV, data) ;
 
 const dataAB =  addPropertiesToTopojson (dataCSVAB , data)
 
+const dataFtls = addPropertiesToTopojsonFtls(dataFatls , data)
 
-console.log(dataAB);
 
 const dataALL = addPropertiesToTopojson(dataCSVINJ , data)
 
+const [fatalities , setFatalities ] = useState(false ) ;  
 
 
 function addPropertiesToTopojson(originalData, topojson) {
@@ -2868,13 +2868,27 @@ function addPropertiesToTopojson(originalData, topojson) {
 
 
 
+function addPropertiesToTopojsonFtls(originalData, topojson) {
+  // Create a deep copy of the topojson object
+  const topojsonCopy = JSON.parse(JSON.stringify(topojson));
+
+  topojsonCopy.objects.cb_2015_mississippi_county_20m.geometries.forEach(function(feature) {
+    const county = originalData.find(function(c) {
+      return c.County.toLowerCase() === feature.properties.NAME.toLowerCase();
+    });
+    if (county) {
+      
+      console.log(county);
+      feature.properties.Fatalities = county.Fatalities || 0;
+    }
+  });
+
+  return topojsonCopy;
+}
 
 
-console.log("ghahjhdhddjdjhdhd");
 
-console.log(dataa);
 
-console.log(dataAB);
 
 
   const geojsonData = feature(
@@ -2894,6 +2908,11 @@ console.log(dataAB);
     dataALL.objects.cb_2015_mississippi_county_20m
   );
 
+  const geojsonDataFtls = feature(
+    dataFtls,
+    dataFtls.objects.cb_2015_mississippi_county_20m
+  );
+
 
 
 const [datMap , setDataMap] =useState(geojsonDataALL )
@@ -2902,35 +2921,34 @@ const [datMap , setDataMap] =useState(geojsonDataALL )
 const value  = event.target.value
 if(value ==="All Injuries"){
 setDataMap( geojsonDataALL )
-
-console.log("1111111111111111111111111111111111111111111111111111");
+setFatalities(false)
 
 }
 if(value ==="Type A"){
 setDataMap(  geojsonData )
-console.log("2222222222222222222222222222222222222222222");
+setFatalities(false)
+
 } 
 if(value ==="Type A & B"){
 setDataMap( geojsonDataAB ) 
-console.log("3333333333333333333333333333333333333333333333333333");
+setFatalities(false)
 
  }
 
-console.log(datMap);
+
+if(value ==="Fatalities"){
+setDataMap( geojsonDataFtls ) 
+setFatalities(true)
+ }
 
   };
 
-useEffect(() => {
-  console.log(datMap);
-}, [datMap]);
-
-
-  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap  , switchData );
+  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap  , switchData  , fatalities );
 
   return (<> <div ref={mapContainer} className="map-container" /> 
 
 
-
+<div className="select-type" >
  <div className="select-dropdown"  onChange={handleOptionChange}  >
     <select>
       <option value="All Injuries">All Injuries</option>
@@ -2941,14 +2959,14 @@ useEffect(() => {
     </select>
   </div>
 
-<div className="toggle"   title= { switchData ?   "Not alcohol Involved"  : "Alcohol Involved" } >
+<div className={`toggle   ${ fatalities &&  "show-fatal" }   ` }   title= { switchData ?   "Not alcohol Involved"  : "Alcohol Involved" } >
 
 
   <input type="checkbox" id="a"   onClick={ () =>{ setSwitchData( (old)=> { return !old }  ) } }   />
   <label htmlFor="a">
   </label>
 </div>
-
+</div>
 
  </> );
 };

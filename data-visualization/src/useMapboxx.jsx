@@ -2,11 +2,11 @@
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-const useMapboxx = (container, accessToken, mapStyle, data  , involmenemt) => {
+const useMapbox = (container, accessToken, mapStyle, data  , involmenemt , fatalities) => {
   useEffect(() => {
 
 console.log("ijfc,jr,fckf,ckfc,");
-console.log(involmenemt);
+console.log(data);
 
 const bounds = [    [-91.655009, 30.173943], // Southwest coordinates
   [-88.097889, 34.996052]  // Northeast coordinates
@@ -31,12 +31,13 @@ map.on('load', () => {
     'id': 'world-layer',
     'type': 'background',
     'paint': {
-      'background-color': 'rgba(204, 204, 204, 0.3)' // grey with 0.2 opacity
+      'background-color': 'rgba(204, 204, 204, 0.7)' // grey with 0.2 opacity
     }
   });
 
+if(! fatalities) {
     map.addLayer({
-    'id': 'counties-layer',
+    'id': 'counties-layer-',
     'type': 'fill',
     'source': 'counties',
     'layout': {},
@@ -44,13 +45,37 @@ map.on('load', () => {
       'fill-color': [
         'interpolate',
         ['linear'], 
-        ['get',    involmenemt ? "notAlcoholInvolved" :"AlcoholInvolved"    ],
+        ['get',    involmenemt ? "notAlcoholInvolved" :"alcoholInvolved"    ],
         0, 'rgba(173, 216, 230, 1)', // light blue at 0
-         (involmenemt ? 201 : 5) , 'rgba(0, 0, 139, 1)' 
+         (involmenemt ? 257 : 5) , 'rgba(0, 0, 139, 1)' 
       ],
       'fill-opacity': 0.7
     }
   });
+
+}
+if(fatalities) {
+map.addLayer({
+  'id': 'counties-layer',
+  'type': 'fill',
+  'source': 'counties',
+  'layout': {},
+  'paint': {
+    'fill-color': [
+      'interpolate',
+      ['linear'], 
+      ['get', 'Fatalities'],
+      0, 'rgba(173, 216, 230, 1)', // light blue at 0
+      // Adjust color at max value (here, adjust 20 as per your max fatalities value)
+      20, 'rgba(0, 0, 139, 1)' // dark blue at max
+    ],
+    'fill-opacity': 0.7
+  }
+});
+
+}
+
+
   // Add your counties borders
   map.addLayer({
     'id': 'counties-borders',
@@ -71,4 +96,4 @@ map.on('load', () => {
   }, [container, accessToken, mapStyle, data , involmenemt]);
 };
 
-export default useMapboxx;
+export default useMapbox;

@@ -2,11 +2,11 @@
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-const useMapbox = (container, accessToken, mapStyle, data  , involmenemt) => {
+const useMapbox = (container, accessToken, mapStyle, data  , involmenemt , fatalities) => {
   useEffect(() => {
 
 console.log("ijfc,jr,fckf,ckfc,");
-console.log(involmenemt);
+console.log(data);
 
 const bounds = [    [-91.655009, 30.173943], // Southwest coordinates
   [-88.097889, 34.996052]  // Northeast coordinates
@@ -35,8 +35,9 @@ map.on('load', () => {
     }
   });
 
+if(! fatalities) {
     map.addLayer({
-    'id': 'counties-layer',
+    'id': 'counties-layer-',
     'type': 'fill',
     'source': 'counties',
     'layout': {},
@@ -51,6 +52,30 @@ map.on('load', () => {
       'fill-opacity': 0.7
     }
   });
+
+}
+if(fatalities) {
+map.addLayer({
+  'id': 'counties-layer',
+  'type': 'fill',
+  'source': 'counties',
+  'layout': {},
+  'paint': {
+    'fill-color': [
+      'interpolate',
+      ['linear'], 
+      ['get', 'Fatalities'],
+      0, 'rgba(173, 216, 230, 1)', // light blue at 0
+      // Adjust color at max value (here, adjust 20 as per your max fatalities value)
+      20, 'rgba(0, 0, 139, 1)' // dark blue at max
+    ],
+    'fill-opacity': 0.7
+  }
+});
+
+}
+
+
   // Add your counties borders
   map.addLayer({
     'id': 'counties-borders',

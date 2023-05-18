@@ -1,7 +1,7 @@
 import json
 
 # File paths
-input_file_path = "alcohol_fatal_long_list.prn"
+input_file_path = "alcohol_fatal_long_list_city.prn"
 output_file_path = "output.json"
 
 # Read the data

@@ -101,10 +101,19 @@ left: 75%;
 }
 
 
-
+.select-type {
+width: 70%;
+align-items: center;
+display: flex;
+justify-content: space-between;
+position: absolute;
+top: 15%;
+left: 20%;
+}
 
 
 .select-dropdown {
+  
   position: relative;
   background-color: #ffffff;
   width: auto;
@@ -143,4 +152,8 @@ left: 75%;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #aaa;
+}
+
+.show-fatal {
+display: none;
 }

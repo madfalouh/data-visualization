@@ -1,4 +1,4 @@
-[
+const Fatal_cities = [
    
     {
         "city": "ABERDEEN",
@@ -381,3 +381,5 @@
         "not_alcohol_involved": 1
     }
 ]
+
+export default Fatal_cities ; 
