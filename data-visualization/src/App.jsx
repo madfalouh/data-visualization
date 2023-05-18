@@ -62,27 +62,27 @@ function App() {
           });
         }}
       >
-        {" "}
+        
       </MenuIcon>
       <div className={`firt-section  open  ${open && " toggle-side"}   `}>
         <div className="side-element" style={{ backgroundColor: "#6998F5" }}>
-          {" "}
+          
           <LiquorIcon></LiquorIcon> Alcohol Fatalities
         </div>
         <div className="side-element">
-          {" "}
+          
           <DirectionsBikeIcon></DirectionsBikeIcon> Bycle Fatalities
         </div>
         <div className="side-element">
-          {" "}
+          
           <TwoWheelerIcon></TwoWheelerIcon> Cyclist Fatalities
         </div>
         <div className="side-element">
-          {" "}
+          
           <VaccinesIcon></VaccinesIcon> Drug Fatalities
         </div>
         <div className="side-element">
-          {" "}
+          
           <MopedIcon></MopedIcon> Motocycle Fatalities
         </div>
       </div>

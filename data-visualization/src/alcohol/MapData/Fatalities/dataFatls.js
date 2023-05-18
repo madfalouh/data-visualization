@@ -1,4 +1,4 @@
-[
+const dataFatls = [
     {"County": "ADAMS", "Fatalities": 2},
     {"County": "ALCORN", "Fatalities": 1},
     {"County": "AMITE", "Fatalities": 2},
@@ -80,3 +80,5 @@
     {"County": "YALOBUSHA",  "Fatalities": 0},
     {"County": "YAZOO",  "Fatalities": 1}
 ]
+
+export default dataFatls ;

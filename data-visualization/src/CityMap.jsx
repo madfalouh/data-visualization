@@ -39,7 +39,11 @@ const mydata = addPropertiesToGeojson(dattaa , data)
   return (<> <div ref={mapContainer} className="map-container" /> 
 
 <div className="toggle"   title= { switchData ?   "Not alcohol Involved"  : "Alcohol Involved" } >
-  <input type="checkbox" id="a"   onClick={ () =>{ setSwitchData( (old)=> { return !old }  ) } }   />
+ 
+
+
+
+ <input type="checkbox" id="a"   onClick={ () =>{ setSwitchData( (old)=> { return !old }  ) } }   />
   <label htmlFor="a">
   </label>
 </div>

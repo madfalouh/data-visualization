@@ -1,424 +1,20 @@
 // src/Map.js
 import useMapbox from "./useMapbox";
 import "./Map.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import * as d3 from 'd3';
-
-const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoibWFkZmFsb3VoIiwiYSI6ImNsaGducmV3MzBmcmkzc2w5c25zY2ZsaTkifQ.qOZpdZGPS6IiY3YZfMqlHQ";
+import dataCSV from "./alcohol/MapData/typeA/dataCSV";
+import dataCSVAB from "./alcohol/MapData/typeAB/dataCSVAB";
+import dataCSVINJ from "./alcohol/MapData/All injuries/dataCSVINJ";
+import dataFatls from "./alcohol/MapData/Fatalities/dataFatls";
+const MAPBOX_ACCESS_TOKEN ="pk.eyJ1IjoibWFkZmFsb3VoIiwiYSI6ImNsaGducmV3MzBmcmkzc2w5c25zY2ZsaTkifQ.qOZpdZGPS6IiY3YZfMqlHQ";
 const MAPBOX_STYLE = "mapbox://styles/mapbox/streets-v11";
-
 const CountyMap = () => {
   const mapContainer = useRef(null);
 const [switchData  , setSwitchData  ]= useState(true) ;
-  const dataCSV = [
-    {
-      County: "Adams",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 28,
-    },
-    {
-      County: "Alcorn",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
-    },
-    {
-      County: "Amite",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 16,
-    },
-    {
-      County: "Attala",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 18,
-    },
-    {
-      County: "Benton",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
-    },
-    {
-      County: "Bolivar",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 41,
-    },
-    {
-      County: "Calhoun",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
-    },
-    {
-      County: "Carroll",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 14,
-    },
-    {
-      County: "Chickasaw",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
-    },
-    {
-      County: "Choctaw",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 16,
-    },
-    {
-      County: "Claiborne",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
-    },
-    {
-      County: "Clarke",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
-    },
-    {
-      County: "Clay",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 19,
-    },
-    {
-      County: "Coahoma",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 24,
-    },
-    {
-      County: "Copiah",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 33,
-    },
-    {
-      County: "Covington",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 27,
-    },
-    {
-      County: "DeSoto",
-      alcoholInvolved: 2,
-      notAlcoholInvolved: 157,
-    },
-    {
-      County: "Forrest",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 70,
-    },
-    {
-      County: "Franklin",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
-    },
-    {
-      County: "George",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
-    },
-    {
-      County: "Greene",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
-    },
-    {
-      County: "Grenada",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 63,
-    },
-    {
-      County: "Hancock",
-      alcoholInvolved: 0,
-      notAlcoholInved: 47,
-    },
-    {
-      County: "Harrison",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 157,
-    },
-    {
-      County: "Hinds",
-      alcoholInvolved: 5,
-      notAlcoholInvolved: 267,
-    },
-    {
-      County: "Holmes",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
-    },
-    {
-      County: "Humphreys",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
-    },
-    {
-      County: "Itawamba",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
-    },
-    {
-      County: "Jackson",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 137,
-    },
-    {
-      County: "Jasper",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
-    },
-    {
-      County: "Jefferson",
-      alcoholInvolved: 3,
-      notAlcoholInvolved: 13,
-    },
-    {
-      County: "Jefferson Davis",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
-    },
-    {
-      County: "Jones",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 63,
-    },
-    {
-      County: "Kemper",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 15,
-    },
-    {
-      County: "Lafayette",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 39,
-    },
-    {
-      County: "Lamar",
-      alcoholInvolved: 4,
-      notAlcoholInvolved: 39,
-    },
-    {
-      County: "Lauderdale",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 62,
-    },
-    {
-      County: "Lawrence",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
-    },
-    {
-      County: "Leake",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
-    },
-    {
-      County: "Lee",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 126,
-    },
-    {
-      County: "Leflore",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 22,
-    },
-    {
-      County: "Lincoln",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 39,
-    },
-    {
-      County: "Lowndes",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 64,
-    },
-    {
-      County: "Madison",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 70,
-    },
-    {
-      County: "Marion",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 22,
-    },
-    {
-      County: "Marshall",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
-    },
-    {
-      County: "Monroe",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 52,
-    },
-    {
-      County: "Montgomery",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
-    },
-    {
-      County: "Neshoba",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 41,
-    },
-    {
-      County: "Newton",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 30,
-    },
-    {
-      County: "Noxubee",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 50,
-    },
-    {
-      County: "Oktibbeha",
-      alcoholInvolved: 2,
-      notAlcoholInvolved: 41,
-    },
-    {
-      County: "Panola",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 72,
-    },
-    {
-      County: "Pearl River",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 60,
-    },
-    {
-      County: "Perry",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 13,
-    },
-    {
-      County: "Pike",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 59,
-    },
-    {
-      County: "Pontotoc",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 42,
-    },
-    {
-      County: "Prentiss",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
-    },
-    {
-      County: "Quitman",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 3,
-    },
-    {
-      County: "Rankin",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 125,
-    },
-    {
-      County: "Scott",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 36,
-    },
-    {
-      County: "Sharkey",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 5,
-    },
-    {
-      County: "Simpson",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 47,
-    },
-    {
-      County: "Smith",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 10,
-    },
-    {
-      County: "Stone",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 20,
-    },
-    {
-      County: "Sunflower",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 34,
-    },
-    {
-      County: "Tallahatchie",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 13,
-    },
-    {
-      County: "Tate",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 42,
-    },
-    {
-      County: "Tippah",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 29,
-    },
-    {
-      County: "Tishomingo",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 37,
-    },
-    {
-      County: "Tunica",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 25,
-    },
-    {
-      County: "Union",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 38,
-    },
-    {
-      County: "Walthall",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 7,
-    },
-    {
-      County: "Warren",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 36,
-    },
-    {
-      County: "Washington",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 35,
-    },
-    {
-      County: "Wayne",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 18,
-    },
-    {
-      County: "Webster",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
-    },
-    {
-      County: "Wilkinson",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 6,
-    },
-    {
-      County: "Winston",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 12,
-    },
-    {
-      County: "Yalobusha",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 10,
-    },
-    {
-      County: "Yazoo",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 40,
-    },
-  ];
+ 
+
 
   const data = {
     type: "Topology",
@@ -3236,14 +2832,27 @@ const [switchData  , setSwitchData  ]= useState(true) ;
   };
 
 
+console.log(data);
 
 const  dataa =  addPropertiesToTopojson(dataCSV, data) ;
 
+
+
+const dataAB =  addPropertiesToTopojson (dataCSVAB , data)
+
+
+console.log(dataAB);
+
+const dataALL = addPropertiesToTopojson(dataCSVINJ , data)
+
+
+
 function addPropertiesToTopojson(originalData, topojson) {
-  topojson.objects.cb_2015_mississippi_county_20m.geometries.forEach(function(feature) {
+  // Create a deep copy of the topojson object
+  const topojsonCopy = JSON.parse(JSON.stringify(topojson));
+
+  topojsonCopy.objects.cb_2015_mississippi_county_20m.geometries.forEach(function(feature) {
     const county = originalData.find(function(c) {
-      // Log the county names from both datasets
-  
       return c.County === feature.properties.NAME;
     });
 
@@ -3253,8 +2862,19 @@ function addPropertiesToTopojson(originalData, topojson) {
     }
   });
 
-  return topojson;
+  return topojsonCopy;
 }
+
+
+
+
+
+
+console.log("ghahjhdhddjdjhdhd");
+
+console.log(dataa);
+
+console.log(dataAB);
 
 
   const geojsonData = feature(
@@ -3262,22 +2882,68 @@ function addPropertiesToTopojson(originalData, topojson) {
     dataa.objects.cb_2015_mississippi_county_20m
   );
 
-const colorScale = d3.scaleQuantile()
-  .domain([0, d3.max(dataa.objects.cb_2015_mississippi_county_20m.geometries, d => d.properties.alcoholInvolved)])
-  .range(d3.schemeBlues[9]);
 
-geojsonData.features.forEach(function(feature) {
-  feature.properties.alcoholInvolvedColor = colorScale(feature.properties.alcoholInvolved);
-});
+  const geojsonDataAB = feature(
+    dataAB,
+    dataAB.objects.cb_2015_mississippi_county_20m
+  );
 
 
+  const geojsonDataALL = feature(
+    dataALL,
+    dataALL.objects.cb_2015_mississippi_county_20m
+  );
 
 
-  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, geojsonData  , switchData );
+
+const [datMap , setDataMap] =useState(geojsonDataALL )
+
+  const handleOptionChange = (event) => {
+const value  = event.target.value
+if(value ==="All Injuries"){
+setDataMap( geojsonDataALL )
+
+console.log("1111111111111111111111111111111111111111111111111111");
+
+}
+if(value ==="Type A"){
+setDataMap(  geojsonData )
+console.log("2222222222222222222222222222222222222222222");
+} 
+if(value ==="Type A & B"){
+setDataMap( geojsonDataAB ) 
+console.log("3333333333333333333333333333333333333333333333333333");
+
+ }
+
+console.log(datMap);
+
+  };
+
+useEffect(() => {
+  console.log(datMap);
+}, [datMap]);
+
+
+  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap  , switchData );
 
   return (<> <div ref={mapContainer} className="map-container" /> 
 
+
+
+ <div className="select-dropdown"  onChange={handleOptionChange}  >
+    <select>
+      <option value="All Injuries">All Injuries</option>
+      <option value="Fatalities">Fatalities</option>
+      <option value="Type A" >Type A</option>
+      <option value="Type A & B">Type A & B</option>
+
+    </select>
+  </div>
+
 <div className="toggle"   title= { switchData ?   "Not alcohol Involved"  : "Alcohol Involved" } >
+
+
   <input type="checkbox" id="a"   onClick={ () =>{ setSwitchData( (old)=> { return !old }  ) } }   />
   <label htmlFor="a">
   </label>
