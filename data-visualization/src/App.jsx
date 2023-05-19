@@ -7,7 +7,7 @@ import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import MopedIcon from "@mui/icons-material/Moped";
 import VaccinesIcon from "@mui/icons-material/Vaccines";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WcIcon from "@mui/icons-material/Wc";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -29,12 +29,29 @@ import RoadChart from "./alcohol/Charts/RoadChart";
 import CountyMap from "./CountyMap";
 import CityMap from "./CityMap";
 import MenuIcon from "@mui/icons-material/Menu";
+
+
+import AgeChart_Drug from "./drug/Charts/AgeChart_Drug";
+import DayOfWeekChart_Drug from "./drug/Charts/DayOfWeekChart_Drug";
+import GenderChart_Drug from "./drug/Charts/GenderChart_Drug";
+import RaceChart_Drug from "./drug/Charts/RaceChart_Drug";
+import RoadChart_Drug from "./drug/Charts/RoadChart_Drug";
+import TimeOfDayChart_Drug from "./drug/Charts/TimeOfDayChart_Drug";
+import VehiculeChart_Drug from "./drug/Charts/VehiculeChart_Drug";
+import MonthChart_Drug from "./drug/Charts/MonthChart_Drug";
+
+
 Chart.register(CategoryScale);
 
 function App() {
   const [open, setOpen] = useState(false);
 
+const [i, setI] = useState(0);
+const [j, setJ] = useState(0);
+
   const cnt = [
+
+[
     <MonthChart></MonthChart>,
     <TimeOfDayChart></TimeOfDayChart>,
     <DayOfWeekChar></DayOfWeekChar>,
@@ -45,11 +62,39 @@ function App() {
     <CountyMap></CountyMap>,
     <VehiculeChart></VehiculeChart>,
     <RoadChart></RoadChart>,
+
+]  
+, 
+
+[
+    <MonthChart_Drug></MonthChart_Drug>,
+    <TimeOfDayChart_Drug></TimeOfDayChart_Drug> ,
+    <AgeChart_Drug></AgeChart_Drug>,
+    <DayOfWeekChart_Drug></DayOfWeekChart_Drug>,
+    <GenderChart_Drug></GenderChart_Drug>,
+    <RaceChart_Drug></RaceChart_Drug>,
+    <RoadChart_Drug></RoadChart_Drug>,
+    <CityMap></CityMap>,
+    <CountyMap></CountyMap>,
+    <VehiculeChart_Drug></VehiculeChart_Drug>,
+]
+
   ];
 
-  const [components, setComponents] = useState(cnt[0]);
+  const [components, setComponents] = useState(cnt[i][j]);
 
   const [selected, setSelected] = useState("Month");
+
+  const [selectedData, setSelectedData] = useState("Alcohol");
+
+
+useEffect (() =>{
+
+setComponents(cnt[i][j]);
+
+} , [i, j] )
+
+
 
   return (
     <div className="container">
@@ -61,28 +106,24 @@ function App() {
             return !old;
           });
         }}
-      >
-        
-      </MenuIcon>
-      <div className={`firt-section  open  ${open && " toggle-side"}   `}>
-        <div className="side-element" style={{ backgroundColor: "#6998F5" }}>
-          
+      ></MenuIcon>
+      <div className={`firt-section  open  ${open && " toggle-side"}   `}    >
+        <div className="side-element"  style={selectedData === "Alcohol" ? { backgroundColor: "#6998F5" } : {}}    onClick={()=> {  setSelectedData("Alcohol")  ; setI(0) }}     >
           <LiquorIcon></LiquorIcon> Alcohol Fatalities
         </div>
-        <div className="side-element">
-          
-          <DirectionsBikeIcon></DirectionsBikeIcon> Bycle Fatalities
-        </div>
-        <div className="side-element">
-          
-          <TwoWheelerIcon></TwoWheelerIcon> Cyclist Fatalities
-        </div>
-        <div className="side-element">
-          
+
+        <div className="side-element"   style={selectedData === "Drug" ? { backgroundColor: "#6998F5" } : {}}  onClick={()=> {  setSelectedData("Drug")  ; setI(1)  }}  >
           <VaccinesIcon></VaccinesIcon> Drug Fatalities
         </div>
-        <div className="side-element">
-          
+
+        <div className="side-element"    style={selectedData === "speeding" ? { backgroundColor: "#6998F5" } : {}}  onClick={()=> {  setSelectedData("speeding")  ; setI(1)  }}    >
+          <DirectionsBikeIcon></DirectionsBikeIcon> Speeding Fatalities
+        </div>
+        <div className="side-element"  onClick={()=> {  selectedData("Alcohol") }}   >
+          <TwoWheelerIcon></TwoWheelerIcon> Cyclist Fatalities
+        </div>
+
+        <div className="side-element"   onClick={()=> {  selectedData("Alcohol") }}   >
           <MopedIcon></MopedIcon> Motocycle Fatalities
         </div>
       </div>
@@ -92,7 +133,8 @@ function App() {
           <div className="options">
             <div
               onClick={() => {
-                setComponents(cnt[0]);
+          
+                setJ(0)
                 setSelected("Month");
               }}
             >
@@ -104,7 +146,9 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[1]);
+                
+
+                setJ(1)
                 setSelected("Time of Day");
               }}
             >
@@ -116,7 +160,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[2]);
+                  setJ(2)
                 setSelected("Day of the week");
               }}
             >
@@ -128,7 +172,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[3]);
+                  setJ(3)
                 setSelected("Gender");
               }}
             >
@@ -140,7 +184,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[4]);
+                  setJ(4)
                 setSelected("Race");
               }}
             >
@@ -152,7 +196,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[5]);
+                  setJ(5)
                 setSelected("Age");
               }}
             >
@@ -164,7 +208,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[6]);
+                  setJ(6)
                 setSelected("City");
               }}
             >
@@ -176,7 +220,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[7]);
+                  setJ(7)
                 setSelected("County");
               }}
             >
@@ -188,7 +232,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[8]);
+                  setJ(8)
                 setSelected("Vehicle");
               }}
             >
@@ -200,7 +244,7 @@ function App() {
             </div>
             <div
               onClick={() => {
-                setComponents(cnt[9]);
+                 setJ(9)
                 setSelected("Roadway");
               }}
             >

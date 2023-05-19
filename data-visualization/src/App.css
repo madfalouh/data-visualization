@@ -231,6 +231,8 @@ margin: 0px;
 }
 
 
+
+
 .burger-icon {
 left: 0;
 }
@@ -300,5 +302,25 @@ background-color: rgba(209, 215, 228, 0.2);
 
 }
 
+
+
+#legend {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  font-family: Arial;
+  z-index: 1;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 3px;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
 
 

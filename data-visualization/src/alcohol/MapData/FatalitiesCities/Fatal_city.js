@@ -1,385 +1,81 @@
 const Fatal_cities = [
-   
-    {
-        "city": "ABERDEEN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BATESVILLE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BAY",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BELMONT",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BILOXI",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
-    },
-    {
-        "city": "BOLTON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BOONEVILLE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BRANDON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "BROOKHAVEN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "BROOKSVILL",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CALHOUN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CANTON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CARTHAGE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CLARKSDALE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CLEVELAND",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CLINTON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "COLUMBUS",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "CORINTH",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "D'IBERVILL",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "Did",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "DURANT",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "FLORENCE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "GLOSTER",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "GREENVILLE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "GREENWOOD",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "GRENADA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "GULFPORT",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
-    },
-    {
-        "city": "HATTIESBUR",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "HERNANDO",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "HOLLY",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "INDIANOLA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "JACKSON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
-    },
-    {
-        "city": "LAUREL",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "LEARNED",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "LELAND",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "LEXINGTON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "LONG",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "LUCEDALE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MACON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MADISON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "MAGEE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MAGNOLIA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MCCOMB",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MENDENHALL",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MERIDIAN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
-    },
-    {
-        "city": "MONTICELLO",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "MORTON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "MOSS",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "MOUND",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "NATCHEZ",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "OLIVE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "Other",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "OXFORD",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "PASCAGOULA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "PASS",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "PEARL",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "PICAYUNE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "RAYMOND",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "RIDGELAND",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "SALTILLO",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "SENATOBIA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "SHANNON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "SOUTHAVEN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
-    },
-    {
-        "city": "STARKVILLE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "SUMMIT",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "TCHULA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    },
-    {
-        "city": "TERRY",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "TUPELO",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "UTICA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "VARDAMAN",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "WATER",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "WESSON",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "WIGGINS",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "WINONA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "WOODVILLE",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
-    },
-    {
-        "city": "YAZOO",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
-    }
+  { "city": "ABERDEEN", "Fatalities": 0 },
+  { "city": "BATESVILLE", "Fatalities": 0 },
+  { "city": "BAY SPRINGS", "Fatalities": 0 },
+  { "city": "BELMONT", "Fatalities": 0 },
+  { "city": "BILOXI", "Fatalities": 1 },
+  { "city": "BOLTON", "Fatalities": 0 },
+  { "city": "BOONEVILLE", "Fatalities": 0 },
+  { "city": "BRANDON", "Fatalities": 0 },
+  { "city": "BROOKHAVEN", "Fatalities": 0 },
+  { "city": "BROOKSVILLE", "Fatalities": 0 },
+  { "city": "CALHOUN city", "Fatalities": 0 },
+  { "city": "CANTON", "Fatalities": 0 },
+  { "city": "CARTHAGE", "Fatalities": 1 },
+  { "city": "CLARKSDALE", "Fatalities": 0 },
+  { "city": "CLEVELAND", "Fatalities": 0 },
+  { "city": "CLINTON", "Fatalities": 0 },
+  { "city": "COLUMBUS", "Fatalities": 1 },
+  { "city": "CORINTH", "Fatalities": 0 },
+  { "city": "D'IBERVILLE", "Fatalities": 0 },
+  { "city": "Did not occur within city limits", "Fatalities": 50 },
+  { "city": "DURANT", "Fatalities": 0 },
+  { "city": "FLORENCE", "Fatalities": 0 },
+  { "city": "GLOSTER", "Fatalities": 1 },
+  { "city": "GREENVILLE", "Fatalities": 0 },
+  { "city": "GREENWOOD", "Fatalities": 0 },
+  { "city": "GRENADA", "Fatalities": 0 },
+  { "city": "GULFPORT", "Fatalities": 0 },
+  { "city": "HATTIESBURG", "Fatalities": 0 },
+  { "city": "HERNANDO", "Fatalities": 0 },
+  { "city": "HOLLY SPRINGS", "Fatalities": 0 },
+  { "city": "INDIANOLA", "Fatalities": 0 },
+  { "city": "JACKSON", "Fatalities": 1 },
+  { "city": "LAUREL", "Fatalities": 0 },
+  { "city": "LEARNED", "Fatalities": 0 },
+  { "city": "LELAND", "Fatalities": 0 },
+  { "city": "LEXINGTON", "Fatalities": 0 },
+  { "city": "LONG BEACH", "Fatalities": 0 },
+  { "city": "LUCEDALE", "Fatalities": 0 },
+  { "city": "MACON", "Fatalities": 0 },
+  { "city": "MADISON", "Fatalities": 1 },
+  { "city": "MAGEE", "Fatalities": 0 },
+  { "city": "MAGNOLIA", "Fatalities": 0 },
+  { "city": "MCCOMB", "Fatalities": 0 },
+  { "city": "MENDENHALL", "Fatalities": 0 },
+  { "city": "MERIDIAN", "Fatalities": 1 },
+  { "city": "MONTICELLO", "Fatalities": 0 },
+  { "city": "MORTON", "Fatalities": 3 },
+  { "city": "MOSS POINT", "Fatalities": 0 },
+  { "city": "MOUND BAYOU", "Fatalities": 0 },
+  { "city": "NATCHEZ", "Fatalities": 1 },
+  { "city": "OLIVE BRANCH", "Fatalities": 0 },
+  { "city": "Other", "Fatalities": 1 },
+  { "city": "OXFORD", "Fatalities": 0 },
+  { "city": "PASCAGOULA", "Fatalities": 0 },
+  { "city": "PASS CHRISTIAN", "Fatalities": 0 },
+  { "city": "PEARL", "Fatalities": 0 },
+  { "city": "PICAYUNE", "Fatalities": 0 },
+  { "city": "RAYMOND", "Fatalities": 0 },
+  { "city": "RIDGELAND", "Fatalities": 0 },
+  { "city": "SALTILLO", "Fatalities": 0 },
+  { "city": "SENATOBIA", "Fatalities": 1 },
+  { "city": "SHANNON", "Fatalities": 0 },
+  { "city": "SOUTHAVEN", "Fatalities": 1 },
+  { "city": "STARKVILLE", "Fatalities": 0 },
+  { "city": "SUMMIT", "Fatalities": 0 },
+  { "city": "TCHULA", "Fatalities": 0 },
+  { "city": "TERRY", "Fatalities": 0 },
+  { "city": "TUPELO", "Fatalities": 1 },
+  { "city": "UTICA", "Fatalities": 0 },
+  { "city": "VARDAMAN", "Fatalities": 0 },
+  { "city": "WATER VALLEY", "Fatalities": 0 },
+  { "city": "WESSON", "Fatalities": 1 },
+  { "city": "WIGGINS", "Fatalities": 0 },
+  { "city": "WINONA", "Fatalities": 0 },
+  { "city": "WOODVILLE", "Fatalities": 0 },
+  { "city": "YAZOO city", "Fatalities": 0 }
 ]
+
 
 export default Fatal_cities ; 

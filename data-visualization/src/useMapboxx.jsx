@@ -1,99 +1,163 @@
-// src/useMapbox.js
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-const useMapbox = (container, accessToken, mapStyle, data  , involmenemt , fatalities) => {
+const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalities, maxAl, maxNAl, maxFa) => {
+  const map = useRef(null);
+  const currentLayerId = useRef(null);
+  const borderLayerId = 'counties-borders';
+  
   useEffect(() => {
-
-console.log("ijfc,jr,fckf,ckfc,");
-console.log(data);
-
-const bounds = [    [-91.655009, 30.173943], // Southwest coordinates
-  [-88.097889, 34.996052]  // Northeast coordinates
-]; 
     if (!container.current) return;
 
     mapboxgl.accessToken = accessToken;
-    const map = new mapboxgl.Map({
+    map.current = new mapboxgl.Map({
       container: container.current,
       style: mapStyle,
       center: [-89.3985, 32.3547],
       zoom: 6,
     });
 
-map.on('load', () => {
-  map.addSource('counties', {
-    type: 'geojson',
-    data: data,
-  });
+    map.current.on('load', () => {
+      map.current.addSource('counties', {
+        type: 'geojson',
+        data: data,
+      });
 
-  map.addLayer({
-    'id': 'world-layer',
-    'type': 'background',
-    'paint': {
-      'background-color': 'rgba(204, 204, 204, 0.7)' // grey with 0.2 opacity
-    }
-  });
+      // Add the world-layer
+      map.current.addLayer({
+        'id': 'world-layer',
+        'type': 'background',
+        'paint': {
+          'background-color': 'rgba(0, 0, 0, 0.2)' // grey with 0.2 opacity
+        }
+      });
 
-if(! fatalities) {
-    map.addLayer({
-    'id': 'counties-layer-',
-    'type': 'fill',
-    'source': 'counties',
-    'layout': {},
-    'paint': {
-      'fill-color': [
-        'interpolate',
-        ['linear'], 
-        ['get',    involmenemt ? "notAlcoholInvolved" :"alcoholInvolved"    ],
-        0, 'rgba(173, 216, 230, 1)', // light blue at 0
-         (involmenemt ? 257 : 5) , 'rgba(0, 0, 139, 1)' 
-      ],
-      'fill-opacity': 0.7
-    }
-  });
+      // Create our initial layer
+      addLayer();
 
-}
-if(fatalities) {
-map.addLayer({
-  'id': 'counties-layer',
-  'type': 'fill',
-  'source': 'counties',
-  'layout': {},
-  'paint': {
-    'fill-color': [
-      'interpolate',
-      ['linear'], 
-      ['get', 'Fatalities'],
-      0, 'rgba(173, 216, 230, 1)', // light blue at 0
-      // Adjust color at max value (here, adjust 20 as per your max fatalities value)
-      20, 'rgba(0, 0, 139, 1)' // dark blue at max
-    ],
-    'fill-opacity': 0.7
-  }
-});
+      // Add your counties borders
+      map.current.addLayer({
+        'id': borderLayerId,
+        'type': 'line',
+        'source': 'counties',
+        'layout': {},
+        'paint': {
+          'line-width': 0.2,
+          'line-color': '#000'
+        }
+      });
 
-}
+      // Create legend
+      const legend = document.createElement('div');
+      legend.id = 'legend';
+      legend.style.display = 'block';
+      legend.style.position = 'absolute';
+      legend.style.bottom = '30px';
+      legend.style.right = '10px';
+      legend.style.backgroundColor = '#fff';
+      legend.style.padding = '10px';
+      legend.style.fontFamily = 'Arial';
+      legend.style.zIndex = '1';
 
+      const labels = [
+        { color: 'rgba(173, 216, 230, 1)', label: '0 Fatalities' },
+        { color: 'rgba(0, 0, 139, 1)', label: `${maxFa} Fatalities` },
+      ];
 
-  // Add your counties borders
-  map.addLayer({
-    'id': 'counties-borders',
-    'type': 'line',
-    'source': 'counties',
-    'layout': {},
-    'paint': {
-      'line-width': 0.2,
-      'line-color': '#000'
-    }
-  });
-});
+      labels.forEach(label => {
+        const item = document.createElement('div');
+        const key = document.createElement('span');
+        key.className = 'legend-key';
+        key.style.display = 'inline-block';
+        key.style.borderRadius = '3px';
+        key.style.width = '10px';
+        key.style.height = '10px';
+        key.style.marginRight = '5px';
+        key.style.background = label.color;
 
+        const value = document.createElement('span');
+        value.innerHTML = label.label;
+        item.appendChild(key);
+        item.appendChild(value);
+        legend.appendChild(item);
+      });
+
+      container.current.appendChild(legend);
+    });
 
     return () => {
-      map.remove();
+      map.current.remove();
     };
-  }, [container, accessToken, mapStyle, data , involmenemt]);
+  }, [container, accessToken, mapStyle]);
+
+  useEffect(() => {
+    if (map.current.getSource('counties')) {
+      // First, remove the existing layer
+      if (currentLayerId.current) {
+        map.current.removeLayer(currentLayerId.current);
+        map.current.removeLayer(borderLayerId);
+      }
+
+      map.current.removeSource('counties');
+      map.current.addSource('counties', {
+        type: 'geojson',
+        data: data,
+      });
+
+      // Add the layer with the updated source
+      addLayer();
+
+      // Add your counties borders
+      map.current.addLayer({
+        'id': borderLayerId,
+        'type': 'line',
+        'source': 'counties',
+        'layout': {},
+        'paint': {
+          'line-width': 1,
+          'line-color': '#000'
+        }
+      });
+    }
+  }, [data, involmenemt, fatalities]);
+
+  const addLayer = () => {
+    const layerConfig = !fatalities ? {
+      'id': 'counties-layer-',
+      'type': 'fill',
+      'source': 'counties',
+      'layout': {},
+      'paint': {
+        'fill-color': [
+          'interpolate',
+          ['linear'], 
+          ['get', involmenemt ? "notAlcoholInvolved" : "alcoholInvolved"],
+          0, 'rgba(173, 216, 230, 1)', 
+          (involmenemt ? maxNAl : maxAl), 'rgba(0, 0, 139, 1)'
+        ],
+        'fill-opacity': 1
+      }
+    } : {
+      'id': 'counties-layer',
+      'type': 'fill',
+      'source': 'counties',
+      'layout': {},
+      'paint': {
+        'fill-color': [
+          'interpolate',
+          ['linear'], 
+          ['get', 'Fatalities'],
+          0, 'rgba(173, 216, 230, 1)', 
+          maxFa, 'rgba(0, 0, 139, 1)'
+        ],
+        'fill-opacity': 1
+      }
+    };
+
+    // Add the layer and update the ref with the new layer id
+    map.current.addLayer(layerConfig);
+    currentLayerId.current = layerConfig.id;
+  };
 };
 
-export default useMapbox;
+export default useMapboxx;

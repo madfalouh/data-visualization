@@ -2857,6 +2857,8 @@ function addPropertiesToTopojson(originalData, topojson) {
     });
 
     if (county) {
+ 
+
       feature.properties.alcoholInvolved = county.alcoholInvolved|| 0;
       feature.properties.notAlcoholInvolved = county.notAlcoholInvolved || 0;
     }
@@ -2878,7 +2880,6 @@ function addPropertiesToTopojsonFtls(originalData, topojson) {
     });
     if (county) {
       
-      console.log(county);
       feature.properties.Fatalities = county.Fatalities || 0;
     }
   });
@@ -2921,6 +2922,10 @@ const [datMap , setDataMap] =useState(geojsonDataALL )
 const value  = event.target.value
 if(value ==="All Injuries"){
 setDataMap( geojsonDataALL )
+
+
+
+
 setFatalities(false)
 
 }
@@ -2943,7 +2948,50 @@ setFatalities(true)
 
   };
 
-  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap  , switchData  , fatalities );
+
+const features = datMap.features;
+
+
+let maxAlcoholInvolved = 0;
+
+for (const feature of features) {
+  if (feature.properties && feature.properties.alcoholInvolved) {
+    const notAlcoholInvolved = feature.properties.alcoholInvolved;
+    if (notAlcoholInvolved > maxAlcoholInvolved) {
+      maxAlcoholInvolved = notAlcoholInvolved;
+    }
+  }
+}
+
+let maxNotAlcoholInvolved = 0;
+
+for (const feature of features) {
+  if (feature.properties && feature.properties.notAlcoholInvolved) {
+    const notAlcoholInvolved = feature.properties.notAlcoholInvolved;
+    if (notAlcoholInvolved > maxNotAlcoholInvolved) {
+      maxNotAlcoholInvolved = notAlcoholInvolved;
+    }
+  }
+}
+
+
+let maxNotAlcoholInvolvedFatalities = 0;
+
+for (const feature of features) {
+  if (feature.properties && feature.properties.Fatalities) {
+    const notAlcoholInvolved = feature.properties.Fatalities;
+    if (notAlcoholInvolved > maxNotAlcoholInvolvedFatalities) {
+      maxNotAlcoholInvolvedFatalities = notAlcoholInvolved;
+    }
+  }
+}
+
+
+
+
+console.log(geojsonDataFtls);
+
+  useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap  , switchData  , fatalities  , maxAlcoholInvolved ,  maxNotAlcoholInvolved   , maxNotAlcoholInvolvedFatalities );
 
   return (<> <div ref={mapContainer} className="map-container" /> 
 
