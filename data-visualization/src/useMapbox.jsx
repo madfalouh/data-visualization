@@ -22,6 +22,9 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
         data: data,
       });
 
+
+
+
       // Add the world-layer
       map.current.addLayer({
         'id': 'world-layer',
@@ -30,6 +33,7 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
           'background-color': 'rgba(0, 0, 0, 0.7)' // grey with 0.2 opacity
         }
       });
+
 
       // Add the counties-layer
       map.current.addLayer({

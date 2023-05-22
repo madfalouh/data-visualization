@@ -10,15 +10,14 @@ overflow-x: hidden;
 position: fixed;
 top: 0;
 z-index: 10000000000;
-left: -120%;
+left: -130%;
 }
 
 .container {
 display: grid;
 margin: 0;
-grid-template-columns: 13% auto;
+grid-template-columns: 13vw auto;
 padding: 0;
-
 }
 
 .firt-section {

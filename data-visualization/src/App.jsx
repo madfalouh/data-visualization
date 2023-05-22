@@ -30,7 +30,6 @@ import CountyMap from "./CountyMap";
 import CityMap from "./CityMap";
 import MenuIcon from "@mui/icons-material/Menu";
 
-
 import AgeChart_Drug from "./drug/Charts/AgeChart_Drug";
 import DayOfWeekChart_Drug from "./drug/Charts/DayOfWeekChart_Drug";
 import GenderChart_Drug from "./drug/Charts/GenderChart_Drug";
@@ -40,45 +39,40 @@ import TimeOfDayChart_Drug from "./drug/Charts/TimeOfDayChart_Drug";
 import VehiculeChart_Drug from "./drug/Charts/VehiculeChart_Drug";
 import MonthChart_Drug from "./drug/Charts/MonthChart_Drug";
 
-
 Chart.register(CategoryScale);
 
 function App() {
   const [open, setOpen] = useState(false);
 
-const [i, setI] = useState(0);
-const [j, setJ] = useState(0);
+  const [i, setI] = useState(0);
+  const [j, setJ] = useState(0);
 
   const cnt = [
+    [
+      <MonthChart></MonthChart>,
+      <TimeOfDayChart></TimeOfDayChart>,
+      <DayOfWeekChar></DayOfWeekChar>,
+      <GenderChart></GenderChart>,
+      <RaceChart></RaceChart>,
+      <AgeChart></AgeChart>,
+      <CityMap></CityMap>,
+      <CountyMap></CountyMap>,
+      <VehiculeChart></VehiculeChart>,
+      <RoadChart></RoadChart>,
+    ],
+    [
+      <MonthChart_Drug></MonthChart_Drug>,
+      <TimeOfDayChart_Drug></TimeOfDayChart_Drug>,
+      <DayOfWeekChart_Drug></DayOfWeekChart_Drug>,
+      <GenderChart_Drug></GenderChart_Drug>,
+      <RaceChart_Drug></RaceChart_Drug>,
+      <AgeChart_Drug></AgeChart_Drug>,
+      <CityMap></CityMap>,
+      <CountyMap></CountyMap>,
 
-[
-    <MonthChart></MonthChart>,
-    <TimeOfDayChart></TimeOfDayChart>,
-    <DayOfWeekChar></DayOfWeekChar>,
-    <GenderChart></GenderChart>,
-    <RaceChart></RaceChart>,
-    <AgeChart></AgeChart>,
-    <CityMap></CityMap>,
-    <CountyMap></CountyMap>,
-    <VehiculeChart></VehiculeChart>,
-    <RoadChart></RoadChart>,
-
-]  
-, 
-
-[
-    <MonthChart_Drug></MonthChart_Drug>,
-    <TimeOfDayChart_Drug></TimeOfDayChart_Drug> ,
-    <AgeChart_Drug></AgeChart_Drug>,
-    <DayOfWeekChart_Drug></DayOfWeekChart_Drug>,
-    <GenderChart_Drug></GenderChart_Drug>,
-    <RaceChart_Drug></RaceChart_Drug>,
-    <RoadChart_Drug></RoadChart_Drug>,
-    <CityMap></CityMap>,
-    <CountyMap></CountyMap>,
-    <VehiculeChart_Drug></VehiculeChart_Drug>,
-]
-
+      <VehiculeChart_Drug></VehiculeChart_Drug>,
+      <RoadChart_Drug></RoadChart_Drug>,
+    ],
   ];
 
   const [components, setComponents] = useState(cnt[i][j]);
@@ -87,14 +81,9 @@ const [j, setJ] = useState(0);
 
   const [selectedData, setSelectedData] = useState("Alcohol");
 
-
-useEffect (() =>{
-
-setComponents(cnt[i][j]);
-
-} , [i, j] )
-
-
+  useEffect(() => {
+    setComponents(cnt[i][j]);
+  }, [i, j]);
 
   return (
     <div className="container">
@@ -107,23 +96,58 @@ setComponents(cnt[i][j]);
           });
         }}
       ></MenuIcon>
-      <div className={`firt-section  open  ${open && " toggle-side"}   `}    >
-        <div className="side-element"  style={selectedData === "Alcohol" ? { backgroundColor: "#6998F5" } : {}}    onClick={()=> {  setSelectedData("Alcohol")  ; setI(0) }}     >
+      <div className={`firt-section  open  ${open && " toggle-side"}   `}>
+        <div
+          className="side-element"
+          style={
+            selectedData === "Alcohol" ? { backgroundColor: "#6998F5" } : {}
+          }
+          onClick={() => {
+            setSelectedData("Alcohol");
+            setI(0);
+          }}
+        >
           <LiquorIcon></LiquorIcon> Alcohol Fatalities
         </div>
 
-        <div className="side-element"   style={selectedData === "Drug" ? { backgroundColor: "#6998F5" } : {}}  onClick={()=> {  setSelectedData("Drug")  ; setI(1)  }}  >
+        <div
+          className="side-element"
+          style={selectedData === "Drug" ? { backgroundColor: "#6998F5" } : {}}
+          onClick={() => {
+            setSelectedData("Drug");
+            setI(1);
+          }}
+        >
           <VaccinesIcon></VaccinesIcon> Drug Fatalities
         </div>
 
-        <div className="side-element"    style={selectedData === "speeding" ? { backgroundColor: "#6998F5" } : {}}  onClick={()=> {  setSelectedData("speeding")  ; setI(1)  }}    >
+        <div
+          className="side-element"
+          style={
+            selectedData === "speeding" ? { backgroundColor: "#6998F5" } : {}
+          }
+          onClick={() => {
+            setSelectedData("speeding");
+            setI(1);
+          }}
+        >
           <DirectionsBikeIcon></DirectionsBikeIcon> Speeding Fatalities
         </div>
-        <div className="side-element"  onClick={()=> {  selectedData("Alcohol") }}   >
+        <div
+          className="side-element"
+          onClick={() => {
+            selectedData("Alcohol");
+          }}
+        >
           <TwoWheelerIcon></TwoWheelerIcon> Cyclist Fatalities
         </div>
 
-        <div className="side-element"   onClick={()=> {  selectedData("Alcohol") }}   >
+        <div
+          className="side-element"
+          onClick={() => {
+            selectedData("Alcohol");
+          }}
+        >
           <MopedIcon></MopedIcon> Motocycle Fatalities
         </div>
       </div>
@@ -133,8 +157,7 @@ setComponents(cnt[i][j]);
           <div className="options">
             <div
               onClick={() => {
-          
-                setJ(0)
+                setJ(0);
                 setSelected("Month");
               }}
             >
@@ -146,9 +169,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                
-
-                setJ(1)
+                setJ(1);
                 setSelected("Time of Day");
               }}
             >
@@ -160,7 +181,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(2)
+                setJ(2);
                 setSelected("Day of the week");
               }}
             >
@@ -172,7 +193,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(3)
+                setJ(3);
                 setSelected("Gender");
               }}
             >
@@ -184,7 +205,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(4)
+                setJ(4);
                 setSelected("Race");
               }}
             >
@@ -196,7 +217,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(5)
+                setJ(5);
                 setSelected("Age");
               }}
             >
@@ -208,7 +229,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(6)
+                setJ(6);
                 setSelected("City");
               }}
             >
@@ -220,7 +241,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(7)
+                setJ(7);
                 setSelected("County");
               }}
             >
@@ -232,7 +253,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                  setJ(8)
+                setJ(8);
                 setSelected("Vehicle");
               }}
             >
@@ -244,7 +265,7 @@ setComponents(cnt[i][j]);
             </div>
             <div
               onClick={() => {
-                 setJ(9)
+                setJ(9);
                 setSelected("Roadway");
               }}
             >

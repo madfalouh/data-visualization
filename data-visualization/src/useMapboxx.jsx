@@ -2,13 +2,19 @@ import { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalities, maxAl, maxNAl, maxFa) => {
+
+console.log(data)
+
+
   const map = useRef(null);
   const currentLayerId = useRef(null);
   const borderLayerId = 'counties-borders';
-  
+  const legend = useRef(null);
+
   useEffect(() => {
     if (!container.current) return;
 
+    // Initialize map only once
     mapboxgl.accessToken = accessToken;
     map.current = new mapboxgl.Map({
       container: container.current,
@@ -23,141 +29,125 @@ const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalit
         data: data,
       });
 
-      // Add the world-layer
       map.current.addLayer({
-        'id': 'world-layer',
-        'type': 'background',
-        'paint': {
-          'background-color': 'rgba(0, 0, 0, 0.2)' // grey with 0.2 opacity
-        }
+        id: 'world-layer',
+        type: 'background',
+        paint: {
+          'background-color': 'rgba(0, 0, 0, 0.2)',
+        },
       });
 
-      // Create our initial layer
       addLayer();
-
-      // Add your counties borders
-      map.current.addLayer({
-        'id': borderLayerId,
-        'type': 'line',
-        'source': 'counties',
-        'layout': {},
-        'paint': {
-          'line-width': 0.2,
-          'line-color': '#000'
-        }
-      });
-
-      // Create legend
-      const legend = document.createElement('div');
-      legend.id = 'legend';
-      legend.style.display = 'block';
-      legend.style.position = 'absolute';
-      legend.style.bottom = '30px';
-      legend.style.right = '10px';
-      legend.style.backgroundColor = '#fff';
-      legend.style.padding = '10px';
-      legend.style.fontFamily = 'Arial';
-      legend.style.zIndex = '1';
-
-      const labels = [
-        { color: 'rgba(173, 216, 230, 1)', label: '0 Fatalities' },
-        { color: 'rgba(0, 0, 139, 1)', label: `${maxFa} Fatalities` },
-      ];
-
-      labels.forEach(label => {
-        const item = document.createElement('div');
-        const key = document.createElement('span');
-        key.className = 'legend-key';
-        key.style.display = 'inline-block';
-        key.style.borderRadius = '3px';
-        key.style.width = '10px';
-        key.style.height = '10px';
-        key.style.marginRight = '5px';
-        key.style.background = label.color;
-
-        const value = document.createElement('span');
-        value.innerHTML = label.label;
-        item.appendChild(key);
-        item.appendChild(value);
-        legend.appendChild(item);
-      });
-
-      container.current.appendChild(legend);
+      updateLegend();
     });
 
     return () => {
       map.current.remove();
     };
-  }, [container, accessToken, mapStyle]);
+  }, [container, accessToken, mapStyle]); // Only initialize map once
 
   useEffect(() => {
-    if (map.current.getSource('counties')) {
-      // First, remove the existing layer
-      if (currentLayerId.current) {
-        map.current.removeLayer(currentLayerId.current);
-        map.current.removeLayer(borderLayerId);
-      }
-
-      map.current.removeSource('counties');
-      map.current.addSource('counties', {
-        type: 'geojson',
-        data: data,
-      });
-
-      // Add the layer with the updated source
+    if (map.current && map.current.isStyleLoaded()) {
       addLayer();
-
-      // Add your counties borders
-      map.current.addLayer({
-        'id': borderLayerId,
-        'type': 'line',
-        'source': 'counties',
-        'layout': {},
-        'paint': {
-          'line-width': 1,
-          'line-color': '#000'
-        }
-      });
+      updateLegend();
     }
-  }, [data, involmenemt, fatalities]);
+  }, [data, involmenemt, fatalities, maxAl, maxNAl, maxFa]);
 
   const addLayer = () => {
-    const layerConfig = !fatalities ? {
-      'id': 'counties-layer-',
-      'type': 'fill',
-      'source': 'counties',
-      'layout': {},
-      'paint': {
+    if (currentLayerId.current) {
+      map.current.removeLayer(currentLayerId.current);
+      map.current.removeLayer(borderLayerId);
+    }
+
+    const maxValue = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
+    const layerConfig = {
+      id: 'counties-layer',
+      type: 'fill',
+      source: 'counties',
+      layout: {},
+      paint: {
         'fill-color': [
           'interpolate',
-          ['linear'], 
-          ['get', involmenemt ? "notAlcoholInvolved" : "alcoholInvolved"],
-          0, 'rgba(173, 216, 230, 1)', 
-          (involmenemt ? maxNAl : maxAl), 'rgba(0, 0, 139, 1)'
+          ['linear'],
+          ['get', fatalities ? 'Fatalities' : (involmenemt ? 'notAlcoholInvolved' : 'alcoholInvolved')],
+          0,
+          'rgba(173, 216, 230, 1)',
+          Math.round(maxValue * 0.25),
+          'rgba(135, 206, 235, 1)',
+          Math.round(maxValue * 0.5),
+          'rgba(70, 130, 180, 1)',
+          maxValue,
+          'rgba(0, 0, 139, 1)',
         ],
-        'fill-opacity': 1
-      }
-    } : {
-      'id': 'counties-layer',
-      'type': 'fill',
-      'source': 'counties',
-      'layout': {},
-      'paint': {
-        'fill-color': [
-          'interpolate',
-          ['linear'], 
-          ['get', 'Fatalities'],
-          0, 'rgba(173, 216, 230, 1)', 
-          maxFa, 'rgba(0, 0, 139, 1)'
-        ],
-        'fill-opacity': 1
-      }
+        'fill-opacity': 1,
+      },
     };
 
-    // Add the layer and update the ref with the new layer id
     map.current.addLayer(layerConfig);
     currentLayerId.current = layerConfig.id;
+
+    map.current.addLayer({
+      id: borderLayerId,
+      type: 'line',
+      source: 'counties',
+      layout: {},
+      paint: {
+        'line-width': 0.2,
+        'line-color': '#000',
+      },
+    });
   };
+
+  const updateLegend = () => {
+    // Clear previous legend content
+    if (legend.current) {
+      legend.current.innerHTML = '';
+    } else {
+      legend.current = document.createElement('div');
+      legend.current.id = 'legend';
+      legend.current.style.display = 'block';
+      legend.current.style.position = 'absolute';
+      legend.current.style.bottom = '30px';
+      legend.current.style.backgroundColor = '#fff';
+      legend.current.style.padding = '10px';
+      legend.current.style.fontFamily = 'Arial';
+      legend.current.style.zIndex = '1';
+      container.current.appendChild(legend.current);
+    }
+
+    const maxVal = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
+
+    const labels = [
+      { color: 'rgba(173, 216, 230, 1)', label: '0 Fatalities' },
+      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round(maxVal * 0.25)} Fatalities` },
+      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round(maxVal * 0.5)} Fatalities` },
+      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} Fatalities` },
+    ];
+
+    labels.forEach((label) => {
+      const item = document.createElement('div');
+      const key = document.createElement('span');
+      key.className = 'legend-key';
+      key.style.display = 'inline-block';
+      key.style.borderRadius = '3px';
+      key.style.width = '10px';
+      key.style.height = '10px';
+      key.style.marginRight = '10px';
+      key.style.background = label.color;
+
+      const value = document.createElement('span');
+      value.innerHTML = label.label;
+      item.appendChild(key);
+      item.appendChild(value);
+      legend.current.appendChild(item);
+    });
+  };
+
+  useEffect(() => {
+    updateLegend();
+  }, [fatalities, involmenemt, maxAl, maxNAl, maxFa]);
+
+  return { map, legend };
 };
 
 export default useMapboxx;
