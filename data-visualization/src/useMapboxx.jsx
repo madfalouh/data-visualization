@@ -2,19 +2,13 @@ import { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 
 const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalities, maxAl, maxNAl, maxFa) => {
-
-console.log(data)
-
-
   const map = useRef(null);
-  const currentLayerId = useRef(null);
+  const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
-  const legend = useRef(null);
 
   useEffect(() => {
     if (!container.current) return;
 
-    // Initialize map only once
     mapboxgl.accessToken = accessToken;
     map.current = new mapboxgl.Map({
       container: container.current,
@@ -33,95 +27,63 @@ console.log(data)
         id: 'world-layer',
         type: 'background',
         paint: {
-          'background-color': 'rgba(0, 0, 0, 0.2)',
+          'background-color': 'rgba(0, 0, 0, 0.8)',
         },
       });
 
       addLayer();
-      updateLegend();
+
+      map.current.addLayer({
+        id: borderLayerId,
+        type: 'line',
+        source: 'counties',
+        layout: {},
+        paint: {
+          'line-width': 1,
+          'line-color': '#000',
+        },
+      });
+
+      createLegend();
     });
 
     return () => {
       map.current.remove();
     };
-  }, [container, accessToken, mapStyle]); // Only initialize map once
+  }, [container, accessToken, mapStyle]);
 
   useEffect(() => {
-    if (map.current && map.current.isStyleLoaded()) {
-      addLayer();
-      updateLegend();
-    }
+    if (!map.current.getSource('counties')) return;
+
+    addLayer();
   }, [data, involmenemt, fatalities, maxAl, maxNAl, maxFa]);
 
-  const addLayer = () => {
-    if (currentLayerId.current) {
-      map.current.removeLayer(currentLayerId.current);
-      map.current.removeLayer(borderLayerId);
-    }
+  useEffect(() => {
+    createLegend();
+  }, [involmenemt, fatalities, maxAl, maxNAl, maxFa]);
 
-    const maxValue = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
-    const layerConfig = {
-      id: 'counties-layer',
-      type: 'fill',
-      source: 'counties',
-      layout: {},
-      paint: {
-        'fill-color': [
-          'interpolate',
-          ['linear'],
-          ['get', fatalities ? 'Fatalities' : (involmenemt ? 'notAlcoholInvolved' : 'alcoholInvolved')],
-          0,
-          'rgba(173, 216, 230, 1)',
-          Math.round(maxValue * 0.25),
-          'rgba(135, 206, 235, 1)',
-          Math.round(maxValue * 0.5),
-          'rgba(70, 130, 180, 1)',
-          maxValue,
-          'rgba(0, 0, 139, 1)',
-        ],
-        'fill-opacity': 1,
-      },
-    };
+  const createLegend = () => {
+    const legend = document.getElementById('legend');
+    if (legend) legend.parentNode.removeChild(legend);
 
-    map.current.addLayer(layerConfig);
-    currentLayerId.current = layerConfig.id;
-
-    map.current.addLayer({
-      id: borderLayerId,
-      type: 'line',
-      source: 'counties',
-      layout: {},
-      paint: {
-        'line-width': 0.2,
-        'line-color': '#000',
-      },
-    });
-  };
-
-  const updateLegend = () => {
-    // Clear previous legend content
-    if (legend.current) {
-      legend.current.innerHTML = '';
-    } else {
-      legend.current = document.createElement('div');
-      legend.current.id = 'legend';
-      legend.current.style.display = 'block';
-      legend.current.style.position = 'absolute';
-      legend.current.style.bottom = '30px';
-      legend.current.style.backgroundColor = '#fff';
-      legend.current.style.padding = '10px';
-      legend.current.style.fontFamily = 'Arial';
-      legend.current.style.zIndex = '1';
-      container.current.appendChild(legend.current);
-    }
+    const legendDiv = document.createElement('div');
+    legendDiv.id = 'legend';
+    legendDiv.style.display = 'block';
+    legendDiv.style.position = 'absolute';
+    legendDiv.style.bottom = '30px';
+    legendDiv.style.backgroundColor = '#fff';
+    legendDiv.style.padding = '10px';
+    legendDiv.style.fontFamily = 'Arial';
+    legendDiv.style.zIndex = '1';
+    container.current.appendChild(legendDiv);
 
     const maxVal = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
 
     const labels = [
-      { color: 'rgba(173, 216, 230, 1)', label: '0 Fatalities' },
-      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round(maxVal * 0.25)} Fatalities` },
-      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round(maxVal * 0.5)} Fatalities` },
-      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} Fatalities` },
+      { color: 'rgba(173, 216, 230, 1)', label: '0 Crashes' },
+      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round((maxVal * 0.25) * 100) / 100} Crashes` },
+      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round((maxVal * 0.5) * 100) / 100} Crashes` },
+      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} Crashes` },
     ];
 
     labels.forEach((label) => {
@@ -139,15 +101,54 @@ console.log(data)
       value.innerHTML = label.label;
       item.appendChild(key);
       item.appendChild(value);
-      legend.current.appendChild(item);
+      legendDiv.appendChild(item);
     });
   };
 
-  useEffect(() => {
-    updateLegend();
-  }, [fatalities, involmenemt, maxAl, maxNAl, maxFa]);
+const addLayer = () => {
+  const property = fatalities ? 'Fatalities' : involmenemt ? 'notAlcoholInvolved' : 'alcoholInvolved';
+  const maxValue = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
 
-  return { map, legend };
+  let stops = [0];
+  if (maxValue > 1) stops.push(Math.round((maxValue * 0.25) * 100) / 100);
+  if (maxValue > 2) stops.push(Math.round((maxValue * 0.5) * 100) / 100);
+  stops.push(maxValue);
+
+  const colors = ['rgba(173, 216, 230, 1)', 'rgba(135, 206, 235, 1)', 'rgba(70, 130, 180, 1)', 'rgba(0, 0, 139, 1)'];
+
+  let fillColors = ['interpolate', ['linear'], ['get', property]];
+  stops.forEach((stop, i) => {
+    fillColors.push(stop);
+    fillColors.push(colors[i]);
+  });
+
+  const layerConfig = {
+    id: currentLayerId.current,
+    type: 'fill',
+    source: 'counties',
+    layout: {},
+    paint: {
+      'fill-color': fillColors,
+      'fill-opacity': 1,
+    },
+  };
+
+  if (map.current.getLayer(currentLayerId.current)) {
+    map.current.removeLayer(currentLayerId.current);
+  }
+
+  if (map.current.getSource('counties')) {
+    map.current.getSource('counties').setData(data);
+  } else {
+    map.current.addSource('counties', {
+      type: 'geojson',
+      data: data,
+    });
+  }
+
+  map.current.addLayer(layerConfig);
+};
+
 };
 
 export default useMapboxx;

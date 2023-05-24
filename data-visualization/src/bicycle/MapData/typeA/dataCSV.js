@@ -1,410 +1,328 @@
- const dataCSV = [
+const dataInj = [
     {
-      County: "Adams",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 28,
+        "County": "Adams",
+        "Not_Applicable": 29
     },
     {
-      County: "Alcorn",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
+        "County": "Alcorn",
+        "Not_Applicable": 46
     },
     {
-      County: "Amite",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 16,
+        "County": "Amite",
+        "Not_Applicable": 16
     },
     {
-      County: "Attala",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 18,
+        "County": "Attala",
+        "Not_Applicable": 18
     },
     {
-      County: "Benton",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
+        "County": "Benton",
+        "Not_Applicable": 17
     },
     {
-      County: "Bolivar",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 41,
+        "County": "Bolivar",
+        "Not_Applicable": 41
     },
     {
-      County: "Calhoun",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
+        "County": "Calhoun",
+        "Not_Applicable": 17
     },
     {
-      County: "Carroll",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 14,
+        "County": "Carroll",
+        "Not_Applicable": 14
     },
     {
-      County: "Chickasaw",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 17,
+        "County": "Chickasaw",
+        "Not_Applicable": 17
     },
     {
-      County: "Choctaw",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 16,
+        "County": "Choctaw",
+        "Not_Applicable": 16
     },
     {
-      County: "Claiborne",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
+        "County": "Claiborne",
+        "Not_Applicable": 24
     },
     {
-      County: "Clarke",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
+        "County": "Clarke",
+        "Not_Applicable": 11
     },
     {
-      County: "Clay",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 19,
+        "County": "Clay",
+        "Not_Applicable": 19
     },
     {
-      County: "Coahoma",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 24,
+        "County": "Coahoma",
+        "Not_Applicable": 25
     },
     {
-      County: "Copiah",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 33,
+        "County": "Copiah",
+        "Not_Applicable": 33
     },
     {
-      County: "Covington",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 27,
+        "County": "Covington",
+        "Not_Applicable": 27
     },
     {
-      County: "DeSoto",
-      alcoholInvolved: 2,
-      notAlcoholInvolved: 157,
+        "County": "DeSoto",
+        "Not_Applicable": 159
     },
     {
-      County: "Forrest",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 70,
+        "County": "Forrest",
+        "Not_Applicable": 70
     },
     {
-      County: "Franklin",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
+        "County": "Franklin",
+        "Not_Applicable": 9
     },
     {
-      County: "George",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
+        "County": "George",
+        "Not_Applicable": 46
     },
     {
-      County: "Greene",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
+        "County": "Greene",
+        "Not_Applicable": 9
     },
     {
-      County: "Grenada",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 63,
+        "County": "Grenada",
+        "Not_Applicable": 63
     },
     {
-      County: "Hancock",
-      alcoholInvolved: 0,
-      notAlcoholInved: 47,
+        "County": "Hancock",
+        "Not_Applicable": 47
     },
     {
-      County: "Harrison",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 157,
+        "County": "Harrison",
+        "Not_Applicable": 158
     },
     {
-      County: "Hinds",
-      alcoholInvolved: 5,
-      notAlcoholInvolved: 267,
+        "County": "Hinds",
+        "Not_Applicable": 272
     },
     {
-      County: "Holmes",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
+        "County": "Holmes",
+        "Not_Applicable": 23
     },
     {
-      County: "Humphreys",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
+        "County": "Humphreys",
+        "Not_Applicable": 9
     },
     {
-      County: "Itawamba",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
+        "County": "Itawamba",
+        "Not_Applicable": 23
     },
     {
-      County: "Jackson",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 137,
+        "County": "Jackson",
+        "Not_Applicable": 138
     },
     {
-      County: "Jasper",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
+        "County": "Jasper",
+        "Not_Applicable": 24
     },
     {
-      County: "Jefferson",
-      alcoholInvolved: 3,
-      notAlcoholInvolved: 13,
+        "County": "Jefferson",
+        "Not_Applicable": 16
     },
     {
-      County: "Jefferson Davis",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 9,
+        "County": "Jefferson Davis",
+        "Not_Applicable": 9
     },
     {
-      County: "Jones",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 63,
+        "County": "Jones",
+        "Not_Applicable": 64
     },
     {
-      County: "Kemper",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 15,
+        "County": "Kemper",
+        "Not_Applicable": 15
     },
     {
-      County: "Lafayette",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 39,
+        "County": "Lafayette",
+        "Not_Applicable": 39
     },
     {
-      County: "Lamar",
-      alcoholInvolved: 4,
-      notAlcoholInvolved: 39,
+        "County": "Lamar",
+        "Not_Applicable": 43
     },
     {
-      County: "Lauderdale",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 62,
+        "County": "Lauderdale",
+        "Not_Applicable": 62
     },
     {
-      County: "Lawrence",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
+        "County": "Lawrence",
+        "Not_Applicable": 11
     },
     {
-      County: "Leake",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 23,
+        "County": "Leake",
+        "Not_Applicable": 23
     },
     {
-      County: "Lee",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 126,
+        "County": "Lee",
+        "Not_Applicable": 127
     },
     {
-      County: "Leflore",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 22,
+        "County": "Leflore",
+        "Not_Applicable": 22
     },
     {
-      County: "Lincoln",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 39,
+        "County": "Lincoln",
+        "Not_Applicable": 39
     },
     {
-      County: "Lowndes",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 64,
+        "County": "Lowndes",
+        "Not_Applicable": 65
     },
     {
-      County: "Madison",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 70,
+        "County": "Madison",
+        "Not_Applicable": 70
     },
     {
-      County: "Marion",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 22,
+        "County": "Marion",
+        "Not_Applicable": 22
     },
     {
-      County: "Marshall",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 46,
+        "County": "Marshall",
+        "Not_Applicable": 46
     },
     {
-      County: "Monroe",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 52,
+        "County": "Monroe",
+        "Not_Applicable": 52
     },
     {
-      County: "Montgomery",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
+        "County": "Montgomery",
+        "Not_Applicable": 11
     },
     {
-      County: "Neshoba",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 41,
+        "County": "Neshoba",
+        "Not_Applicable": 41
     },
     {
-      County: "Newton",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 30,
+        "County": "Newton",
+        "Not_Applicable": 30
     },
     {
-      County: "Noxubee",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 50,
+        "County": "Noxubee",
+        "Not_Applicable": 50
     },
     {
-      County: "Oktibbeha",
-      alcoholInvolved: 2,
-      notAlcoholInvolved: 41,
+        "County": "Oktibbeha",
+        "Not_Applicable": 43
     },
     {
-      County: "Panola",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 72,
+        "County": "Panola",
+        "Not_Applicable": 73
     },
     {
-      County: "Pearl River",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 60,
+        "County": "Pearl River",
+        "Not_Applicable": 60
     },
     {
-      County: "Perry",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 13,
+        "County": "Perry",
+        "Not_Applicable": 13
     },
     {
-      County: "Pike",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 59,
+        "County": "Pike",
+        "Not_Applicable": 60
     },
     {
-      County: "Pontotoc",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 42,
+        "County": "Pontotoc",
+        "Not_Applicable": 42
     },
     {
-      County: "Prentiss",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 24,
+        "County": "Prentiss",
+        "Not_Applicable": 24
     },
     {
-      County: "Quitman",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 3,
+        "County": "Quitman",
+        "Not_Applicable": 3
     },
     {
-      County: "Rankin",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 125,
+        "County": "Rankin",
+        "Not_Applicable": 125
     },
     {
-      County: "Scott",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 36,
+        "County": "Scott",
+        "Not_Applicable": 36
     },
     {
-      County: "Sharkey",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 5,
+        "County": "Sharkey",
+        "Not_Applicable": 5
     },
     {
-      County: "Simpson",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 47,
+        "County": "Simpson",
+        "Not_Applicable": 47
     },
     {
-      County: "Smith",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 10,
+        "County": "Smith",
+        "Not_Applicable": 10
     },
     {
-      County: "Stone",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 20,
+        "County": "Stone",
+        "Not_Applicable": 20
     },
     {
-      County: "Sunflower",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 34,
+        "County": "Sunflower",
+        "Not_Applicable": 34
     },
     {
-      County: "Tallahatchie",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 13,
+        "County": "Tallahatchie",
+        "Not_Applicable": 13
     },
     {
-      County: "Tate",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 42,
+        "County": "Tate",
+        "Not_Applicable": 42
     },
     {
-      County: "Tippah",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 29,
+        "County": "Tippah",
+        "Not_Applicable": 29
     },
     {
-      County: "Tishomingo",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 37,
+        "County": "Tishomingo",
+        "Not_Applicable": 37
     },
     {
-      County: "Tunica",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 25,
+        "County": "Tunica",
+        "Not_Applicable": 25
     },
     {
-      County: "Union",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 38,
+        "County": "Union",
+        "Not_Applicable": 38
     },
     {
-      County: "Walthall",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 7,
+        "County": "Walthall",
+        "Not_Applicable": 7
     },
     {
-      County: "Warren",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 36,
+        "County": "Warren",
+        "Not_Applicable": 36
     },
     {
-      County: "Washington",
-      alcoholInvolved: 1,
-      notAlcoholInvolved: 35,
+        "County": "Washington",
+        "Not_Applicable": 36
     },
     {
-      County: "Wayne",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 18,
+        "County": "Wayne",
+        "Not_Applicable": 18
     },
     {
-      County: "Webster",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 11,
+        "County": "Webster",
+        "Not_Applicable": 11
     },
     {
-      County: "Wilkinson",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 6,
+        "County": "Wilkinson",
+        "Not_Applicable": 6
     },
     {
-      County: "Winston",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 12,
+        "County": "Winston",
+        "Not_Applicable": 12
     },
     {
-      County: "Yalobusha",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 10,
+        "County": "Yalobusha",
+        "Not_Applicable": 10
     },
     {
-      County: "Yazoo",
-      alcoholInvolved: 0,
-      notAlcoholInvolved: 40,
-    },
-  ];
+        "County": "Yazoo",
+        "Not_Applicable": 40
+    }
+];
 
-
-export default dataCSV ; 
+export default dataInj;

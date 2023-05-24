@@ -96,8 +96,8 @@ justify-content: center;
 align-items: center;
 flex-direction: column-reverse;
 position: absolute;
-top: 20%;
-left: 40%;
+top: 5%;
+left: 50%;
 z-index: 1000000000;
 }
 
@@ -114,9 +114,9 @@ z-index: 1000000000;
 
 .select-dropdown select {
   font-family: "helvetica neue", helvetica;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 200;
-  max-width: 100%;
+  min-width: 100%;
   padding: 8px 24px 8px 10px;
   border: none;
   background-color: transparent;
@@ -178,4 +178,36 @@ z-index: 1000000000;
 }
 
 
+}
+
+/* CSS for the popup */
+.mapboxgl-popup {
+  position: absolute;
+top: 10px;
+  background-color: #fff;
+
+}
+
+
+
+
+.popup {
+
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.popup h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.popup p {
+color: black;
+  margin: 0;
 }

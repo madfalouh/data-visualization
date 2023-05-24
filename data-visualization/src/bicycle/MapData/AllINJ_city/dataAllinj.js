@@ -1,2291 +1,1832 @@
 const dataInj = [
- 
     {
-        "city": "Abbeville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Abbeville",
+        "Not_Applicable": 10
     },
     {
-        "city": "Aberdeen",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 68
+        "City": "Aberdeen",
+        "Not_Applicable": 68
     },
     {
-        "city": "Ackerman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Ackerman",
+        "Not_Applicable": 7
     },
     {
-        "city": "Alcorn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Alcorn State University",
+        "Not_Applicable": 4
     },
     {
-        "city": "Alligator",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Alligator",
+        "Not_Applicable": 1
     },
     {
-        "city": "Amory",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 100
+        "City": "Amory",
+        "Not_Applicable": 104
     },
     {
-        "city": "Anguilla",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Anguilla",
+        "Not_Applicable": 1
     },
     {
-        "city": "Arkabutla",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Arkabutla",
+        "Not_Applicable": 2
     },
     {
-        "city": "Artesia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Artesia",
+        "Not_Applicable": 2
     },
     {
-        "city": "Ashland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Ashland",
+        "Not_Applicable": 5
     },
     {
-        "city": "Avalon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Avalon",
+        "Not_Applicable": 3
     },
     {
-        "city": "Bailey",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Bailey",
+        "Not_Applicable": 2
     },
     {
-        "city": "Baldwyn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 58
+        "City": "Baldwyn",
+        "Not_Applicable": 58
     },
     {
-        "city": "Bassfield",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Bassfield",
+        "Not_Applicable": 24
     },
     {
-        "city": "Batesville",
-        "alcohol_involved": 6,
-        "not_alcohol_involved": 199
+        "City": "Batesville",
+        "Not_Applicable": 205
     },
     {
-        "city": "Bay",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Bay Saint Louis",
+        "Not_Applicable": 97
     },
     {
-        "city": "Bay",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Bay Springs",
+        "Not_Applicable": 36
     },
     {
-        "city": "Beaumont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Beaumont",
+        "Not_Applicable": 4
     },
     {
-        "city": "Beauregard",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Beauregard",
+        "Not_Applicable": 1
     },
     {
-        "city": "Becker",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Becker",
+        "Not_Applicable": 5
     },
     {
-        "city": "Belmont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Belmont",
+        "Not_Applicable": 16
     },
     {
-        "city": "Belzoni",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Belzoni",
+        "Not_Applicable": 1
     },
     {
-        "city": "Benoit",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Benoit",
+        "Not_Applicable": 2
     },
     {
-        "city": "Benton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Benton",
+        "Not_Applicable": 9
     },
     {
-        "city": "Bentonia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Bentonia",
+        "Not_Applicable": 19
     },
     {
-        "city": "Big",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Big Creek",
+        "Not_Applicable": 1
     },
     {
-        "city": "Biloxi",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 549
+        "City": "Biloxi",
+        "Not_Applicable": 549
     },
     {
-        "city": "Blue",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Blue Mountain",
+        "Not_Applicable": 8
     },
     {
-        "city": "Blue",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Blue Springs",
+        "Not_Applicable": 13
     },
     {
-        "city": "Bogue",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Bogue Chitto",
+        "Not_Applicable": 22
     },
     {
-        "city": "Bolton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Bolton",
+        "Not_Applicable": 7
     },
     {
-        "city": "Bond",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Bond",
+        "Not_Applicable": 1
     },
     {
-        "city": "Booneville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 94
+        "City": "Booneville",
+        "Not_Applicable": 95
     },
     {
-        "city": "Boyle",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Boyle",
+        "Not_Applicable": 6
     },
     {
-        "city": "Brandon",
-        "alcohol_involved": 6,
-        "not_alcohol_involved": 297
+        "City": "Brandon",
+        "Not_Applicable": 303
     },
     {
-        "city": "Braxton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Braxton",
+        "Not_Applicable": 5
     },
     {
-        "city": "Brookhaven",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 163
+        "City": "Brookhaven",
+        "Not_Applicable": 164
     },
     {
-        "city": "Brooklyn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Brooklyn",
+        "Not_Applicable": 11
     },
     {
-        "city": "Brooksville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Brooksville",
+        "Not_Applicable": 22
     },
     {
-        "city": "Bruce",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Bruce",
+        "Not_Applicable": 12
     },
     {
-        "city": "Buckatunna",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Buckatunna",
+        "Not_Applicable": 4
     },
     {
-        "city": "Bude",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Bude",
+        "Not_Applicable": 7
     },
     {
-        "city": "Burnsville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Burnsville",
+        "Not_Applicable": 11
     },
     {
-        "city": "Byhalia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 37
+        "City": "Byhalia",
+        "Not_Applicable": 37
     },
     {
-        "city": "Byram",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 106
+        "City": "Byram",
+        "Not_Applicable": 109
     },
     {
-        "city": "Caledonia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Caledonia",
+        "Not_Applicable": 10
     },
     {
-        "city": "Calhoun",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Calhoun City",
+        "Not_Applicable": 14
     },
     {
-        "city": "Canton",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 167
+        "City": "Canton",
+        "Not_Applicable": 169
     },
     {
-        "city": "Carriere",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 36
+        "City": "Carriere",
+        "Not_Applicable": 36
     },
     {
-        "city": "Carrollton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Carrollton",
+        "Not_Applicable": 3
     },
     {
-        "city": "Carthage",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 68
+        "City": "Carthage",
+        "Not_Applicable": 68
     },
     {
-        "city": "Cary",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Cary",
+        "Not_Applicable": 4
     },
     {
-        "city": "Cascilla",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Cascilla",
+        "Not_Applicable": 3
     },
     {
-        "city": "Cedar",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Cedar Bluff",
+        "Not_Applicable": 1
     },
     {
-        "city": "Centreville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Centreville",
+        "Not_Applicable": 18
     },
     {
-        "city": "Chalybeate",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Chalybeate",
+        "Not_Applicable": 4
     },
     {
-        "city": "Charleston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 29
+        "City": "Charleston",
+        "Not_Applicable": 29
     },
     {
-        "city": "Chunky",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Chunky",
+        "Not_Applicable": 2
     },
     {
-        "city": "Clara",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Clara",
+        "Not_Applicable": 8
     },
     {
-        "city": "Clarksdale",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 234
+        "City": "Clarksdale",
+        "Not_Applicable": 236
     },
     {
-        "city": "Clermont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Clermont Harbor",
+        "Not_Applicable": 4
     },
     {
-        "city": "Cleveland",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 145
+        "City": "Cleveland",
+        "Not_Applicable": 147
     },
     {
-        "city": "Clinton",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 150
+        "City": "Clinton",
+        "Not_Applicable": 153
     },
     {
-        "city": "Coffeeville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Coffeeville",
+        "Not_Applicable": 8
     },
     {
-        "city": "Coldwater",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Coldwater",
+        "Not_Applicable": 20
     },
     {
-        "city": "Collins",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 75
+        "City": "Collins",
+        "Not_Applicable": 75
     },
     {
-        "city": "Collinsville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Collinsville",
+        "Not_Applicable": 1
     },
     {
-        "city": "Columbia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 74
+        "City": "Columbia",
+        "Not_Applicable": 74
     },
     {
-        "city": "Columbus",
-        "alcohol_involved": 6,
-        "not_alcohol_involved": 600
+        "City": "Columbus",
+        "Not_Applicable": 606
     },
     {
-        "city": "Como",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 23
+        "City": "Como",
+        "Not_Applicable": 23
     },
     {
-        "city": "Conehatta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Conehatta",
+        "Not_Applicable": 6
     },
     {
-        "city": "Corinth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 189
+        "City": "Corinth",
+        "Not_Applicable": 189
     },
     {
-        "city": "Courtland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Courtland",
+        "Not_Applicable": 18
     },
     {
-        "city": "Crawford",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Crawford",
+        "Not_Applicable": 1
     },
     {
-        "city": "Crenshaw",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Crenshaw",
+        "Not_Applicable": 3
     },
     {
-        "city": "Crosby",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Crosby",
+        "Not_Applicable": 1
     },
     {
-        "city": "Crowder",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Crowder",
+        "Not_Applicable": 1
     },
     {
-        "city": "Cruger",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Cruger",
+        "Not_Applicable": 5
     },
     {
-        "city": "Crystal",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 58
+        "City": "Crystal Springs",
+        "Not_Applicable": 58
     },
     {
-        "city": "D'Iberville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 128
+        "City": "D'Iberville",
+        "Not_Applicable": 128
     },
     {
-        "city": "D'Lo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "D'Lo",
+        "Not_Applicable": 7
     },
     {
-        "city": "Daleville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Daleville",
+        "Not_Applicable": 1
     },
     {
-        "city": "De",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "De Lisle",
+        "Not_Applicable": 3
     },
     {
-        "city": "De",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "De Soto",
+        "Not_Applicable": 1
     },
     {
-        "city": "Decatur",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Decatur",
+        "Not_Applicable": 12
     },
     {
-        "city": "Dekalb",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Dekalb",
+        "Not_Applicable": 15
     },
     {
-        "city": "Dennis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Dennis",
+        "Not_Applicable": 1
     },
     {
-        "city": "Derma",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Derma",
+        "Not_Applicable": 16
     },
     {
-        "city": "Diamondhead",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Diamondhead",
+        "Not_Applicable": 20
     },
     {
-        "city": "Doddsville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Doddsville",
+        "Not_Applicable": 1
     },
     {
-        "city": "Drew",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Drew",
+        "Not_Applicable": 2
     },
     {
-        "city": "Duck",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Duck Hill",
+        "Not_Applicable": 3
     },
     {
-        "city": "Dumas",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Dumas",
+        "Not_Applicable": 1
     },
     {
-        "city": "Duncan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Duncan",
+        "Not_Applicable": 1
     },
     {
-        "city": "Dundee",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Dundee",
+        "Not_Applicable": 3
     },
     {
-        "city": "Durant",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Durant",
+        "Not_Applicable": 6
     },
     {
-        "city": "Ecru",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 25
+        "City": "Ecru",
+        "Not_Applicable": 25
     },
     {
-        "city": "Eden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Eden",
+        "Not_Applicable": 2
     },
     {
-        "city": "Edwards",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 17
+        "City": "Edwards",
+        "Not_Applicable": 17
     },
     {
-        "city": "Elliott",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Elliott",
+        "Not_Applicable": 12
     },
     {
-        "city": "Ellisville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 61
+        "City": "Ellisville",
+        "Not_Applicable": 62
     },
     {
-        "city": "Enterprise",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Enterprise",
+        "Not_Applicable": 3
     },
     {
-        "city": "Ethel",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Ethel",
+        "Not_Applicable": 5
     },
     {
-        "city": "Etta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Etta",
+        "Not_Applicable": 2
     },
     {
-        "city": "Eucutta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Eucutta",
+        "Not_Applicable": 4
     },
     {
-        "city": "Eupora",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Eupora",
+        "Not_Applicable": 15
     },
     {
-        "city": "Falkner",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Falkner",
+        "Not_Applicable": 8
     },
     {
-        "city": "Fayette",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Fayette",
+        "Not_Applicable": 14
     },
     {
-        "city": "Fernwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Fernwood",
+        "Not_Applicable": 4
     },
     {
-        "city": "Flora",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Flora",
+        "Not_Applicable": 10
     },
     {
-        "city": "Florence",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 55
+        "City": "Florence",
+        "Not_Applicable": 55
     },
     {
-        "city": "Flowood",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 261
+        "City": "Flowood",
+        "Not_Applicable": 264
     },
     {
-        "city": "Forest",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 64
+        "City": "Forest",
+        "Not_Applicable": 64
     },
     {
-        "city": "Foxworth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Foxworth",
+        "Not_Applicable": 8
     },
     {
-        "city": "French",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "French Camp",
+        "Not_Applicable": 1
     },
     {
-        "city": "Fulton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 51
+        "City": "Fulton",
+        "Not_Applicable": 51
     },
     {
-        "city": "Gallman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Gallman",
+        "Not_Applicable": 3
     },
     {
-        "city": "Gattman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Gattman",
+        "Not_Applicable": 1
     },
     {
-        "city": "Gautier",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 118
+        "City": "Gautier",
+        "Not_Applicable": 122
     },
     {
-        "city": "Georgetown",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Georgetown",
+        "Not_Applicable": 3
     },
     {
-        "city": "Glens",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Glens",
+        "Not_Applicable": 5
     },
     {
-        "city": "Gloster",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Gloster",
+        "Not_Applicable": 16
     },
     {
-        "city": "Golden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Golden",
+        "Not_Applicable": 1
     },
     {
-        "city": "Goodman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Goodman",
+        "Not_Applicable": 2
     },
     {
-        "city": "Gore",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Gore Springs",
+        "Not_Applicable": 3
     },
     {
-        "city": "Greenville",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 419
+        "City": "Greenville",
+        "Not_Applicable": 422
     },
     {
-        "city": "Greenwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 172
+        "City": "Greenwood",
+        "Not_Applicable": 172
     },
     {
-        "city": "Greenwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Greenwood Springs",
+        "Not_Applicable": 3
     },
     {
-        "city": "Grenada",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 163
+        "City": "Grenada",
+        "Not_Applicable": 166
     },
     {
-        "city": "Gulfport",
-        "alcohol_involved": 5,
-        "not_alcohol_involved": 1406
+        "City": "Gulfport",
+        "Not_Applicable": 1411
     },
     {
-        "city": "Guntown",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Guntown",
+        "Not_Applicable": 6
     },
     {
-        "city": "Hamilton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Hamilton",
+        "Not_Applicable": 8
     },
     {
-        "city": "Harrisville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Harrisville",
+        "Not_Applicable": 4
     },
     {
-        "city": "Hatley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Hatley",
+        "Not_Applicable": 6
     },
     {
-        "city": "Hattiesbur",
-        "alcohol_involved": 9,
-        "not_alcohol_involved": 1020
+        "City": "Hattiesburg",
+        "Not_Applicable": 1029
     },
     {
-        "city": "Hazlehurst",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 79
+        "City": "Hazlehurst",
+        "Not_Applicable": 81
     },
     {
-        "city": "Heidelberg",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Heidelberg",
+        "Not_Applicable": 14
     },
     {
-        "city": "Hermanville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Hermanville",
+        "Not_Applicable": 7
     },
     {
-        "city": "Hernando",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 100
+        "City": "Hernando",
+        "Not_Applicable": 102
     },
     {
-        "city": "Hickory",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Hickory",
+        "Not_Applicable": 1
     },
     {
-        "city": "Hickory",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Hickory Flat",
+        "Not_Applicable": 3
     },
     {
-        "city": "Holcomb",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Holcomb",
+        "Not_Applicable": 11
     },
     {
-        "city": "Hollandale",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Hollandale",
+        "Not_Applicable": 6
     },
     {
-        "city": "Holly",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Holly Bluff",
+        "Not_Applicable": 3
     },
     {
-        "city": "Holly",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 81
+        "City": "Holly Springs",
+        "Not_Applicable": 81
     },
     {
-        "city": "Horn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Horn Lake",
+        "Not_Applicable": 235
     },
     {
-        "city": "Houston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Houston",
+        "Not_Applicable": 21
     },
     {
-        "city": "Hurley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Hurley",
+        "Not_Applicable": 3
     },
     {
-        "city": "Indianola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 56
+        "City": "Indianola",
+        "Not_Applicable": 56
     },
     {
-        "city": "Isola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Isola",
+        "Not_Applicable": 1
     },
     {
-        "city": "Itta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Itta Bena",
+        "Not_Applicable": 18
     },
     {
-        "city": "Iuka",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 51
+        "City": "Iuka",
+        "Not_Applicable": 51
     },
     {
-        "city": "Jackson",
-        "alcohol_involved": 17,
-        "not_alcohol_involved": 2439
+        "City": "Jackson",
+        "Not_Applicable": 2456
     },
     {
-        "city": "Jayess",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Jayess",
+        "Not_Applicable": 2
     },
     {
-        "city": "Keesler",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Keesler Air Force Base",
+        "Not_Applicable": 1
     },
     {
-        "city": "Kilmichael",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Kilmichael",
+        "Not_Applicable": 6
     },
     {
-        "city": "Kiln",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 35
+        "City": "Kiln",
+        "Not_Applicable": 37
     },
     {
-        "city": "Kokomo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Kokomo",
+        "Not_Applicable": 3
     },
     {
-        "city": "Kosciusko",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 69
+        "City": "Kosciusko",
+        "Not_Applicable": 69
     },
     {
-        "city": "Kossuth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Kossuth",
+        "Not_Applicable": 6
     },
     {
-        "city": "Lafayette",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Lafayette Springs",
+        "Not_Applicable": 1
     },
     {
-        "city": "Lake",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Lake",
+        "Not_Applicable": 6
     },
     {
-        "city": "Lake",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Lake Cormorant",
+        "Not_Applicable": 15
     },
     {
-        "city": "Lakeshore",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Lakeshore",
+        "Not_Applicable": 5
     },
     {
-        "city": "Lauderdale",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Lauderdale",
+        "Not_Applicable": 5
     },
     {
-        "city": "Laurel",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 428
+        "City": "Laurel",
+        "Not_Applicable": 430
     },
     {
-        "city": "Leakesville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Leakesville",
+        "Not_Applicable": 10
     },
     {
-        "city": "Learned",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Learned",
+        "Not_Applicable": 1
     },
     {
-        "city": "Leflore",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Leflore",
+        "Not_Applicable": 1
     },
     {
-        "city": "Leland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Leland",
+        "Not_Applicable": 5
     },
     {
-        "city": "Lexington",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 31
+        "City": "Lexington",
+        "Not_Applicable": 31
     },
     {
-        "city": "Liberty",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Liberty",
+        "Not_Applicable": 5
     },
     {
-        "city": "Long",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 115
+        "City": "Long Beach",
+        "Not_Applicable": 115
     },
     {
-        "city": "Lorman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Lorman",
+        "Not_Applicable": 3
     },
     {
-        "city": "Louin",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Louin",
+        "Not_Applicable": 3
     },
     {
-        "city": "Louisville",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 77
+        "City": "Louisville",
+        "Not_Applicable": 80
     },
     {
-        "city": "Lucedale",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 28
+        "City": "Lucedale",
+        "Not_Applicable": 28
     },
     {
-        "city": "Lumberton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Lumberton",
+        "Not_Applicable": 14
     },
     {
-        "city": "Lyon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Lyon",
+        "Not_Applicable": 2
     },
     {
-        "city": "Maben",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Maben",
+        "Not_Applicable": 3
     },
     {
-        "city": "Macon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 106
+        "City": "Macon",
+        "Not_Applicable": 106
     },
     {
-        "city": "Madden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Madden",
+        "Not_Applicable": 1
     },
     {
-        "city": "Madison",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 151
+        "City": "Madison",
+        "Not_Applicable": 151
     },
     {
-        "city": "Magee",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 111
+        "City": "Magee",
+        "Not_Applicable": 112
     },
     {
-        "city": "Magnolia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 38
+        "City": "Magnolia",
+        "Not_Applicable": 38
     },
     {
-        "city": "Mantachie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Mantachie",
+        "Not_Applicable": 10
     },
     {
-        "city": "Marion",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Marion",
+        "Not_Applicable": 8
     },
     {
-        "city": "Marks",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Marks",
+        "Not_Applicable": 11
     },
     {
-        "city": "Mathiston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Mathiston",
+        "Not_Applicable": 8
     },
     {
-        "city": "McAdams",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "McAdams",
+        "Not_Applicable": 8
     },
     {
-        "city": "McCall",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "McCall Creek",
+        "Not_Applicable": 2
     },
     {
-        "city": "McCarley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "McCarley",
+        "Not_Applicable": 3
     },
     {
-        "city": "McComb",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 185
+        "City": "McComb",
+        "Not_Applicable": 187
     },
     {
-        "city": "McCool",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "McCool",
+        "Not_Applicable": 2
     },
     {
-        "city": "McHenry",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "McHenry",
+        "Not_Applicable": 5
     },
     {
-        "city": "McLain",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "McLain",
+        "Not_Applicable": 3
     },
     {
-        "city": "McLaurin",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "McLaurin",
+        "Not_Applicable": 3
     },
     {
-        "city": "McNeill",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "McNeill",
+        "Not_Applicable": 3
     },
     {
-        "city": "Meadville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Meadville",
+        "Not_Applicable": 2
     },
     {
-        "city": "Mendenhall",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 58
+        "City": "Mendenhall",
+        "Not_Applicable": 58
     },
     {
-        "city": "Meridian",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 518
+        "City": "Meridian",
+        "Not_Applicable": 520
     },
     {
-        "city": "Merigold",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Merigold",
+        "Not_Applicable": 4
     },
     {
-        "city": "Michigan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Michigan City",
+        "Not_Applicable": 1
     },
     {
-        "city": "Minter",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Minter City",
+        "Not_Applicable": 1
     },
     {
-        "city": "Mississipp",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 12
+        "City": "Mississippi State",
+        "Not_Applicable": 13
     },
     {
-        "city": "Mize",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Mize",
+        "Not_Applicable": 4
     },
     {
-        "city": "Monticello",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 29
+        "City": "Monticello",
+        "Not_Applicable": 29
     },
     {
-        "city": "Mooreville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Mooreville",
+        "Not_Applicable": 5
     },
     {
-        "city": "Moorhead",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Moorhead",
+        "Not_Applicable": 3
     },
     {
-        "city": "Morgan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Morgan City",
+        "Not_Applicable": 3
     },
     {
-        "city": "Morton",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 34
+        "City": "Morton",
+        "Not_Applicable": 38
     },
     {
-        "city": "Moselle",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Moselle",
+        "Not_Applicable": 8
     },
     {
-        "city": "Moss",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Moss",
+        "Not_Applicable": 2
     },
     {
-        "city": "Moss",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 192
+        "City": "Moss Point",
+        "Not_Applicable": 192
     },
     {
-        "city": "Mound",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Mound Bayou",
+        "Not_Applicable": 9
     },
     {
-        "city": "Mount",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Mount Olive",
+        "Not_Applicable": 21
     },
     {
-        "city": "Mount",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Mount Pleasant",
+        "Not_Applicable": 15
     },
     {
-        "city": "Myrtle",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 6
+        "City": "Myrtle",
+        "Not_Applicable": 7
     },
     {
-        "city": "NA",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": NaN,
+        "Not_Applicable": 11
     },
     {
-        "city": "Natchez",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 227
+        "City": "Natchez",
+        "Not_Applicable": 228
     },
     {
-        "city": "Neely",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Neely",
+        "Not_Applicable": 1
     },
     {
-        "city": "Nesbit",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Nesbit",
+        "Not_Applicable": 9
     },
     {
-        "city": "Neshoba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Neshoba",
+        "Not_Applicable": 4
     },
     {
-        "city": "Nettleton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 31
+        "City": "Nettleton",
+        "Not_Applicable": 31
     },
     {
-        "city": "New",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "New Albany",
+        "Not_Applicable": 117
     },
     {
-        "city": "New",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "New Augusta",
+        "Not_Applicable": 11
     },
     {
-        "city": "New",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "New Hebron",
+        "Not_Applicable": 3
     },
     {
-        "city": "Newton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 25
+        "City": "Newton",
+        "Not_Applicable": 25
     },
     {
-        "city": "Nicholson",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 2
+        "City": "Nicholson",
+        "Not_Applicable": 3
     },
     {
-        "city": "North",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "North Gulfport",
+        "Not_Applicable": 2
     },
     {
-        "city": "North",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "North Tunica",
+        "Not_Applicable": 3
     },
     {
-        "city": "Noxapater",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Noxapater",
+        "Not_Applicable": 9
     },
     {
-        "city": "Oak",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Oak Vale",
+        "Not_Applicable": 1
     },
     {
-        "city": "Oakland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Oakland",
+        "Not_Applicable": 16
     },
     {
-        "city": "Ocean",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Ocean Springs",
+        "Not_Applicable": 227
     },
     {
-        "city": "Okolona",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Okolona",
+        "Not_Applicable": 14
     },
     {
-        "city": "Old",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Old Houlka",
+        "Not_Applicable": 2
     },
     {
-        "city": "Olive",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Olive Branch",
+        "Not_Applicable": 442
     },
     {
-        "city": "Orange",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Orange Grove",
+        "Not_Applicable": 1
     },
     {
-        "city": "Osyka",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Osyka",
+        "Not_Applicable": 7
     },
     {
-        "city": "Ovett",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Ovett",
+        "Not_Applicable": 3
     },
     {
-        "city": "Oxford",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 353
+        "City": "Oxford",
+        "Not_Applicable": 354
     },
     {
-        "city": "Pachuta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Pachuta",
+        "Not_Applicable": 2
     },
     {
-        "city": "Paden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Paden",
+        "Not_Applicable": 1
     },
     {
-        "city": "Paris",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Paris",
+        "Not_Applicable": 1
     },
     {
-        "city": "Pascagoula",
-        "alcohol_involved": 5,
-        "not_alcohol_involved": 269
+        "City": "Pascagoula",
+        "Not_Applicable": 274
     },
     {
-        "city": "Pass",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Pass Christian",
+        "Not_Applicable": 90
     },
     {
-        "city": "Pattison",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Pattison",
+        "Not_Applicable": 14
     },
     {
-        "city": "Paulding",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Paulding",
+        "Not_Applicable": 1
     },
     {
-        "city": "Pearl",
-        "alcohol_involved": 6,
-        "not_alcohol_involved": 240
+        "City": "Pearl",
+        "Not_Applicable": 246
     },
     {
-        "city": "Pearlington",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Pearlington",
+        "Not_Applicable": 8
     },
     {
-        "city": "Pelahatchie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 27
+        "City": "Pelahatchie",
+        "Not_Applicable": 27
     },
     {
-        "city": "Perkinston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Perkinston",
+        "Not_Applicable": 19
     },
     {
-        "city": "Petal",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 102
+        "City": "Petal",
+        "Not_Applicable": 102
     },
     {
-        "city": "Pheba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Pheba",
+        "Not_Applicable": 3
     },
     {
-        "city": "Philadelphia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 102
+        "City": "Philadelphia",
+        "Not_Applicable": 102
     },
     {
-        "city": "Philipp",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Philipp",
+        "Not_Applicable": 2
     },
     {
-        "city": "Picayune",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 215
+        "City": "Picayune",
+        "Not_Applicable": 219
     },
     {
-        "city": "Pickens",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Pickens",
+        "Not_Applicable": 5
     },
     {
-        "city": "Pinola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Pinola",
+        "Not_Applicable": 3
     },
     {
-        "city": "Pittsboro",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Pittsboro",
+        "Not_Applicable": 9
     },
     {
-        "city": "Plantersville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Plantersville",
+        "Not_Applicable": 4
     },
     {
-        "city": "Pleasant",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Pleasant Grove",
+        "Not_Applicable": 1
     },
     {
-        "city": "Polkville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Polkville",
+        "Not_Applicable": 2
     },
     {
-        "city": "Pontotoc",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 106
+        "City": "Pontotoc",
+        "Not_Applicable": 109
     },
     {
-        "city": "Pope",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Pope",
+        "Not_Applicable": 13
     },
     {
-        "city": "Poplarville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 48
+        "City": "Poplarville",
+        "Not_Applicable": 48
     },
     {
-        "city": "Port",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Port Gibson",
+        "Not_Applicable": 88
     },
     {
-        "city": "Porterville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Porterville",
+        "Not_Applicable": 3
     },
     {
-        "city": "Potts",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Potts Camp",
+        "Not_Applicable": 4
     },
     {
-        "city": "Prairie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Prairie",
+        "Not_Applicable": 7
     },
     {
-        "city": "Prairie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Prairie Point",
+        "Not_Applicable": 2
     },
     {
-        "city": "Prentiss",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Prentiss",
+        "Not_Applicable": 2
     },
     {
-        "city": "Preston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Preston",
+        "Not_Applicable": 2
     },
     {
-        "city": "Pulaski",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Pulaski",
+        "Not_Applicable": 2
     },
     {
-        "city": "Purvis",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 23
+        "City": "Purvis",
+        "Not_Applicable": 24
     },
     {
-        "city": "Quitman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 27
+        "City": "Quitman",
+        "Not_Applicable": 27
     },
     {
-        "city": "Raleigh",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Raleigh",
+        "Not_Applicable": 8
     },
     {
-        "city": "Randolph",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Randolph",
+        "Not_Applicable": 2
     },
     {
-        "city": "Raymond",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 36
+        "City": "Raymond",
+        "Not_Applicable": 36
     },
     {
-        "city": "Red",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Red Banks",
+        "Not_Applicable": 8
     },
     {
-        "city": "Red",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Red Lick",
+        "Not_Applicable": 1
     },
     {
-        "city": "Redwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Redwood",
+        "Not_Applicable": 1
     },
     {
-        "city": "Reform",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Reform",
+        "Not_Applicable": 1
     },
     {
-        "city": "Richland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 110
+        "City": "Richland",
+        "Not_Applicable": 110
     },
     {
-        "city": "Richton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Richton",
+        "Not_Applicable": 2
     },
     {
-        "city": "Ridgeland",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 301
+        "City": "Ridgeland",
+        "Not_Applicable": 303
     },
     {
-        "city": "Rienzi",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rienzi",
+        "Not_Applicable": 3
     },
     {
-        "city": "Ripley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 64
+        "City": "Ripley",
+        "Not_Applicable": 64
     },
     {
-        "city": "Robinsonvi",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 49
+        "City": "Robinsonville",
+        "Not_Applicable": 52
     },
     {
-        "city": "Rolling",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rolling Fork",
+        "Not_Applicable": 3
     },
     {
-        "city": "Rose",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Rose Hill",
+        "Not_Applicable": 1
     },
     {
-        "city": "Rosedale",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Rosedale",
+        "Not_Applicable": 2
     },
     {
-        "city": "Roxie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Roxie",
+        "Not_Applicable": 9
     },
     {
-        "city": "Ruleville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Ruleville",
+        "Not_Applicable": 20
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 56
+        "City": "Rural Adams",
+        "Not_Applicable": 56
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 95
+        "City": "Rural Alcorn",
+        "Not_Applicable": 95
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Amite",
+        "Not_Applicable": 46
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 52
+        "City": "Rural Attala",
+        "Not_Applicable": 52
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 39
+        "City": "Rural Benton",
+        "Not_Applicable": 39
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Bolivar",
+        "Not_Applicable": 69
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Calhoun",
+        "Not_Applicable": 50
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 47
+        "City": "Rural Carroll",
+        "Not_Applicable": 47
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Chickasaw",
+        "Not_Applicable": 61
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 39
+        "City": "Rural Choctaw",
+        "Not_Applicable": 39
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 42
+        "City": "Rural Claiborne",
+        "Not_Applicable": 42
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Clarke",
+        "Not_Applicable": 77
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 54
+        "City": "Rural Clay",
+        "Not_Applicable": 54
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 47
+        "City": "Rural Coahoma",
+        "Not_Applicable": 47
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 88
+        "City": "Rural Copiah",
+        "Not_Applicable": 88
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Covington",
+        "Not_Applicable": 112
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 236
+        "City": "Rural DeSoto",
+        "Not_Applicable": 236
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 98
+        "City": "Rural Forrest",
+        "Not_Applicable": 98
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 37
+        "City": "Rural Franklin",
+        "Not_Applicable": 37
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural George",
+        "Not_Applicable": 203
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 35
+        "City": "Rural Greene",
+        "Not_Applicable": 35
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Grenada",
+        "Not_Applicable": 96
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Hancock",
+        "Not_Applicable": 147
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Harrison",
+        "Not_Applicable": 239
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Hinds",
+        "Not_Applicable": 174
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Holmes",
+        "Not_Applicable": 67
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Humphreys",
+        "Not_Applicable": 30
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rural Issaquena",
+        "Not_Applicable": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Itawamba",
+        "Not_Applicable": 119
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jackson",
+        "Not_Applicable": 488
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jasper",
+        "Not_Applicable": 118
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jefferson",
+        "Not_Applicable": 64
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jefferson Davis",
+        "Not_Applicable": 37
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jones",
+        "Not_Applicable": 162
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 33
+        "City": "Rural Kemper",
+        "Not_Applicable": 33
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 80
+        "City": "Rural Lafayette",
+        "Not_Applicable": 80
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Lamar",
+        "Not_Applicable": 181
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Lauderdale",
+        "Not_Applicable": 227
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 35
+        "City": "Rural Lawrence",
+        "Not_Applicable": 35
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Leake",
+        "Not_Applicable": 75
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Lee",
+        "Not_Applicable": 209
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 37
+        "City": "Rural Leflore",
+        "Not_Applicable": 37
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 92
+        "City": "Rural Lincoln",
+        "Not_Applicable": 92
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Lowndes",
+        "Not_Applicable": 177
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Madison",
+        "Not_Applicable": 187
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 77
+        "City": "Rural Marion",
+        "Not_Applicable": 77
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 131
+        "City": "Rural Marshall",
+        "Not_Applicable": 131
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Monroe",
+        "Not_Applicable": 120
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Rural Montgomery",
+        "Not_Applicable": 24
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Neshoba",
+        "Not_Applicable": 156
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Newton",
+        "Not_Applicable": 85
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Rural Noxubee",
+        "Not_Applicable": 19
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Oktibbeha",
+        "Not_Applicable": 131
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 127
+        "City": "Rural Panola",
+        "Not_Applicable": 127
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Pearl River",
+        "Not_Applicable": 150
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 52
+        "City": "Rural Perry",
+        "Not_Applicable": 52
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Pike",
+        "Not_Applicable": 152
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Pontotoc",
+        "Not_Applicable": 106
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Prentiss",
+        "Not_Applicable": 62
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Rural Quitman",
+        "Not_Applicable": 15
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Rankin",
+        "Not_Applicable": 288
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Scott",
+        "Not_Applicable": 94
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Sharkey",
+        "Not_Applicable": 11
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 73
+        "City": "Rural Simpson",
+        "Not_Applicable": 73
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 37
+        "City": "Rural Smith",
+        "Not_Applicable": 37
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 57
+        "City": "Rural Stone",
+        "Not_Applicable": 57
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Sunflower",
+        "Not_Applicable": 86
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Tallahatchie",
+        "Not_Applicable": 30
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Tate",
+        "Not_Applicable": 80
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 67
+        "City": "Rural Tippah",
+        "Not_Applicable": 67
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 53
+        "City": "Rural Tishomingo",
+        "Not_Applicable": 53
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Tunica",
+        "Not_Applicable": 66
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Union",
+        "Not_Applicable": 118
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 84
+        "City": "Rural Walthall",
+        "Not_Applicable": 84
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 114
+        "City": "Rural Warren",
+        "Not_Applicable": 114
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Washington",
+        "Not_Applicable": 71
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 35
+        "City": "Rural Wayne",
+        "Not_Applicable": 35
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Rural Webster",
+        "Not_Applicable": 22
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 55
+        "City": "Rural Wilkinson",
+        "Not_Applicable": 55
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 23
+        "City": "Rural Winston",
+        "Not_Applicable": 23
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Rural Yalobusha",
+        "Not_Applicable": 24
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 51
+        "City": "Rural Yazoo",
+        "Not_Applicable": 51
     },
     {
-        "city": "Ruth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Ruth",
+        "Not_Applicable": 4
     },
     {
-        "city": "Sallis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Sallis",
+        "Not_Applicable": 10
     },
     {
-        "city": "Saltillo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 50
+        "City": "Saltillo",
+        "Not_Applicable": 50
     },
     {
-        "city": "Sandersville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Sandersville",
+        "Not_Applicable": 8
     },
     {
-        "city": "Sandy",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sandy Hook",
+        "Not_Applicable": 1
     },
     {
-        "city": "Sarah",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Sarah",
+        "Not_Applicable": 5
     },
     {
-        "city": "Sardis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 49
+        "City": "Sardis",
+        "Not_Applicable": 49
     },
     {
-        "city": "Satartia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Satartia",
+        "Not_Applicable": 4
     },
     {
-        "city": "Saucier",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 51
+        "City": "Saucier",
+        "Not_Applicable": 51
     },
     {
-        "city": "Schlater",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Schlater",
+        "Not_Applicable": 2
     },
     {
-        "city": "Scooba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Scooba",
+        "Not_Applicable": 7
     },
     {
-        "city": "Sebastopol",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Sebastopol",
+        "Not_Applicable": 6
     },
     {
-        "city": "Seminary",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Seminary",
+        "Not_Applicable": 5
     },
     {
-        "city": "Senatobia",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 100
+        "City": "Senatobia",
+        "Not_Applicable": 104
     },
     {
-        "city": "Shannon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 35
+        "City": "Shannon",
+        "Not_Applicable": 35
     },
     {
-        "city": "Shaw",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Shaw",
+        "Not_Applicable": 1
     },
     {
-        "city": "Shelby",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Shelby",
+        "Not_Applicable": 4
     },
     {
-        "city": "Sherman",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 11
+        "City": "Sherman",
+        "Not_Applicable": 12
     },
     {
-        "city": "Shivers",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Shivers",
+        "Not_Applicable": 1
     },
     {
-        "city": "Shubuta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Shubuta",
+        "Not_Applicable": 3
     },
     {
-        "city": "Shuqualak",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Shuqualak",
+        "Not_Applicable": 18
     },
     {
-        "city": "Sibley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sibley",
+        "Not_Applicable": 1
     },
     {
-        "city": "Sidon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Sidon",
+        "Not_Applicable": 3
     },
     {
-        "city": "Silver",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Silver Creek",
+        "Not_Applicable": 4
     },
     {
-        "city": "Smithville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 6
+        "City": "Smithville",
+        "Not_Applicable": 7
     },
     {
-        "city": "Sontag",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sontag",
+        "Not_Applicable": 1
     },
     {
-        "city": "Soso",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Soso",
+        "Not_Applicable": 7
     },
     {
-        "city": "Southaven",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 693
+        "City": "Southaven",
+        "Not_Applicable": 697
     },
     {
-        "city": "Star",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Star",
+        "Not_Applicable": 2
     },
     {
-        "city": "Starkville",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 560
+        "City": "Starkville",
+        "Not_Applicable": 563
     },
     {
-        "city": "Steens",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Steens",
+        "Not_Applicable": 1
     },
     {
-        "city": "Stennis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Stennis Space Center",
+        "Not_Applicable": 2
     },
     {
-        "city": "Stewart",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Stewart",
+        "Not_Applicable": 2
     },
     {
-        "city": "Stringer",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Stringer",
+        "Not_Applicable": 7
     },
     {
-        "city": "Sturgis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sturgis",
+        "Not_Applicable": 1
     },
     {
-        "city": "Summit",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 56
+        "City": "Summit",
+        "Not_Applicable": 56
     },
     {
-        "city": "Sumrall",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Sumrall",
+        "Not_Applicable": 21
     },
     {
-        "city": "Sylvarena",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Sylvarena",
+        "Not_Applicable": 2
     },
     {
-        "city": "Taylor",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Taylor",
+        "Not_Applicable": 3
     },
     {
-        "city": "Taylorsville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Taylorsville",
+        "Not_Applicable": 4
     },
     {
-        "city": "Tchula",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tchula",
+        "Not_Applicable": 1
     },
     {
-        "city": "Terry",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 40
+        "City": "Terry",
+        "Not_Applicable": 40
     },
     {
-        "city": "Thompson",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Thompson",
+        "Not_Applicable": 1
     },
     {
-        "city": "Tillatoba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Tillatoba",
+        "Not_Applicable": 6
     },
     {
-        "city": "Tiplersville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tiplersville",
+        "Not_Applicable": 1
     },
     {
-        "city": "Tishomingo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tishomingo",
+        "Not_Applicable": 1
     },
     {
-        "city": "Toccopola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Toccopola",
+        "Not_Applicable": 1
     },
     {
-        "city": "Toomsuba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Toomsuba",
+        "Not_Applicable": 1
     },
     {
-        "city": "Town",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Town Of Walls",
+        "Not_Applicable": 28
     },
     {
-        "city": "Tunica",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 43
+        "City": "Tunica",
+        "Not_Applicable": 44
     },
     {
-        "city": "Tupelo",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 850
+        "City": "Tupelo",
+        "Not_Applicable": 854
     },
     {
-        "city": "Tutwiler",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Tutwiler",
+        "Not_Applicable": 2
     },
     {
-        "city": "Tylertown",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 30
+        "City": "Tylertown",
+        "Not_Applicable": 30
     },
     {
-        "city": "Union",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Union",
+        "Not_Applicable": 3
     },
     {
-        "city": "Union",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Union Church",
+        "Not_Applicable": 8
     },
     {
-        "city": "University",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "University",
+        "Not_Applicable": 3
     },
     {
-        "city": "Utica",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Utica",
+        "Not_Applicable": 15
     },
     {
-        "city": "Vaiden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Vaiden",
+        "Not_Applicable": 6
     },
     {
-        "city": "Vancleave",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Vancleave",
+        "Not_Applicable": 2
     },
     {
-        "city": "Vardaman",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 17
+        "City": "Vardaman",
+        "Not_Applicable": 18
     },
     {
-        "city": "Vaughan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Vaughan",
+        "Not_Applicable": 6
     },
     {
-        "city": "Verona",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 57
+        "City": "Verona",
+        "Not_Applicable": 59
     },
     {
-        "city": "Vicksburg",
-        "alcohol_involved": 4,
-        "not_alcohol_involved": 334
+        "City": "Vicksburg",
+        "Not_Applicable": 338
     },
     {
-        "city": "Victoria",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Victoria",
+        "Not_Applicable": 6
     },
     {
-        "city": "Walnut",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Walnut",
+        "Not_Applicable": 19
     },
     {
-        "city": "Walnut",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Walnut Grove",
+        "Not_Applicable": 2
     },
     {
-        "city": "Water",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Water Valley",
+        "Not_Applicable": 20
     },
     {
-        "city": "Waveland",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 100
+        "City": "Waveland",
+        "Not_Applicable": 101
     },
     {
-        "city": "Waynesboro",
-        "alcohol_involved": 3,
-        "not_alcohol_involved": 101
+        "City": "Waynesboro",
+        "Not_Applicable": 104
     },
     {
-        "city": "Weir",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Weir",
+        "Not_Applicable": 4
     },
     {
-        "city": "Wesson",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Wesson",
+        "Not_Applicable": 20
     },
     {
-        "city": "West",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "West",
+        "Not_Applicable": 5
     },
     {
-        "city": "West",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "West Point",
+        "Not_Applicable": 107
     },
     {
-        "city": "Wheeler",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Wheeler",
+        "Not_Applicable": 1
     },
     {
-        "city": "Wiggins",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 102
+        "City": "Wiggins",
+        "Not_Applicable": 103
     },
     {
-        "city": "Winona",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 26
+        "City": "Winona",
+        "Not_Applicable": 26
     },
     {
-        "city": "Woodland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Woodland",
+        "Not_Applicable": 3
     },
     {
-        "city": "Woodville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 34
+        "City": "Woodville",
+        "Not_Applicable": 34
     },
     {
-        "city": "Yazoo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 98
+        "City": "Yazoo City",
+        "Not_Applicable": 98
     },
     {
-        "city": "Zama",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Zama",
+        "Not_Applicable": 2
     }
-]
+];
 
-
-export default dataInj ;
+export default dataInj;

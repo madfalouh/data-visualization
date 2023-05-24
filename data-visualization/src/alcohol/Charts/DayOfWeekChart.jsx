@@ -75,7 +75,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: "Monthly Alcohol Involvement",
+      text: " Alcohol Related Crashes",
       style: {
         color: "#ffffff",
       },
@@ -119,21 +119,21 @@ console.log(chartWidth);
         borderWidth: 1,
       },
       {
-        name: "Type AB",
+        name: "Type A&B",
         data: dataAB.datasets[0].data,
         color: Highcharts.getOptions().colors[1],
         borderColor: Highcharts.getOptions().colors[1],
         borderWidth: 1,
       },
       {
-        name: "All Injuries",
+        name: "All Fatalities", 
         data: dataFatalities.datasets[0].data,
         color: Highcharts.getOptions().colors[2],
         borderColor: Highcharts.getOptions().colors[2],
         borderWidth: 1,
       },
       {
-        name: "All Fatalities",
+        name: "All Injuries",
         data: dataInjuries.datasets[0].data,
         color: Highcharts.getOptions().colors[3],
         borderColor: Highcharts.getOptions().colors[3],
@@ -167,7 +167,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: "Monthly Not Alcohol Involved",
+      text: " Not Alcohol Involved",
       style: {
         color: "#ffffff",
       },
@@ -211,7 +211,7 @@ console.log(chartWidth);
         borderWidth: 1,
       },
       {
-        name: "Type AB",
+        name: "Type A&B",
         data: dataAB.datasets[1].data,
         color: Highcharts.getOptions().colors[1],
         borderColor: Highcharts.getOptions().colors[1],
@@ -219,7 +219,7 @@ console.log(chartWidth);
       },
 
       {
-        name: "All Fatalities",
+        name: "All Injuries",
         data: dataInjuries.datasets[1].data,
         color: Highcharts.getOptions().colors[3],
         borderColor: Highcharts.getOptions().colors[3],

@@ -9,8 +9,8 @@ import dataInj from "./alcohol/MapData/AllINJ_city/dataAllinj";
 import Fatal_cities from "./alcohol/MapData/FatalitiesCities/Fatal_city";
 import dataA_city from "./alcohol/MapData/typeA_city/dataA_city";
 import dataAB_city from "./alcohol/MapData/typeAB_city/typeAB_city";
-const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoibWFkZmFsb3VoIiwiYSI6ImNsaGducmV3MzBmcmkzc2w5c25zY2ZsaTkifQ.qOZpdZGPS6IiY3YZfMqlHQ";
+
+const MAPBOX_ACCESS_TOKEN ="pk.eyJ1IjoibWFkZmFsb3VoIiwiYSI6ImNsaGducmV3MzBmcmkzc2w5c25zY2ZsaTkifQ.qOZpdZGPS6IiY3YZfMqlHQ";
 const MAPBOX_STYLE = "mapbox://styles/madfalouh/clhz3clmy04hb01p44ugbemsr";
 
 const CityMap = () => {
@@ -34,57 +34,49 @@ const CityMap = () => {
     return geojsonCopy;
   }
 
-  function addPropertiesToGeojsonftls(originalData, geojson) {
-    const geojsonCopy = JSON.parse(JSON.stringify(geojson));
+function addPropertiesToGeojsonftls(originalData, geojson) {
+  const geojsonCopy = JSON.parse(JSON.stringify(geojson));
 
-    geojsonCopy.features.forEach(function (feature) {
-      const city = originalData.find(function (c) {
-        return c.city.toLowerCase() === feature.properties.name.toLowerCase();
-      });
-
-
-      if (city) {
-
-       
-        feature.properties.Fatalities = city.Fatalities || 0;
-
-      }
+  geojsonCopy.features.forEach(function (feature) {
+    const city = originalData.find(function (c) {
+      return c.city.toLowerCase() === feature.properties.name.toLowerCase();
     });
 
-    return geojsonCopy;
-  }
+    feature.properties.Fatalities = city ? city.Fatalities || 0 : 0;
+  });
 
-const geojsonDataA = addPropertiesToGeojson(dataA_city, data);
+  return geojsonCopy;
+}
 
-const geojsonDataFtls = addPropertiesToGeojsonftls(Fatal_cities, data);
 
-const geojsonDataALL = addPropertiesToGeojson(dataInj, data);
+  const geojsonDataA = addPropertiesToGeojson(dataA_city, data);
+  const geojsonDataFtls = addPropertiesToGeojsonftls(Fatal_cities, data);
+  const geojsonDataALL = addPropertiesToGeojson(dataInj, data);
+  const geojsonDataAB = addPropertiesToGeojson(dataAB_city, data);
 
-const geojsonDataAB = addPropertiesToGeojson(dataAB_city, data);
-
-const [fatalities, setFatalities] = useState(false);
-
-const [datMap, setDataMap] = useState(geojsonDataALL);
-
+  const [fatalities, setFatalities] = useState(false);
+  const [datMap, setDataMap] = useState(geojsonDataALL);
 
 const handleOptionChange = (event) => {
-
   const value = event.target.value;
+  let updatedDataMap;
+
   if (value === "All Injuries") {
-    setDataMap(geojsonDataALL);
+    updatedDataMap = addPropertiesToGeojson(dataInj, data);
     setFatalities(false);
   } else if (value === "Type A") {
-    setDataMap(geojsonDataA);
+    updatedDataMap = addPropertiesToGeojson(dataA_city, data);
     setFatalities(false);
   } else if (value === "Type A & B") {
-    setDataMap(geojsonDataAB);
+    updatedDataMap = addPropertiesToGeojson(dataAB_city, data);
     setFatalities(false);
   } else if (value === "Fatalities") {
-    setDataMap(geojsonDataFtls);
+    updatedDataMap = addPropertiesToGeojsonftls(Fatal_cities, data);
     setFatalities(true);
   }
-};
 
+  setDataMap(updatedDataMap);
+};
 
   const features = datMap.features;
 
@@ -92,14 +84,12 @@ const handleOptionChange = (event) => {
 
   for (const feature of features) {
     if (feature.properties && feature.properties.alcoholInvolved) {
-      const notAlcoholInvolved = feature.properties.alcoholInvolved;
-      if (notAlcoholInvolved > maxAlcoholInvolved) {
-        maxAlcoholInvolved = notAlcoholInvolved;
+      const alcoholInvolved = feature.properties.alcoholInvolved;
+      if (alcoholInvolved > maxAlcoholInvolved) {
+        maxAlcoholInvolved = alcoholInvolved;
       }
     }
   }
-
-  console.log(maxAlcoholInvolved);
 
   let maxNotAlcoholInvolved = 0;
 
@@ -116,16 +106,12 @@ const handleOptionChange = (event) => {
 
   for (const feature of features) {
     if (feature.properties && feature.properties.Fatalities) {
-
-
-      const notAlcoholInvolved = feature.properties.Fatalities;
-      if (notAlcoholInvolved > maxNotAlcoholInvolvedFatalities) {
-        maxNotAlcoholInvolvedFatalities = notAlcoholInvolved;
+      const fatalities = feature.properties.Fatalities;
+      if (fatalities > maxNotAlcoholInvolvedFatalities) {
+        maxNotAlcoholInvolvedFatalities = fatalities;
       }
     }
   }
-
-console.log(datMap)
 
   useMapboxx(
     mapContainer,
@@ -141,22 +127,18 @@ console.log(datMap)
 
   return (
     <>
-      {" "}
       <div ref={mapContainer} className="map-container" />
       <div className="select-type">
         <div className="select-dropdown" onChange={handleOptionChange}>
           <select>
-            <option value="All Injuries">All, Injuries</option>
+            <option value="All Injuries">All Injuries</option>
             <option value="Fatalities">Fatalities</option>
             <option value="Type A">Type A</option>
             <option value="Type A & B">Type A & B</option>
           </select>
         </div>
 
-        <div
-          className={`toggle   ${true && "show-fatal"}   `}
-          title={switchData ? "Not alcohol Involved" : "Alcohol Involved"}
-        >
+        <div className={` ${!fatalities &&  "toggle" }   ${fatalities && "show-fatal"}`} title={switchData ? "Not alcohol Involved" : "Alcohol Involved"}>
           <p>Alcohol Involved</p>
           <input
             type="checkbox"
@@ -167,11 +149,11 @@ console.log(datMap)
               });
             }}
           />
-
           <label htmlFor="a"></label>
-          <p>Alcohil Not Involved</p>
+          <p>Alcohol Not Involved</p>
         </div>
 
+        <div className="legend-"></div>
       </div>
     </>
   );
