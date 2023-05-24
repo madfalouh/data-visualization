@@ -7,7 +7,6 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
   const map = useRef(null);
   const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
-  const popup = useRef(null);
 
   useEffect(() => {
     if (!container.current) return;
@@ -37,42 +36,29 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
       createLegend();
       addLayer();
 
-      // Create a new Popup instance
-      popup.current = new mapboxgl.Popup({
+      let popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
       });
 
-      // Attach mousemove event handler to display pop-up on hover
-      map.current.on('mousemove', 'counties-layer', (e) => {
-        const feature = e.features[0];
-        const coordinates = e.lngLat;
+map.current.on('mouseenter', currentLayerId.current, function (e) {
+  map.current.getCanvas().style.cursor = 'pointer';
+  
+  var description = `
+    <h3>${e.features[0].properties.NAME}</h3>
+    <p>Cases: ${e.features[0].properties.alcoholInvolved}</p>
+  `;
 
-        // Retrieve the county data
-        const countyData = feature.properties;
+  popup.setLngLat(e.lngLat).setHTML(description).addTo(map.current);
+});
 
-        // Set the HTML content of the pop-up using the county data
-        const popupContent = `
-          <h3>${countyData.NAME}</h3>
-          <h3>Fatalities: ${countyData.Fatalities}</h3>
+map.current.on('mouseout', function () {
+  map.current.getCanvas().style.cursor = '';
+  popup.remove();
+});
 
-        `;
 
-        popup.current
-          .setLngLat(coordinates)
-          .setHTML(popupContent)
-          .addTo(map.current);
-      });
 
-      // Hide the pop-up on mouseout
-      map.current.on('mouseout', 'counties-layer', () => {
-        popup.current.remove();
-      });
-
-      // Close the pop-up on map click
-      map.current.on('click', () => {
-        popup.current.remove();
-      });
     });
 
     return () => {

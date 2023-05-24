@@ -5,6 +5,46 @@ position: relative;
   width: 100%;
 }
 
+
+.mapboxgl-popup {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+position: relative;
+    color: #000000;
+    border-radius: 4px;
+    padding: 10px 30px;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.mapboxgl-popup-content  p  {
+    width: 100%;
+    font-size: 16px;
+    color: #000000;
+    line-height: 0;
+}
+
+.mapboxgl-popup-close-button {
+position: absolute;
+top: 0;
+left: 0;
+box-shadow: #000000;
+border: none;
+color: #000000cb;
+border-radius: 3px;
+font-size:20px ;
+background-color: #ffffff;
+outline: none;
+cursor: pointer;
+}
+
+.mapboxgl-popup-close-button:hover {
+color: #0000008e;
+}
+
 .toggle {
   --toggle-width: 60px;
   --toggle-height: 30px;

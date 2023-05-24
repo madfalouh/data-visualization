@@ -19,7 +19,6 @@ import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { AddRoad, AssistWalker, DirectionsCar } from "@mui/icons-material";
 import TabCard from "./TabCard";
 
-
 import MonthChart from "./alcohol/Charts/monthChart";
 import TimeOfDayChart from "./alcohol/Charts/timeOfDayChart";
 import DayOfWeekChar from "./alcohol/Charts/DayOfWeekChart";
@@ -65,7 +64,7 @@ import GenderChart_Child from "./child/Charts/GenderChart_Child";
 import RaceChart_Child from "./child/Charts/RaceChart_Child";
 import TimeOfDayChart_Child from "./child/Charts/TimeOfDayChart_Child";
 import MonthChart_Child from "./child/Charts/MonthChart_Child";
-import SpeedIcon from '@mui/icons-material/Speed';
+import SpeedIcon from "@mui/icons-material/Speed";
 import AgeChart_INJ from "./inj/Charts/AgeChart_INJ";
 import DayOfWeekChart_INJ from "./inj/Charts/DayOfWeekChart_INJ";
 import GenderChart_INJ from "./inj/Charts/GenderChart_INJ";
@@ -93,7 +92,6 @@ import MonthChart_Occ from "./occupant/Charts/MonthChart_Occ";
 import RoadChart_Occ from "./occupant/Charts/RoadChart_Occ";
 import VehiculeChart_Occ from "./occupant/Charts/VehiculeChart_Occ";
 
-
 import EscalatorWarningIcon from "@mui/icons-material/EscalatorWarning";
 import AgeChart_UN from "./unbelt/Charts/AgeChart_UN";
 import DayOfWeekChart_UN from "./unbelt/Charts/DayOfWeekChart_UN";
@@ -113,6 +111,12 @@ import CountyChart_Drug from "./drug/Charts/CountyChart_Drug";
 import CityChart_Drug from "./drug/Charts/CityChart_Drug";
 import CityChart_BC from "./bicycle/Charts/CityChart_BC";
 import CountyChart_BC from "./bicycle/Charts/CountyChart_BC";
+import CityChart_mtrc from "./mtrcycl/Charts/CityChart_mtrc";
+import CountyChart_mtrc from "./mtrcycl/Charts/CountyChart_mtrc";
+import CityChart_UN from "./unbelt/Charts/CityChart_UN";
+import CountyChart_UN from "./unbelt/Charts/CountyChart_UN";
+import CityChart_OCC from "./occupant/Charts/CityChart_OCC";
+import CountyChart_OCC from "./occupant/Charts/CountyChart_OCC";
 Chart.register(CategoryScale);
 
 function App() {
@@ -143,8 +147,8 @@ function App() {
       <GenderChart_Drug></GenderChart_Drug>,
       <RaceChart_Drug></RaceChart_Drug>,
       <AgeChart_Drug></AgeChart_Drug>,
-      <CityChart_Drug></CityChart_Drug> ,
-      <CountyChart_Drug></CountyChart_Drug> ,
+      <CityChart_Drug></CityChart_Drug>,
+      <CountyChart_Drug></CountyChart_Drug>,
 
       <VehiculeChart_Drug></VehiculeChart_Drug>,
       <RoadChart_Drug></RoadChart_Drug>,
@@ -159,8 +163,8 @@ function App() {
       <GenderChart_Occ></GenderChart_Occ>,
       <RaceChart_Occ></RaceChart_Occ>,
       <AgeChart_Occ></AgeChart_Occ>,
-      <CityMap></CityMap>,
-      <CountyMap></CountyMap>,
+      <CityChart_OCC></CityChart_OCC>,
+      <CountyChart_OCC></CountyChart_OCC>,
       <VehiculeChart_Occ></VehiculeChart_Occ>,
       <RoadChart_Occ></RoadChart_Occ>,
     ],
@@ -173,9 +177,9 @@ function App() {
       <GenderChart_Speed></GenderChart_Speed>,
       <RaceChart_Speed></RaceChart_Speed>,
       <AgeChart_Speed></AgeChart_Speed>,
-      
-      <CityChart_Speed></CityChart_Speed> ,
-      <CountyChart_Speed></CountyChart_Speed> ,
+
+      <CityChart_Speed></CityChart_Speed>,
+      <CountyChart_Speed></CountyChart_Speed>,
 
       <VehiculeChart_Speed></VehiculeChart_Speed>,
 
@@ -191,8 +195,8 @@ function App() {
       <RaceChart_UN></RaceChart_UN>,
       <AgeChart_UN></AgeChart_UN>,
 
-      <CityMap></CityMap>,
-      <CountyMap></CountyMap>,
+      <CityChart_UN></CityChart_UN>,
+      <CountyChart_UN></CountyChart_UN>,
 
       <VehiculeChart_UN></VehiculeChart_UN>,
       <RoadChart_UN></RoadChart_UN>,
@@ -238,22 +242,29 @@ function App() {
       <GenderChart_Child></GenderChart_Child>,
       <RaceChart_Child></RaceChart_Child>,
       <AgeChart_Child></AgeChart_Child>,
-      <CityMap></CityMap>,
-      <CountyMap></CountyMap>,
+      <NoData></NoData>,
+      <NoData></NoData>,
+
       <NoData></NoData>,
       <NoData></NoData>,
     ],
 
     [
       //8
-      <AgeChart_mtrc></AgeChart_mtrc>,
+
+      <MonthChart_mtrc></MonthChart_mtrc>,
+      <TimeOfDayChart_mtrc></TimeOfDayChart_mtrc>,
       <DayOfWeekChart_mtrc></DayOfWeekChart_mtrc>,
       <GenderChart_mtrc></GenderChart_mtrc>,
       <RaceChart_mtrc></RaceChart_mtrc>,
-      <TimeOfDayChart_mtrc></TimeOfDayChart_mtrc>,
-      <MonthChart_mtrc></MonthChart_mtrc>,
-      <RoadChart_mtrc></RoadChart_mtrc>,
+      <AgeChart_mtrc></AgeChart_mtrc>,
+
+      <CityChart_mtrc></CityChart_mtrc>,
+
+      <CountyChart_mtrc></CountyChart_mtrc>,
+
       <VehiculeChart_mtrc></VehiculeChart_mtrc>,
+      <RoadChart_mtrc></RoadChart_mtrc>,
     ],
 
     [
@@ -265,8 +276,8 @@ function App() {
       <GenderChart_Bicycle></GenderChart_Bicycle>,
       <AgeChart_Bicycle></AgeChart_Bicycle>,
 
-      <CityChart_BC></CityChart_BC> , 
-      <CountyChart_BC></CountyChart_BC> ,
+      <CityChart_BC></CityChart_BC>,
+      <CountyChart_BC></CountyChart_BC>,
       <VehiculeChart_Bicycle></VehiculeChart_Bicycle>,
       <RoadChart_Bicycle></RoadChart_Bicycle>,
     ],

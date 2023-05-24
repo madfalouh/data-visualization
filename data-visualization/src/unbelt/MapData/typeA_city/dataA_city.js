@@ -1,1545 +1,1544 @@
-const dataA_city = [
-  
+const dataInj = [
     {
-        "city": "Abbeville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Abbeville",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "Aberdeen",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Aberdeen",
+        "Belted": 4,
+        "unbelted": 4
     },
     {
-        "city": "Ackerman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Ackerman",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Alcorn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Alcorn State University",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Amory",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Amory",
+        "Belted": 10,
+        "unbelted": 0
     },
     {
-        "city": "Baldwyn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Baldwyn",
+        "Belted": 6,
+        "unbelted": 1
     },
     {
-        "city": "Bassfield",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Bassfield",
+        "Belted": 2,
+        "unbelted": 1
     },
     {
-        "city": "Batesville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 31
+        "City": "Batesville",
+        "Belted": 29,
+        "unbelted": 3
     },
     {
-        "city": "Bay",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Bay Saint Louis",
+        "Belted": 7,
+        "unbelted": 5
     },
     {
-        "city": "Bay",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Bay Springs",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Beaumont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Beaumont",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Belmont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Belmont",
+        "Belted": 0,
+        "unbelted": 3
     },
     {
-        "city": "Belzoni",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Belzoni",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Benton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Benton",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Bentonia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Bentonia",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Big",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Big Creek",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Biloxi",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Biloxi",
+        "Belted": 20,
+        "unbelted": 2
     },
     {
-        "city": "Blue",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Blue Springs",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Bogue",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Bogue Chitto",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "Booneville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Booneville",
+        "Belted": 7,
+        "unbelted": 1
     },
     {
-        "city": "Boyle",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Boyle",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Brandon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Brandon",
+        "Belted": 17,
+        "unbelted": 4
     },
     {
-        "city": "Brookhaven",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Brookhaven",
+        "Belted": 19,
+        "unbelted": 3
     },
     {
-        "city": "Brooksville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Brooksville",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Bruce",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Bruce",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Burnsville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Burnsville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Byhalia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Byhalia",
+        "Belted": 2,
+        "unbelted": 2
     },
     {
-        "city": "Byram",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Byram",
+        "Belted": 8,
+        "unbelted": 2
     },
     {
-        "city": "Caledonia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Caledonia",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Calhoun",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Calhoun City",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Canton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Canton",
+        "Belted": 14,
+        "unbelted": 0
     },
     {
-        "city": "Carriere",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Carriere",
+        "Belted": 6,
+        "unbelted": 0
     },
     {
-        "city": "Carthage",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Carthage",
+        "Belted": 11,
+        "unbelted": 2
     },
     {
-        "city": "Chalybeate",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Chalybeate",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "Charleston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Charleston",
+        "Belted": 0,
+        "unbelted": 2
     },
     {
-        "city": "Clara",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Clara",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Clarksdale",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 13
+        "City": "Clarksdale",
+        "Belted": 11,
+        "unbelted": 3
     },
     {
-        "city": "Clermont",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Clermont Harbor",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Cleveland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Cleveland",
+        "Belted": 11,
+        "unbelted": 2
     },
     {
-        "city": "Clinton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Clinton",
+        "Belted": 16,
+        "unbelted": 3
     },
     {
-        "city": "Coldwater",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Coldwater",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Collins",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Collins",
+        "Belted": 12,
+        "unbelted": 2
     },
     {
-        "city": "Columbia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Columbia",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Columbus",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 26
+        "City": "Columbus",
+        "Belted": 22,
+        "unbelted": 5
     },
     {
-        "city": "Como",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Como",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Conehatta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Conehatta",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Corinth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Corinth",
+        "Belted": 18,
+        "unbelted": 3
     },
     {
-        "city": "Courtland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Courtland",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Crystal",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Crystal Springs",
+        "Belted": 3,
+        "unbelted": 2
     },
     {
-        "city": "D'Iberville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "D'Iberville",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Dekalb",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Dekalb",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Derma",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Derma",
+        "Belted": 3,
+        "unbelted": 1
     },
     {
-        "city": "Diamondhead",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Diamondhead",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Durant",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Durant",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Ecru",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Ecru",
+        "Belted": 6,
+        "unbelted": 0
     },
     {
-        "city": "Eden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Eden",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Edwards",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Edwards",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Elliott",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Elliott",
+        "Belted": 1,
+        "unbelted": 4
     },
     {
-        "city": "Ellisville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Ellisville",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Ethel",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Ethel",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Eucutta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Eucutta",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Eupora",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Eupora",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Falkner",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Falkner",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Fernwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Fernwood",
+        "Belted": 2,
+        "unbelted": 1
     },
     {
-        "city": "Florence",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Florence",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Flowood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Flowood",
+        "Belted": 13,
+        "unbelted": 3
     },
     {
-        "city": "Forest",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Forest",
+        "Belted": 7,
+        "unbelted": 3
     },
     {
-        "city": "French",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "French Camp",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Fulton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Fulton",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Gautier",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Gautier",
+        "Belted": 13,
+        "unbelted": 2
     },
     {
-        "city": "Gloster",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Gloster",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Gore",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Gore Springs",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Greenville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 22
+        "City": "Greenville",
+        "Belted": 20,
+        "unbelted": 3
     },
     {
-        "city": "Greenwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Greenwood",
+        "Belted": 10,
+        "unbelted": 1
     },
     {
-        "city": "Greenwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Greenwood Springs",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Grenada",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 27
+        "City": "Grenada",
+        "Belted": 21,
+        "unbelted": 6
     },
     {
-        "city": "Gulfport",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 75
+        "City": "Gulfport",
+        "Belted": 55,
+        "unbelted": 21
     },
     {
-        "city": "Guntown",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Guntown",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Hattiesbur",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 49
+        "City": "Hattiesburg",
+        "Belted": 42,
+        "unbelted": 8
     },
     {
-        "city": "Hazlehurst",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Hazlehurst",
+        "Belted": 8,
+        "unbelted": 1
     },
     {
-        "city": "Hermanville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Hermanville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Hernando",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Hernando",
+        "Belted": 6,
+        "unbelted": 1
     },
     {
-        "city": "Hickory",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Hickory",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Holcomb",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Holcomb",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Holly",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Holly Bluff",
+        "Belted": 0,
+        "unbelted": 3
     },
     {
-        "city": "Holly",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Holly Springs",
+        "Belted": 7,
+        "unbelted": 1
     },
     {
-        "city": "Horn",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Horn Lake",
+        "Belted": 9,
+        "unbelted": 0
     },
     {
-        "city": "Houston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Houston",
+        "Belted": 2,
+        "unbelted": 1
     },
     {
-        "city": "Indianola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Indianola",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Isola",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Isola",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Itta",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Itta Bena",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Iuka",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Iuka",
+        "Belted": 18,
+        "unbelted": 0
     },
     {
-        "city": "Jackson",
-        "alcohol_involved": 5,
-        "not_alcohol_involved": 201
+        "City": "Jackson",
+        "Belted": 189,
+        "unbelted": 17
     },
     {
-        "city": "Kilmichael",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Kilmichael",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "Kiln",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Kiln",
+        "Belted": 6,
+        "unbelted": 0
     },
     {
-        "city": "Kosciusko",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Kosciusko",
+        "Belted": 11,
+        "unbelted": 0
     },
     {
-        "city": "Kossuth",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Kossuth",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Lake",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Lake Cormorant",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Laurel",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 29
+        "City": "Laurel",
+        "Belted": 27,
+        "unbelted": 2
     },
     {
-        "city": "Leakesville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Leakesville",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Lexington",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Lexington",
+        "Belted": 7,
+        "unbelted": 0
     },
     {
-        "city": "Long",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Long Beach",
+        "Belted": 14,
+        "unbelted": 1
     },
     {
-        "city": "Lorman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Lorman",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Louin",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Louin",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Louisville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Louisville",
+        "Belted": 5,
+        "unbelted": 2
     },
     {
-        "city": "Lucedale",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Lucedale",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Lyon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Lyon",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Macon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 27
+        "City": "Macon",
+        "Belted": 25,
+        "unbelted": 2
     },
     {
-        "city": "Madison",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Madison",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Magee",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Magee",
+        "Belted": 14,
+        "unbelted": 6
     },
     {
-        "city": "Magnolia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Magnolia",
+        "Belted": 6,
+        "unbelted": 4
     },
     {
-        "city": "Marks",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Marks",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Mathiston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Mathiston",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "McComb",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "McComb",
+        "Belted": 11,
+        "unbelted": 10
     },
     {
-        "city": "McHenry",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "McHenry",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "McLain",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "McLain",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Mendenhall",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Mendenhall",
+        "Belted": 6,
+        "unbelted": 0
     },
     {
-        "city": "Meridian",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 30
+        "City": "Meridian",
+        "Belted": 29,
+        "unbelted": 1
     },
     {
-        "city": "Merigold",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Merigold",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Michigan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Michigan City",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Mississippi",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Mississippi State",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Monticello",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Monticello",
+        "Belted": 2,
+        "unbelted": 2
     },
     {
-        "city": "Moorhead",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Moorhead",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Morgan",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Morgan City",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Morton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Morton",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Moss",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Moss",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Moss",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Moss Point",
+        "Belted": 9,
+        "unbelted": 2
     },
     {
-        "city": "Mound",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Mound Bayou",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Mount",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Mount Olive",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Mount",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Mount Pleasant",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Myrtle",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Myrtle",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Natchez",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 18
+        "City": "Natchez",
+        "Belted": 13,
+        "unbelted": 6
     },
     {
-        "city": "Nesbit",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Nesbit",
+        "Belted": 1,
+        "unbelted": 2
     },
     {
-        "city": "Neshoba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Neshoba",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Nettleton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Nettleton",
+        "Belted": 2,
+        "unbelted": 2
     },
     {
-        "city": "New",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "New Albany",
+        "Belted": 9,
+        "unbelted": 1
     },
     {
-        "city": "New",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "New Hebron",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Newton",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Newton",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Oak",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Oak Vale",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Oakland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Oakland",
+        "Belted": 3,
+        "unbelted": 1
     },
     {
-        "city": "Ocean",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Ocean Springs",
+        "Belted": 15,
+        "unbelted": 6
     },
     {
-        "city": "Olive",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 53
+        "City": "Olive Branch",
+        "Belted": 47,
+        "unbelted": 6
     },
     {
-        "city": "Oxford",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Oxford",
+        "Belted": 22,
+        "unbelted": 0
     },
     {
-        "city": "Pascagoula",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Pascagoula",
+        "Belted": 8,
+        "unbelted": 4
     },
     {
-        "city": "Pass",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Pass Christian",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Pattison",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Pattison",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Pearl",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 36
+        "City": "Pearl",
+        "Belted": 35,
+        "unbelted": 1
     },
     {
-        "city": "Pearlington",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Pearlington",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Pelahatchie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Pelahatchie",
+        "Belted": 9,
+        "unbelted": 0
     },
     {
-        "city": "Perkinston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Perkinston",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "Petal",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 17
+        "City": "Petal",
+        "Belted": 13,
+        "unbelted": 4
     },
     {
-        "city": "Philadelphia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Philadelphia",
+        "Belted": 13,
+        "unbelted": 1
     },
     {
-        "city": "Philipp",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Philipp",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Picayune",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Picayune",
+        "Belted": 16,
+        "unbelted": 5
     },
     {
-        "city": "Pittsboro",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Pittsboro",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Plantersville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Plantersville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Pleasant",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Pleasant Grove",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Polkville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Polkville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Pontotoc",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Pontotoc",
+        "Belted": 13,
+        "unbelted": 0
     },
     {
-        "city": "Pope",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Pope",
+        "Belted": 2,
+        "unbelted": 1
     },
     {
-        "city": "Poplarville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Poplarville",
+        "Belted": 7,
+        "unbelted": 1
     },
     {
-        "city": "Port",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Port Gibson",
+        "Belted": 6,
+        "unbelted": 0
     },
     {
-        "city": "Porterville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Porterville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Potts",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Potts Camp",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Preston",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Preston",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Pulaski",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Pulaski",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Purvis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Purvis",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Quitman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Quitman",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Raleigh",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Raleigh",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Raymond",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Raymond",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Red",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Red Banks",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Redwood",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Redwood",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Reform",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Reform",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Richland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Richland",
+        "Belted": 3,
+        "unbelted": 3
     },
     {
-        "city": "Ridgeland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Ridgeland",
+        "Belted": 11,
+        "unbelted": 1
     },
     {
-        "city": "Ripley",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Ripley",
+        "Belted": 4,
+        "unbelted": 4
     },
     {
-        "city": "Robinsonville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Robinsonville",
+        "Belted": 9,
+        "unbelted": 1
     },
     {
-        "city": "Roxie",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Roxie",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Ruleville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Ruleville",
+        "Belted": 9,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Adams",
+        "Belted": 4,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Rural Alcorn",
+        "Belted": 16,
+        "unbelted": 8
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Rural Amite",
+        "Belted": 9,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rural Attala",
+        "Belted": 1,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Rural Benton",
+        "Belted": 10,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 23
+        "City": "Rural Bolivar",
+        "Belted": 11,
+        "unbelted": 12
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Rural Calhoun",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Carroll",
+        "Belted": 8,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Rural Chickasaw",
+        "Belted": 9,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Rural Choctaw",
+        "Belted": 7,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Rural Claiborne",
+        "Belted": 14,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Rural Clarke",
+        "Belted": 4,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Rural Clay",
+        "Belted": 5,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Coahoma",
+        "Belted": 8,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Rural Copiah",
+        "Belted": 8,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Rural Covington",
+        "Belted": 4,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 49
+        "City": "Rural DeSoto",
+        "Belted": 39,
+        "unbelted": 10
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Rural Forrest",
+        "Belted": 11,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 8
+        "City": "Rural Franklin",
+        "Belted": 5,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 42
+        "City": "Rural George",
+        "Belted": 30,
+        "unbelted": 12
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Rural Greene",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Rural Grenada",
+        "Belted": 22,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Rural Hancock",
+        "Belted": 16,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 25
+        "City": "Rural Harrison",
+        "Belted": 22,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Rural Hinds",
+        "Belted": 15,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Rural Holmes",
+        "Belted": 9,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Rural Humphreys",
+        "Belted": 4,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Rural Itawamba",
+        "Belted": 15,
+        "unbelted": 7
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 79
+        "City": "Rural Jackson",
+        "Belted": 50,
+        "unbelted": 29
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 18
+        "City": "Rural Jasper",
+        "Belted": 14,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jefferson",
+        "Belted": 12,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jefferson Davis",
+        "Belted": 2,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Jones",
+        "Belted": 20,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Rural Kemper",
+        "Belted": 7,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Rural Lafayette",
+        "Belted": 10,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Lamar",
+        "Belted": 19,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 31
+        "City": "Rural Lauderdale",
+        "Belted": 23,
+        "unbelted": 8
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Rural Lawrence",
+        "Belted": 2,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Leake",
+        "Belted": 4,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 49
+        "City": "Rural Lee",
+        "Belted": 40,
+        "unbelted": 9
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Rural Leflore",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Rural Lincoln",
+        "Belted": 12,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 34
+        "City": "Rural Lowndes",
+        "Belted": 26,
+        "unbelted": 8
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 39
+        "City": "Rural Madison",
+        "Belted": 34,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Rural Marion",
+        "Belted": 13,
+        "unbelted": 7
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 29
+        "City": "Rural Marshall",
+        "Belted": 23,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 29
+        "City": "Rural Monroe",
+        "Belted": 17,
+        "unbelted": 12
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Rural Montgomery",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 26
+        "City": "Rural Neshoba",
+        "Belted": 19,
+        "unbelted": 7
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 23
+        "City": "Rural Newton",
+        "Belted": 22,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Noxubee",
+        "Belted": 7,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Oktibbeha",
+        "Belted": 16,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 17
+        "City": "Rural Panola",
+        "Belted": 12,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Pearl River",
+        "Belted": 20,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Rural Perry",
+        "Belted": 7,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Rural Pike",
+        "Belted": 16,
+        "unbelted": 5
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 22
+        "City": "Rural Pontotoc",
+        "Belted": 12,
+        "unbelted": 10
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Rural Prentiss",
+        "Belted": 9,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Rural Quitman",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 32
+        "City": "Rural Rankin",
+        "Belted": 26,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 19
+        "City": "Rural Scott",
+        "Belted": 13,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Rural Sharkey",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Rural Simpson",
+        "Belted": 17,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Rural Smith",
+        "Belted": 3,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Rural Stone",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 21
+        "City": "Rural Sunflower",
+        "Belted": 18,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Rural Tallahatchie",
+        "Belted": 9,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Rural Tate",
+        "Belted": 17,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Rural Tippah",
+        "Belted": 11,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 14
+        "City": "Rural Tishomingo",
+        "Belted": 11,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 15
+        "City": "Rural Tunica",
+        "Belted": 11,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 26
+        "City": "Rural Union",
+        "Belted": 20,
+        "unbelted": 6
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Rural Walthall",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 24
+        "City": "Rural Warren",
+        "Belted": 21,
+        "unbelted": 3
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Rural Washington",
+        "Belted": 9,
+        "unbelted": 4
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rural Wayne",
+        "Belted": 1,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Rural Webster",
+        "Belted": 9,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Rural Wilkinson",
+        "Belted": 1,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Rural Winston",
+        "Belted": 3,
+        "unbelted": 2
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Rural Yalobusha",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Rural",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 13
+        "City": "Rural Yazoo",
+        "Belted": 10,
+        "unbelted": 3
     },
     {
-        "city": "Sallis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Sallis",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Saltillo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Saltillo",
+        "Belted": 5,
+        "unbelted": 1
     },
     {
-        "city": "Sandersville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sandersville",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Sarah",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sarah",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Sardis",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Sardis",
+        "Belted": 9,
+        "unbelted": 3
     },
     {
-        "city": "Satartia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Satartia",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Saucier",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Saucier",
+        "Belted": 7,
+        "unbelted": 2
     },
     {
-        "city": "Sebastopol",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sebastopol",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Senatobia",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 16
+        "City": "Senatobia",
+        "Belted": 15,
+        "unbelted": 1
     },
     {
-        "city": "Shannon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Shannon",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Shelby",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Shelby",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Sherman",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sherman",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Shuqualak",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 9
+        "City": "Shuqualak",
+        "Belted": 9,
+        "unbelted": 0
     },
     {
-        "city": "Sidon",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sidon",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Silver",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Silver Creek",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Soso",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Soso",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Southaven",
-        "alcohol_involved": 2,
-        "not_alcohol_involved": 34
+        "City": "Southaven",
+        "Belted": 32,
+        "unbelted": 4
     },
     {
-        "city": "Starkville",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 21
+        "City": "Starkville",
+        "Belted": 21,
+        "unbelted": 1
     },
     {
-        "city": "Stewart",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Stewart",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Stringer",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Stringer",
+        "Belted": 1,
+        "unbelted": 1
     },
     {
-        "city": "Summit",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Summit",
+        "Belted": 2,
+        "unbelted": 3
     },
     {
-        "city": "Sumrall",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Sumrall",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Sylvarena",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Sylvarena",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Tchula",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tchula",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Terry",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 6
+        "City": "Terry",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Thompson",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Thompson",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Tishomingo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tishomingo",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Toomsuba",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Toomsuba",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Town",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 0
+        "City": "Town Of Walls",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Tupelo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 56
+        "City": "Tupelo",
+        "Belted": 52,
+        "unbelted": 4
     },
     {
-        "city": "Tylertown",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Tylertown",
+        "Belted": 0,
+        "unbelted": 1
     },
     {
-        "city": "Utica",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Utica",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Vaiden",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Vaiden",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Verona",
-        "alcohol_involved": 1,
-        "not_alcohol_involved": 5
+        "City": "Verona",
+        "Belted": 4,
+        "unbelted": 2
     },
     {
-        "city": "Vicksburg",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 11
+        "City": "Vicksburg",
+        "Belted": 11,
+        "unbelted": 0
     },
     {
-        "city": "Walnut",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Walnut",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Water",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 5
+        "City": "Water Valley",
+        "Belted": 5,
+        "unbelted": 0
     },
     {
-        "city": "Waveland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 4
+        "City": "Waveland",
+        "Belted": 4,
+        "unbelted": 0
     },
     {
-        "city": "Waynesboro",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "Waynesboro",
+        "Belted": 11,
+        "unbelted": 1
     },
     {
-        "city": "Wesson",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 7
+        "City": "Wesson",
+        "Belted": 7,
+        "unbelted": 0
     },
     {
-        "city": "West",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "West",
+        "Belted": 3,
+        "unbelted": 0
     },
     {
-        "city": "West",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 12
+        "City": "West Point",
+        "Belted": 12,
+        "unbelted": 0
     },
     {
-        "city": "Wiggins",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 10
+        "City": "Wiggins",
+        "Belted": 6,
+        "unbelted": 4
     },
     {
-        "city": "Winona",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 2
+        "City": "Winona",
+        "Belted": 2,
+        "unbelted": 0
     },
     {
-        "city": "Woodland",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Woodland",
+        "Belted": 1,
+        "unbelted": 0
     },
     {
-        "city": "Woodville",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 3
+        "City": "Woodville",
+        "Belted": 2,
+        "unbelted": 1
     },
     {
-        "city": "Yazoo",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 20
+        "City": "Yazoo City",
+        "Belted": 19,
+        "unbelted": 1
     },
     {
-        "city": "Zama",
-        "alcohol_involved": 0,
-        "not_alcohol_involved": 1
+        "City": "Zama",
+        "Belted": 1,
+        "unbelted": 0
     }
-]
+];
 
-export default dataA_city
+export default dataInj;

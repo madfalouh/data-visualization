@@ -1,81 +1,308 @@
-const Fatal_cities = [
-  { "city": "ABERDEEN", "Fatalities": 0 },
-  { "city": "BATESVILLE", "Fatalities": 0 },
-  { "city": "BAY SPRINGS", "Fatalities": 0 },
-  { "city": "BELMONT", "Fatalities": 0 },
-  { "city": "BILOXI", "Fatalities": 1 },
-  { "city": "BOLTON", "Fatalities": 0 },
-  { "city": "BOONEVILLE", "Fatalities": 0 },
-  { "city": "BRANDON", "Fatalities": 0 },
-  { "city": "BROOKHAVEN", "Fatalities": 0 },
-  { "city": "BROOKSVILLE", "Fatalities": 0 },
-  { "city": "CALHOUN city", "Fatalities": 0 },
-  { "city": "CANTON", "Fatalities": 0 },
-  { "city": "CARTHAGE", "Fatalities": 1 },
-  { "city": "CLARKSDALE", "Fatalities": 0 },
-  { "city": "CLEVELAND", "Fatalities": 0 },
-  { "city": "CLINTON", "Fatalities": 0 },
-  { "city": "COLUMBUS", "Fatalities": 1 },
-  { "city": "CORINTH", "Fatalities": 0 },
-  { "city": "D'IBERVILLE", "Fatalities": 0 },
-  { "city": "Did not occur within city limits", "Fatalities": 50 },
-  { "city": "DURANT", "Fatalities": 0 },
-  { "city": "FLORENCE", "Fatalities": 0 },
-  { "city": "GLOSTER", "Fatalities": 1 },
-  { "city": "GREENVILLE", "Fatalities": 0 },
-  { "city": "GREENWOOD", "Fatalities": 0 },
-  { "city": "GRENADA", "Fatalities": 0 },
-  { "city": "GULFPORT", "Fatalities": 0 },
-  { "city": "HATTIESBURG", "Fatalities": 0 },
-  { "city": "HERNANDO", "Fatalities": 0 },
-  { "city": "HOLLY SPRINGS", "Fatalities": 0 },
-  { "city": "INDIANOLA", "Fatalities": 0 },
-  { "city": "JACKSON", "Fatalities": 1 },
-  { "city": "LAUREL", "Fatalities": 0 },
-  { "city": "LEARNED", "Fatalities": 0 },
-  { "city": "LELAND", "Fatalities": 0 },
-  { "city": "LEXINGTON", "Fatalities": 0 },
-  { "city": "LONG BEACH", "Fatalities": 0 },
-  { "city": "LUCEDALE", "Fatalities": 0 },
-  { "city": "MACON", "Fatalities": 0 },
-  { "city": "MADISON", "Fatalities": 1 },
-  { "city": "MAGEE", "Fatalities": 0 },
-  { "city": "MAGNOLIA", "Fatalities": 0 },
-  { "city": "MCCOMB", "Fatalities": 0 },
-  { "city": "MENDENHALL", "Fatalities": 0 },
-  { "city": "MERIDIAN", "Fatalities": 1 },
-  { "city": "MONTICELLO", "Fatalities": 0 },
-  { "city": "MORTON", "Fatalities": 3 },
-  { "city": "MOSS POINT", "Fatalities": 0 },
-  { "city": "MOUND BAYOU", "Fatalities": 0 },
-  { "city": "NATCHEZ", "Fatalities": 1 },
-  { "city": "OLIVE BRANCH", "Fatalities": 0 },
-  { "city": "Other", "Fatalities": 1 },
-  { "city": "OXFORD", "Fatalities": 0 },
-  { "city": "PASCAGOULA", "Fatalities": 0 },
-  { "city": "PASS CHRISTIAN", "Fatalities": 0 },
-  { "city": "PEARL", "Fatalities": 0 },
-  { "city": "PICAYUNE", "Fatalities": 0 },
-  { "city": "RAYMOND", "Fatalities": 0 },
-  { "city": "RIDGELAND", "Fatalities": 0 },
-  { "city": "SALTILLO", "Fatalities": 0 },
-  { "city": "SENATOBIA", "Fatalities": 1 },
-  { "city": "SHANNON", "Fatalities": 0 },
-  { "city": "SOUTHAVEN", "Fatalities": 1 },
-  { "city": "STARKVILLE", "Fatalities": 0 },
-  { "city": "SUMMIT", "Fatalities": 0 },
-  { "city": "TCHULA", "Fatalities": 0 },
-  { "city": "TERRY", "Fatalities": 0 },
-  { "city": "TUPELO", "Fatalities": 1 },
-  { "city": "UTICA", "Fatalities": 0 },
-  { "city": "VARDAMAN", "Fatalities": 0 },
-  { "city": "WATER VALLEY", "Fatalities": 0 },
-  { "city": "WESSON", "Fatalities": 1 },
-  { "city": "WIGGINS", "Fatalities": 0 },
-  { "city": "WINONA", "Fatalities": 0 },
-  { "city": "WOODVILLE", "Fatalities": 0 },
-  { "city": "YAZOO city", "Fatalities": 0 }
-]
+const dataInj = [
+    {
+        "City": "ABERDEEN",
+        "Fatalities": 0
+    },
+    {
+        "City": "BATESVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "BAY SPRINGS",
+        "Fatalities": 1
+    },
+    {
+        "City": "BELMONT",
+        "Fatalities": 1
+    },
+    {
+        "City": "BILOXI",
+        "Fatalities": 0
+    },
+    {
+        "City": "BOLTON",
+        "Fatalities": 1
+    },
+    {
+        "City": "BOONEVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "BRANDON",
+        "Fatalities": 0
+    },
+    {
+        "City": "BROOKHAVEN",
+        "Fatalities": 0
+    },
+    {
+        "City": "BROOKSVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "CALHOUN CITY",
+        "Fatalities": 1
+    },
+    {
+        "City": "CANTON",
+        "Fatalities": 1
+    },
+    {
+        "City": "CARTHAGE",
+        "Fatalities": 0
+    },
+    {
+        "City": "CLARKSDALE",
+        "Fatalities": 0
+    },
+    {
+        "City": "CLEVELAND",
+        "Fatalities": 1
+    },
+    {
+        "City": "CLINTON",
+        "Fatalities": 0
+    },
+    {
+        "City": "COLUMBUS",
+        "Fatalities": 1
+    },
+    {
+        "City": "CORINTH",
+        "Fatalities": 0
+    },
+    {
+        "City": "D'IBERVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "Did not occur within city limits",
+        "Fatalities": 177
+    },
+    {
+        "City": "DURANT",
+        "Fatalities": 0
+    },
+    {
+        "City": "FLORENCE",
+        "Fatalities": 0
+    },
+    {
+        "City": "GLOSTER",
+        "Fatalities": 0
+    },
+    {
+        "City": "GREENVILLE",
+        "Fatalities": 1
+    },
+    {
+        "City": "GREENWOOD",
+        "Fatalities": 0
+    },
+    {
+        "City": "GRENADA",
+        "Fatalities": 0
+    },
+    {
+        "City": "GULFPORT",
+        "Fatalities": 3
+    },
+    {
+        "City": "HATTIESBURG",
+        "Fatalities": 0
+    },
+    {
+        "City": "HERNANDO",
+        "Fatalities": 0
+    },
+    {
+        "City": "HOLLY SPRINGS",
+        "Fatalities": 0
+    },
+    {
+        "City": "INDIANOLA",
+        "Fatalities": 1
+    },
+    {
+        "City": "JACKSON",
+        "Fatalities": 18
+    },
+    {
+        "City": "LAUREL",
+        "Fatalities": 0
+    },
+    {
+        "City": "LEARNED",
+        "Fatalities": 0
+    },
+    {
+        "City": "LELAND",
+        "Fatalities": 1
+    },
+    {
+        "City": "LEXINGTON",
+        "Fatalities": 0
+    },
+    {
+        "City": "LONG BEACH",
+        "Fatalities": 1
+    },
+    {
+        "City": "LUCEDALE",
+        "Fatalities": 1
+    },
+    {
+        "City": "MACON",
+        "Fatalities": 0
+    },
+    {
+        "City": "MADISON",
+        "Fatalities": 1
+    },
+    {
+        "City": "MAGEE",
+        "Fatalities": 0
+    },
+    {
+        "City": "MAGNOLIA",
+        "Fatalities": 1
+    },
+    {
+        "City": "MCCOMB",
+        "Fatalities": 0
+    },
+    {
+        "City": "MENDENHALL",
+        "Fatalities": 0
+    },
+    {
+        "City": "MERIDIAN",
+        "Fatalities": 0
+    },
+    {
+        "City": "MONTICELLO",
+        "Fatalities": 0
+    },
+    {
+        "City": "MORTON",
+        "Fatalities": 0
+    },
+    {
+        "City": "MOSS POINT",
+        "Fatalities": 2
+    },
+    {
+        "City": "MOUND BAYOU",
+        "Fatalities": 0
+    },
+    {
+        "City": "NATCHEZ",
+        "Fatalities": 0
+    },
+    {
+        "City": "OLIVE BRANCH",
+        "Fatalities": 0
+    },
+    {
+        "City": "Other",
+        "Fatalities": 1
+    },
+    {
+        "City": "OXFORD",
+        "Fatalities": 0
+    },
+    {
+        "City": "PASCAGOULA",
+        "Fatalities": 3
+    },
+    {
+        "City": "PASS CHRISTIAN",
+        "Fatalities": 1
+    },
+    {
+        "City": "PEARL",
+        "Fatalities": 2
+    },
+    {
+        "City": "PICAYUNE",
+        "Fatalities": 0
+    },
+    {
+        "City": "RAYMOND",
+        "Fatalities": 1
+    },
+    {
+        "City": "RIDGELAND",
+        "Fatalities": 1
+    },
+    {
+        "City": "SALTILLO",
+        "Fatalities": 0
+    },
+    {
+        "City": "SENATOBIA",
+        "Fatalities": 0
+    },
+    {
+        "City": "SHANNON",
+        "Fatalities": 0
+    },
+    {
+        "City": "SOUTHAVEN",
+        "Fatalities": 0
+    },
+    {
+        "City": "STARKVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "SUMMIT",
+        "Fatalities": 0
+    },
+    {
+        "City": "TCHULA",
+        "Fatalities": 0
+    },
+    {
+        "City": "TERRY",
+        "Fatalities": 1
+    },
+    {
+        "City": "TUPELO",
+        "Fatalities": 2
+    },
+    {
+        "City": "UTICA",
+        "Fatalities": 0
+    },
+    {
+        "City": "VARDAMAN",
+        "Fatalities": 1
+    },
+    {
+        "City": "WATER VALLEY",
+        "Fatalities": 0
+    },
+    {
+        "City": "WESSON",
+        "Fatalities": 0
+    },
+    {
+        "City": "WIGGINS",
+        "Fatalities": 0
+    },
+    {
+        "City": "WINONA",
+        "Fatalities": 2
+    },
+    {
+        "City": "WOODVILLE",
+        "Fatalities": 0
+    },
+    {
+        "City": "YAZOO CITY",
+        "Fatalities": 0
+    }
+];
 
-
-export default Fatal_cities ; 
+export default dataInj;
