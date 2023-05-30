@@ -7,7 +7,16 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
   const map = useRef(null);
   const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
-  const popup = useRef(null);
+
+  const fatalitiesRef = useRef(fatalities);
+  const involmenemtRef = useRef(involmenemt);
+
+  // update refs when value changes
+  useEffect(() => {
+    fatalitiesRef.current = fatalities;
+    involmenemtRef.current = involmenemt;
+  }, [fatalities, involmenemt]);
+
 
   useEffect(() => {
     if (!container.current) return;
@@ -37,42 +46,31 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
       createLegend();
       addLayer();
 
-      // Create a new Popup instance
-      popup.current = new mapboxgl.Popup({
+      let popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
       });
 
-      // Attach mousemove event handler to display pop-up on hover
-      map.current.on('mousemove', 'counties-layer', (e) => {
-        const feature = e.features[0];
-        const coordinates = e.lngLat;
+map.current.on('mousemove', function (e) {
+  var features = map.current.queryRenderedFeatures(e.point, { layers: [currentLayerId.current] });
+  if (features.length > 0) {
+    map.current.getCanvas().style.cursor = 'pointer';
 
-        // Retrieve the county data
-        const countyData = feature.properties;
+    var description = `
+      <p class="title" >${features[0].properties.NAME}</p>
+        <p>Crashes: ${ fatalitiesRef.current ? features[0].properties.Fatalities : (involmenemtRef.current ? features[0].properties.notAlcoholInvolved : features[0].properties.alcoholInvolved) }</p>
+    `;
 
-        // Set the HTML content of the pop-up using the county data
-        const popupContent = `
-          <h3>${countyData.NAME}</h3>
-          <h3>Fatalities: ${countyData.Fatalities}</h3>
 
-        `;
 
-        popup.current
-          .setLngLat(coordinates)
-          .setHTML(popupContent)
-          .addTo(map.current);
-      });
+    popup.setLngLat(e.lngLat).setHTML(description).addTo(map.current);
+  } else {
+    map.current.getCanvas().style.cursor = '';
+    popup.remove();
+  }
+});
 
-      // Hide the pop-up on mouseout
-      map.current.on('mouseout', 'counties-layer', () => {
-        popup.current.remove();
-      });
 
-      // Close the pop-up on map click
-      map.current.on('click', () => {
-        popup.current.remove();
-      });
     });
 
     return () => {
@@ -112,10 +110,10 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
     const maxVal = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
 
     const labels = [
-      { color: 'rgba(173, 216, 230, 1)', label: '0 ِCase' },
-      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round((maxVal * 0.25) * 100) / 100} ِCase` },
-      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round((maxVal * 0.5) * 100) / 100} ِCase` },
-      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} ِCase` },
+      { color: 'rgba(173, 216, 230, 1)', label: '0 ِCrashes' },
+      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round((maxVal * 0.25) * 100) / 100} ِCrashes` },
+      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round((maxVal * 0.5) * 100) / 100} ِCrashes` },
+      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} ِCrashes` },
     ];
 
     labels.forEach((label) => {

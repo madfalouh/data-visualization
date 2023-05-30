@@ -4,10 +4,10 @@ import os
 
 # List of Excel files
 files = [
-    'predestrian_a_inj_2020.xlsx', 
-    'predestrian_ab_inj_2020.xlsx',
-    'predestrian_all_inj_2020.xlsx',
-     'predestrian_fatal_long_list.xlsx',
+    'speed_a_inj_2020.xlsx', 
+    'speed_ab_inj_2020.xlsx',
+    'speed_all_inj_2020.xlsx',
+     'speed_fatal_long_list.xlsx',
 ]
 
 # Iterate over each Excel file

@@ -8,6 +8,7 @@ import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import MopedIcon from "@mui/icons-material/Moped";
 import VaccinesIcon from "@mui/icons-material/Vaccines";
 import { useEffect, useState } from "react";
+import SkateboardingIcon from '@mui/icons-material/Skateboarding';
 import WcIcon from "@mui/icons-material/Wc";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -73,6 +74,8 @@ import TimeOfDayChart_INJ from "./inj/Charts/TimeOfDayChart_INJ";
 import MonthChart_INJ from "./inj/Charts/MonthChart_INJ";
 import RoadChart_INJ from "./inj/Charts/RoadChart_INJ";
 import VehiculeChart_INJ from "./inj/Charts/VehiculeChart_INJ";
+import CityChart_INJ from "./inj/Charts/CityChart_INJ";
+import CountyChart_INJ from "./inj/Charts/CountyChart_INJ";
 
 import AgeChart_mtrc from "./mtrcycl/Charts/AgeChart_mtrc";
 import DayOfWeekChart_mtrc from "./mtrcycl/Charts/DayOfWeekChart_mtrc";
@@ -82,7 +85,7 @@ import TimeOfDayChart_mtrc from "./mtrcycl/Charts/TimeOfDayChart_mtrc";
 import MonthChart_mtrc from "./mtrcycl/Charts/MonthChart_mtrc";
 import RoadChart_mtrc from "./mtrcycl/Charts/RoadChart_mtrc";
 import VehiculeChart_mtrc from "./mtrcycl/Charts/VehiculeChart_mtrc";
-
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 import AgeChart_Occ from "./occupant/Charts/AgeChart_Occ";
 import DayOfWeekChart_Occ from "./occupant/Charts/DayOfWeekChart_Occ";
 import GenderChart_Occ from "./occupant/Charts/GenderChart_Occ";
@@ -91,6 +94,28 @@ import TimeOfDayChart_Occ from "./occupant/Charts/TimeOfDayChart_Occ";
 import MonthChart_Occ from "./occupant/Charts/MonthChart_Occ";
 import RoadChart_Occ from "./occupant/Charts/RoadChart_Occ";
 import VehiculeChart_Occ from "./occupant/Charts/VehiculeChart_Occ";
+
+import AgeChart_Teen from "./teen/Charts/AgeChart_Teen";
+import DayOfWeekChart_Teen from "./teen/Charts/DayOfWeekChart_Teen";
+import GenderChart_Teen from "./teen/Charts/GenderChart_Teen";
+import RaceChart_Teen from "./teen/Charts/RaceChart_Teen";
+import TimeOfDayChart_Teen from "./teen/Charts/TimeOfDayChart_Teen";
+import MonthChart_Teen from "./teen/Charts/MonthChart_Teen";
+import RoadChart_Teen from "./teen/Charts/RoadChart_Teen";
+import VehiculeChart_Teen from "./teen/Charts/VehiculeChart_Teen";
+import CityChart_Teen from "./teen/Charts/CityChart_Teen";
+import CountyChart_Teen from "./teen/Charts/CountyChart_Teen";
+
+import AgeChart_Pred from "./predestrian/Charts/AgeChart_Pred";
+import DayOfWeekChart_Pred from "./predestrian/Charts/DayOfWeekChart_Pred";
+import GenderChart_Pred from "./predestrian/Charts/GenderChart_Pred";
+import RaceChart_Pred from "./predestrian/Charts/RaceChart_Pred";
+import TimeOfDayChart_Pred from "./predestrian/Charts/TimeOfDayChart_Pred";
+import MonthChart_Pred from "./predestrian/Charts/MonthChart_Pred";
+import RoadChart_Pred from "./predestrian/Charts/RoadChart_Pred";
+import VehiculeChart_Pred from "./predestrian/Charts/VehiculeChart_Pred";
+import CityChart_Pred from "./predestrian/Charts/CityChart_Pred";
+import CountyChart_Pred from "./predestrian/Charts/CountyChart_Pred";
 
 import EscalatorWarningIcon from "@mui/icons-material/EscalatorWarning";
 import AgeChart_UN from "./unbelt/Charts/AgeChart_UN";
@@ -226,9 +251,8 @@ function App() {
       <GenderChart_INJ></GenderChart_INJ>,
       <RaceChart_INJ></RaceChart_INJ>,
       <AgeChart_INJ></AgeChart_INJ>,
-
-      <CityMap></CityMap>,
-      <CountyMap></CountyMap>,
+      <CityChart_INJ></CityChart_INJ>,
+      <CountyChart_INJ></CountyChart_INJ>,
 
       <VehiculeChart_INJ></VehiculeChart_INJ>,
       <RoadChart_INJ></RoadChart_INJ>,
@@ -280,6 +304,36 @@ function App() {
       <CountyChart_BC></CountyChart_BC>,
       <VehiculeChart_Bicycle></VehiculeChart_Bicycle>,
       <RoadChart_Bicycle></RoadChart_Bicycle>,
+    ],
+
+    [
+      //10
+      <MonthChart_Teen></MonthChart_Teen>,
+      <TimeOfDayChart_Teen></TimeOfDayChart_Teen>,
+      <DayOfWeekChart_Teen></DayOfWeekChart_Teen>,
+      <RaceChart_Teen></RaceChart_Teen>,
+      <GenderChart_Teen></GenderChart_Teen>,
+      <AgeChart_Teen></AgeChart_Teen>,
+
+      <CityChart_Teen></CityChart_Teen>,
+      <CountyChart_Teen></CountyChart_Teen>,
+      <VehiculeChart_Teen></VehiculeChart_Teen>,
+      <RoadChart_Teen></RoadChart_Teen>,
+    ],
+
+    [
+      //9
+      <MonthChart_Pred></MonthChart_Pred>,
+      <TimeOfDayChart_Pred></TimeOfDayChart_Pred>,
+      <DayOfWeekChart_Pred></DayOfWeekChart_Pred>,
+      <RaceChart_Pred></RaceChart_Pred>,
+      <GenderChart_Pred></GenderChart_Pred>,
+      <AgeChart_Pred></AgeChart_Pred>,
+
+      <CityChart_Pred></CityChart_Pred>,
+      <CountyChart_Pred></CountyChart_Pred>,
+      <VehiculeChart_Pred></VehiculeChart_Pred>,
+      <RoadChart_Pred></RoadChart_Pred>,
     ],
   ];
 
@@ -416,6 +470,28 @@ function App() {
           }}
         >
           <SensorOccupiedIcon></SensorOccupiedIcon> Occupant Protection Crashes
+        </div>
+
+        <div
+          className="side-element"
+          style={selectedData === "Teen" ? { backgroundColor: "#6998F5" } : {}}
+          onClick={() => {
+            setI(10);
+            setSelectedData("Teen");
+          }}
+        >
+          <SkateboardingIcon></SkateboardingIcon> Teen Crashes
+        </div>
+
+        <div
+          className="side-element"
+          style={selectedData === "Pred" ? { backgroundColor: "#6998F5" } : {}}
+          onClick={() => {
+            setI(11);
+            setSelectedData("Pred");
+          }}
+        >
+          <DirectionsWalkIcon></DirectionsWalkIcon> Predestrian Crashes
         </div>
       </div>
 

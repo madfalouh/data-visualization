@@ -6,6 +6,22 @@ const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalit
   const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
 
+
+  const fatalitiesRef = useRef(fatalities);
+  const involmenemtRef = useRef(involmenemt);
+
+  // update refs when value changes
+  useEffect(() => {
+    fatalitiesRef.current = fatalities;
+    involmenemtRef.current = involmenemt;
+  }, [fatalities, involmenemt]);
+
+  // Create a new popup instance
+  const popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+  });
+
   useEffect(() => {
     if (!container.current) return;
 
@@ -45,6 +61,27 @@ const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalit
       });
 
       createLegend();
+
+      // Add event listeners for mouse move and mouse leave events
+map.current.on('mousemove', function (e) {
+
+  var features = map.current.queryRenderedFeatures(e.point, { layers: [currentLayerId.current] });
+  if (features.length > 0) {
+    map.current.getCanvas().style.cursor = 'pointer';
+
+console.log(features[0].properties);
+
+    var description = `
+      <p>${features[0].properties.name}</p>
+        <p>Crashes: ${ fatalitiesRef.current ? features[0].properties.Fatalities : (involmenemtRef.current ? features[0].properties.notAlcoholInvolved : features[0].properties.alcoholInvolved) }</p>
+    `;
+
+    popup.setLngLat(e.lngLat).setHTML(description).addTo(map.current);
+  } else {
+    map.current.getCanvas().style.cursor = '';
+    popup.remove();
+  }
+});
     });
 
     return () => {
@@ -80,10 +117,10 @@ const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalit
     const maxVal = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
 
     const labels = [
-      { color: 'rgba(173, 216, 230, 1)', label: '0 Fatalities' },
-      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round((maxVal * 0.25) * 100) / 100} Fatalities` },
-      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round((maxVal * 0.5) * 100) / 100} Fatalities` },
-      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} Fatalities` },
+      { color: 'rgba(173, 216, 230, 1)', label: '0 Crashes' },
+      { color: 'rgba(135, 206, 235, 1)', label: `${Math.round((maxVal * 0.25) * 100) / 100} Crashes` },
+      { color: 'rgba(70, 130, 180, 1)', label: `${Math.round((maxVal * 0.5) * 100) / 100} Crashes` },
+      { color: 'rgba(0, 0, 139, 1)', label: `${maxVal} Crashes` },
     ];
 
     labels.forEach((label) => {
@@ -105,49 +142,49 @@ const useMapboxx = (container, accessToken, mapStyle, data, involmenemt, fatalit
     });
   };
 
-const addLayer = () => {
-  const property = fatalities ? 'Fatalities' : involmenemt ? 'notAlcoholInvolved' : 'alcoholInvolved';
-  const maxValue = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
+  const addLayer = () => {
+    const property = fatalities ? 'Fatalities' : involmenemt ? 'notAlcoholInvolved' : 'alcoholInvolved';
+    const maxValue = fatalities ? maxFa : involmenemt ? maxNAl : maxAl;
 
-  let stops = [0];
-  if (maxValue > 1) stops.push(Math.round((maxValue * 0.25) * 100) / 100);
-  if (maxValue > 2) stops.push(Math.round((maxValue * 0.5) * 100) / 100);
-  stops.push(maxValue);
+    let stops = [0];
+    if (maxValue > 1) stops.push(Math.round((maxValue * 0.25) * 100) / 100);
+    if (maxValue > 2) stops.push(Math.round((maxValue * 0.5) * 100) / 100);
+    stops.push(maxValue);
 
-  const colors = ['rgba(173, 216, 230, 1)', 'rgba(135, 206, 235, 1)', 'rgba(70, 130, 180, 1)', 'rgba(0, 0, 139, 1)'];
+    const colors = ['rgba(173, 216, 230, 1)', 'rgba(135, 206, 235, 1)', 'rgba(70, 130, 180, 1)', 'rgba(0, 0, 139, 1)'];
 
-  let fillColors = ['interpolate', ['linear'], ['get', property]];
-  stops.forEach((stop, i) => {
-    fillColors.push(stop);
-    fillColors.push(colors[i]);
-  });
-
-  const layerConfig = {
-    id: currentLayerId.current,
-    type: 'fill',
-    source: 'counties',
-    layout: {},
-    paint: {
-      'fill-color': fillColors,
-      'fill-opacity': 1,
-    },
-  };
-
-  if (map.current.getLayer(currentLayerId.current)) {
-    map.current.removeLayer(currentLayerId.current);
-  }
-
-  if (map.current.getSource('counties')) {
-    map.current.getSource('counties').setData(data);
-  } else {
-    map.current.addSource('counties', {
-      type: 'geojson',
-      data: data,
+    let fillColors = ['interpolate', ['linear'], ['get', property]];
+    stops.forEach((stop, i) => {
+      fillColors.push(stop);
+      fillColors.push(colors[i]);
     });
-  }
 
-  map.current.addLayer(layerConfig);
-};
+    const layerConfig = {
+      id: currentLayerId.current,
+      type: 'fill',
+      source: 'counties',
+      layout: {},
+      paint: {
+        'fill-color': fillColors,
+        'fill-opacity': 1,
+      },
+    };
+
+    if (map.current.getLayer(currentLayerId.current)) {
+      map.current.removeLayer(currentLayerId.current);
+    }
+
+    if (map.current.getSource('counties')) {
+      map.current.getSource('counties').setData(data);
+    } else {
+      map.current.addSource('counties', {
+        type: 'geojson',
+        data: data,
+      });
+    }
+
+    map.current.addLayer(layerConfig);
+  };
 
 };
 

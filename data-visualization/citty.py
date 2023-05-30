@@ -8,8 +8,8 @@ import json
 import re
 
 # Put your excel file name here
-file_name = 'occ_protec_ab_inj_2020.xlsx'
-sheet_name = 'City'
+file_name = 'injuries_ab_inj_2020.xlsx'
+sheet_name = 'County'
 
 # Read the Excel file, skip the first row (header=1)
 df = pd.read_excel(file_name, sheet_name=sheet_name, header=1)
@@ -21,11 +21,11 @@ for column in df.select_dtypes(include=['number']).columns:
 # Replace spaces in column names with underscores
 df.columns = df.columns.str.replace(' ', '_')
 
-# Convert the dataframe to a list of dictionaries and clean 'City' entries
+# Convert the dataframe to a list of dictionaries and clean 'County' entries
 data_inj = df.to_dict('records')
 for entry in data_inj:
-    if isinstance(entry['City'], str):
-        entry['City'] = re.sub(r'\s*\([^)]*\)', '', entry['City'])
+    if isinstance(entry['County'], str):
+        entry['County'] = re.sub(r'\s*\([^)]*\)', '', entry['County'])
 
 # Create the JavaScript string
 js_string = "const dataInj = " + json.dumps(data_inj, indent=4) + ";\n\nexport default dataInj;"
@@ -45,11 +45,11 @@ for column in df.select_dtypes(include=['number']).columns:
 # Replace spaces in column names with underscores
 df.columns = df.columns.str.replace(' ', '_')
 
-# Convert the dataframe to a list of dictionaries and clean 'City' entries
+# Convert the dataframe to a list of dictionaries and clean 'County' entries
 data_inj = df.to_dict('records')
 for entry in data_inj:
-    if isinstance(entry['City'], str):
-        entry['City'] = re.sub(r'\s*\([^)]*\)', '', entry['City'])
+    if isinstance(entry['County'], str):
+        entry['County'] = re.sub(r'\s*\([^)]*\)', '', entry['County'])
 
 # Create the JavaScript string
 js_string = "const dataInj = " + json.dumps(data_inj, indent=4) + ";\n\nexport default dataInj;"

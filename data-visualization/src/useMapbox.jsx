@@ -8,6 +8,16 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
   const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
 
+  const fatalitiesRef = useRef(fatalities);
+  const involmenemtRef = useRef(involmenemt);
+
+  // update refs when value changes
+  useEffect(() => {
+    fatalitiesRef.current = fatalities;
+    involmenemtRef.current = involmenemt;
+  }, [fatalities, involmenemt]);
+
+
   useEffect(() => {
     if (!container.current) return;
 
@@ -41,22 +51,24 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
         closeOnClick: false,
       });
 
-map.current.on('mouseenter', currentLayerId.current, function (e) {
-  map.current.getCanvas().style.cursor = 'pointer';
-  
-  var description = `
-    <h3>${e.features[0].properties.NAME}</h3>
-    <p>Cases: ${e.features[0].properties.alcoholInvolved}</p>
-  `;
+map.current.on('mousemove', function (e) {
+  var features = map.current.queryRenderedFeatures(e.point, { layers: [currentLayerId.current] });
+  if (features.length > 0) {
+    map.current.getCanvas().style.cursor = 'pointer';
 
-  popup.setLngLat(e.lngLat).setHTML(description).addTo(map.current);
+    var description = `
+      <p class="title" >${features[0].properties.NAME}</p>
+        <p>Crashes: ${ fatalitiesRef.current ? features[0].properties.Fatalities : (involmenemtRef.current ? features[0].properties.notAlcoholInvolved : features[0].properties.alcoholInvolved) }</p>
+    `;
+
+
+
+    popup.setLngLat(e.lngLat).setHTML(description).addTo(map.current);
+  } else {
+    map.current.getCanvas().style.cursor = '';
+    popup.remove();
+  }
 });
-
-map.current.on('mouseout', function () {
-  map.current.getCanvas().style.cursor = '';
-  popup.remove();
-});
-
 
 
     });

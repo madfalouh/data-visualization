@@ -73,7 +73,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: "Unbelted Related Crashes",
+      text: "Belted Related Crashes",
       style: {
         color: "#ffffff",
       },

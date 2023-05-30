@@ -1,5 +1,4 @@
-import React from 'react'
-import dataA from "../TypeAData/time of day";
+ import dataA from "../TypeAData/time of day";
 import dataAB from "../typeABData/timeOfDay";
 import dataFatalities from "../FatalitiesData/timeOfDay";
 import dataInjuries from "../AllinjuriesData/timeofDayInj";
@@ -75,7 +74,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: "Unbelted Related Crashes",
+      text: "Belted Related Crashes",
       style: {
         color: "#ffffff",
       },
@@ -167,7 +166,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: " Not Unbelted injuries",
+      text: "Unbelted injuries",
       style: {
         color: "#ffffff",
       },

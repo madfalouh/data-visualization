@@ -75,7 +75,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: " Unbelted injuries",
+      text: "Belted injuries",
       style: {
         color: "#ffffff",
       },
@@ -167,7 +167,7 @@ console.log(chartWidth);
       width: chartWidth,
     },
     title: {
-      text: " Not Unbelted injuries",
+      text: "Unbelted injuries",
       style: {
         color: "#ffffff",
       },

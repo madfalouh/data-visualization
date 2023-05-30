@@ -126,7 +126,7 @@ console.log(chartWidth);
       },
       {
         name: "All Fatalities",
-        data: dataFatalities.series[0].data,
+        data: dataFatalities.datasets[0].data,
         color: Highcharts.getOptions().colors[2],
         borderColor: Highcharts.getOptions().colors[2],
         borderWidth: 1,
