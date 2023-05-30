@@ -635,6 +635,10 @@ function App() {
             <div className="body-chart">{components}</div>
           </div>
         </div>
+
+<div className="footer"  >Social Science Research Center | Mississippi Office Of Highway Safety</div>
+
+
       </div>
     </div>
 

@@ -2,7 +2,7 @@
 background-color: #1f2a40;
 margin-bottom: 2%;
 height: 18vh;
-padding: 50px;
+
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 border-radius: 4px;
 display: flex;
@@ -25,6 +25,7 @@ display: flex;
 flex-direction: row;
 align-items: center;
 gap: 20px;
+width: 35%;
 }
 
 
@@ -32,12 +33,13 @@ gap: 20px;
 font-size: 2.2rem;
 
 font-family: 'Open Sans';
-
+width: 100%;
 color: rgb(255, 255, 255);
 }
 
 .nav-container > h2 {
 font-family: 'Open Sans';
+margin-right: 2.5%;
 
 font-size: 2.2rem;
 color: rgb(255, 255, 255);
@@ -60,10 +62,21 @@ display: none;
 
 }
 
-
-.nav-container {
-
-justify-content: center;
+.nav-title {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 20px;
+width: 100%;
 }
+
+
+}
+
+
+  .nav-title img {
+
+  max-width: 100%;
+  height: auto;
 
 }

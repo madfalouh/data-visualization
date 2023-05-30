@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import dataA from "../TypeAData/month";
 import dataAB from "../typeABData/monthInj";
 import dataFatalities from "../FatalitiesData/monthInj";
@@ -7,27 +7,27 @@ import dataInjuries from "../AllinjuriesData/mounthAllInj";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { useCallback, useEffect, useRef, useState } from "react";
-import exportingInit from 'highcharts/modules/exporting';
-import exportCSV from 'highcharts/modules/export-data';
+import exportingInit from "highcharts/modules/exporting";
+import exportCSV from "highcharts/modules/export-data";
 
 exportingInit(Highcharts);
 exportCSV(Highcharts);
 
 function MonthChart() {
- const chartComponent1 = useRef();
+  const chartComponent1 = useRef();
   const chartComponent2 = useRef();
-  let scale = 0 ; 
-    const screenWidth = window.innerWidth;
-    if (screenWidth < 768) { // Typical breakpoint for mobile screens
-      scale =  0.75;
-    } else {
-      scale = 0.7;
-    }
+  let scale = 0;
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    // Typical breakpoint for mobile screens
+    scale = 0.75;
+  } else {
+    scale = 0.7;
+  }
 
+  const [chartWidth, setChartWidth] = useState(window.innerWidth * scale);
 
-const [chartWidth, setChartWidth] = useState(window.innerWidth * scale);
-
-console.log(chartWidth);
+  console.log(chartWidth);
 
   const handleResize = useCallback(() => {
     setChartWidth(window.innerWidth * scale);
@@ -76,30 +76,31 @@ console.log(chartWidth);
     title: {
       text: " Alcohol Related Crashes",
       style: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
     },
     xAxis: {
       categories: dataA.labels,
       labels: {
         style: {
-          color: "#ffffff",
+          color: "#1f2a40",
         },
       },
     },
-  yAxis: {
-  title: {
-    text: "",
-    style: {
-      color: "#ffffff",
+    yAxis: {
+      gridLineColor: "#7b8598",
+      title: {
+        text: "",
+        style: {
+          color: "#1f2a40",
+        },
+      },
+      labels: {
+        style: {
+          color: "#1f2a40",
+        },
+      },
     },
-  },
-  labels: {
-    style: {
-      color: "#ffffff",
-    },
-  },
-},
     plotOptions: {
       column: {
         pointPadding: 0.2,
@@ -142,10 +143,10 @@ console.log(chartWidth);
 
     legend: {
       itemStyle: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
       itemHoverStyle: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
     },
 
@@ -168,30 +169,30 @@ console.log(chartWidth);
     title: {
       text: " Not Alcohol Involved",
       style: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
     },
     xAxis: {
       categories: dataA.labels,
       labels: {
         style: {
-          color: "#ffffff",
+          color: "#1f2a40",
         },
       },
     },
- yAxis: {
-  title: {
-    text: "",
-    style: {
-      color: "#ffffff",
+    yAxis: {
+      title: {
+        text: "",
+        style: {
+          color: "#1f2a40",
+        },
+      },
+      labels: {
+        style: {
+          color: "#1f2a40",
+        },
+      },
     },
-  },
-  labels: {
-    style: {
-      color: "#ffffff",
-    },
-  },
-},
     plotOptions: {
       column: {
         pointPadding: 0.1,
@@ -228,10 +229,10 @@ console.log(chartWidth);
 
     legend: {
       itemStyle: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
       itemHoverStyle: {
-        color: "#ffffff",
+        color: "#1f2a40",
       },
     },
 
@@ -263,4 +264,4 @@ console.log(chartWidth);
   );
 }
 
-export default MonthChart
+export default MonthChart;

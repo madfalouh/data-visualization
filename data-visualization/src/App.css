@@ -1,6 +1,6 @@
 body {
 margin: 0 0;
-background-color: #141b2d;
+background-color: #f6f6f6;
 font-family: "Source Sans Pro", sans-serif;
 overflow-x: hidden;
 
@@ -107,7 +107,7 @@ flex-direction: column;
   justify-content: center;
   margin-top: 1%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  background-color: #1f2a40;
+  background-color: #d1daec;
   padding: 50px;
 }
 
@@ -126,7 +126,7 @@ cursor: pointer;
 
 
 .option:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #000000aa);
 
 }
 
@@ -224,9 +224,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-
-
-
 
 
 
@@ -331,4 +328,18 @@ align-items: center;
 
 color: #fff;
 
+}
+
+
+.footer {
+font-size: 1.35rem;
+width: 100%;
+margin-top: 3%;
+text-align: center;
+
+}
+
+.footer:hover {
+text-decoration: underline;
+color: #6998F5;
 }
