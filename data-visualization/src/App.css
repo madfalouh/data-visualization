@@ -62,6 +62,7 @@ padding: 20px;
 
 .second-section-inner {
 display: flex;
+
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
@@ -87,7 +88,7 @@ flex-direction: column;
 
 .option {
   margin-right: 20px; /* Creates a 20px gap between each item */
-  margin-top: 50px;
+
   transition: transform 0.3s ease-in-out;
   z-index: 1;
   width: 150px;
@@ -224,10 +225,7 @@ align-items: center;
 justify-content: center;
 }
 
-.second-section-inner {
 
-margin: 0px;
-}
 
 
 
@@ -244,7 +242,6 @@ background-color: #172135;
 z-index: 1000;
 width: 100vw;
 left: -120%;
-
 transition: left 0.3s ease-in-out;
 
 }
@@ -276,7 +273,7 @@ color: white;
 }
 
 .firt-section {
-padding: 50px 0px;
+padding: 0px 0px;
 }
 
 .side-element {

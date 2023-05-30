@@ -133,7 +133,7 @@ useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap, switchData, f
         </div>
 
         <div className={` ${!fatalities &&  "toggle" }   ${fatalities && "show-fatal"}`} title={switchData ? "Not alcohol Involved" : "Alcohol Involved"}>
-          <p>Alcohol Involved</p>
+          <p>Belted Injuries</p>
           <input
             type="checkbox"
             id="a"
@@ -144,7 +144,7 @@ useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap, switchData, f
             }}
           />
           <label htmlFor="a"></label>
-          <p>Alcohol Not Involved</p>
+          <p>UnBelted Injuries</p>
         </div>
 
         <div className="legend-"></div>

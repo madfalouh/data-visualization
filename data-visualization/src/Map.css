@@ -3,6 +3,7 @@
 position: relative;
   height: 80vh;
   width: 100%;
+
 }
 
 
@@ -100,7 +101,7 @@ color: #0000008e;
   top: var(--toggle-offset);
   left: var(--toggle-offset);
   bottom: var(--toggle-offset);
-  
+
   aspect-ratio: 1 / 1;
   
   background-color: var(--toggle-inner-default);
@@ -143,24 +144,26 @@ color: #0000008e;
 
 
 .select-type {
-width: fit-content;
-gap: 50px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column-reverse;
-position: absolute;
-top: 5%;
-left: 70%;
-z-index: 1000000000;
+  width: max-content;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  position: absolute;
+  right: -5%;
+  margin-right: 200px;
+  z-index: 1000000000;
 }
+
+
 
 
 .select-dropdown {
   z-index: 1000000000000000000;
   position: relative;
   background-color: #ffffff;
-  width: 300px;
+  width: 250px;
   float: left;
 
   border-radius: 2px;
@@ -204,33 +207,53 @@ display: none;
 
 .toggle {
 gap: 30px;
+min-width: 100%  !important;
 display: flex;
+flex-direction: row;
 align-items: center;
-justify-content: center;
 }
+
+
+
 
 .toggle p  {
-
 margin-top: -2%;
+}
+@media (max-width: 1000px) { 
+.select-type {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 }
 
 
 
-@media (max-width: 1000px) { 
+@media (   max-width: 500px) { 
 
 .select-type {
-width: 70%;
 gap: 50px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column-reverse;
 position: absolute;
-top: 2%;
 left: 15%;
 z-index: 1000000000;
 }
 
+  .toggle {
+    --toggle-width: 80px;
+    --toggle-height: 30px;
+  }
+
+  .toggle {
+    --toggle-inner-default: #ffffff;
+  }
+
+  .toggle input:checked + label::before {
+    transform: translateX(calc(80px -  100px * 0.6));
+  }
 
 }
 

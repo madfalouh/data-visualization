@@ -26,7 +26,7 @@ const CityChart_UN = () => {
 
       if (city) {
          console.log(city);
-        feature.properties.alcoholInvolved = city.Beltede || 0;
+        feature.properties.alcoholInvolved = city.Belted || 0;
         feature.properties.notAlcoholInvolved = city.unbelted  || 0;
       }
     });
@@ -139,7 +139,7 @@ const handleOptionChange = (event) => {
         </div>
 
         <div className={` ${!fatalities &&  "toggle" }   ${fatalities && "show-fatal"}`} title={switchData ? "Not Speeding Involved" : "Speeding Involved"}>
-          <p>Speeding Involved</p>
+          <p>Unbelted injuries </p>
           <input
             type="checkbox"
             id="a"
@@ -150,7 +150,7 @@ const handleOptionChange = (event) => {
             }}
           />
           <label htmlFor="a"></label>
-          <p>Not Speeding Involved</p>
+          <p> Belted injuries</p>
         </div>
 
         <div className="legend-"></div>

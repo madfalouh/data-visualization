@@ -139,7 +139,7 @@ const handleOptionChange = (event) => {
         </div>
 
         <div className={` ${!fatalities &&  "toggle" }   ${fatalities && "show-fatal"}`} title={switchData ? "Not Speeding Involved" : "Speeding Involved"}>
-          <p>Speeding Involved</p>
+          <p>Motocycle Injuries</p>
           <input
             type="checkbox"
             id="a"
@@ -150,7 +150,7 @@ const handleOptionChange = (event) => {
             }}
           />
           <label htmlFor="a"></label>
-          <p>Not Speeding Involved</p>
+          <p>Not Motocycle Injuries</p>
         </div>
 
         <div className="legend-"></div>

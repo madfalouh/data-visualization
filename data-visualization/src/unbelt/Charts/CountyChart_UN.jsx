@@ -33,7 +33,7 @@ function addPropertiesToTopojson(originalData, topojson) {
     });
 
     if (county) {
-        feature.properties.alcoholInvolved = county.Beltede || 0;
+        feature.properties.alcoholInvolved = county.Belted || 0;
         feature.properties.notAlcoholInvolved = county.unbelted  || 0;
     }
   });
@@ -133,7 +133,7 @@ useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap, switchData, f
         </div>
 
         <div className={` ${!fatalities &&  "toggle" }   ${fatalities && "show-fatal"}`} title={switchData ? "Not alcohol Involved" : "Alcohol Involved"}>
-          <p>Alcohol Involved</p>
+          <p>Unbelted injuries</p>
           <input
             type="checkbox"
             id="a"
@@ -144,7 +144,7 @@ useMapbox(mapContainer, MAPBOX_ACCESS_TOKEN, MAPBOX_STYLE, datMap, switchData, f
             }}
           />
           <label htmlFor="a"></label>
-          <p>Alcohol Not Involved</p>
+          <p>Belted injuries</p>
         </div>
 
         <div className="legend-"></div>

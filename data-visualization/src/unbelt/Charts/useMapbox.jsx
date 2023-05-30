@@ -8,6 +8,10 @@ const useMapbox = (container, accessToken, mapStyle, data, involmenemt, fataliti
   const currentLayerId = useRef('counties-layer');
   const borderLayerId = 'counties-borders';
 
+console.log("hj,k;lhjklhjk;l hj,klhnj,k;lhnj,k;l:hnj,k;:lhj,k;l:mnj,k;l:m!");
+
+console.log(data);
+
   const fatalitiesRef = useRef(fatalities);
   const involmenemtRef = useRef(involmenemt);
 

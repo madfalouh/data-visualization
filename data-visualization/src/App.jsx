@@ -19,7 +19,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import { AddRoad, AssistWalker, DirectionsCar } from "@mui/icons-material";
 import TabCard from "./TabCard";
-
+import logo from '../assets/img/logo.png'
 import MonthChart from "./alcohol/Charts/monthChart";
 import TimeOfDayChart from "./alcohol/Charts/timeOfDayChart";
 import DayOfWeekChar from "./alcohol/Charts/DayOfWeekChart";
@@ -142,9 +142,16 @@ import CityChart_UN from "./unbelt/Charts/CityChart_UN";
 import CountyChart_UN from "./unbelt/Charts/CountyChart_UN";
 import CityChart_OCC from "./occupant/Charts/CityChart_OCC";
 import CountyChart_OCC from "./occupant/Charts/CountyChart_OCC";
+import Nav from './navbar/Nav'
+
 Chart.register(CategoryScale);
 
 function App() {
+
+
+
+
+
   const [open, setOpen] = useState(false);
 
   const [i, setI] = useState(0);
@@ -348,6 +355,10 @@ function App() {
   }, [i, j]);
 
   return (
+<>
+
+<Nav> </Nav>
+
     <div className="container">
       <MenuIcon
         className="burger-icon"
@@ -626,6 +637,10 @@ function App() {
         </div>
       </div>
     </div>
+
+</>
   );
+
+
 }
 export default App;
